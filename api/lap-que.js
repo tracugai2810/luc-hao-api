@@ -1443,15 +1443,37 @@ function finishTossSequence() {
 
 
 export default function handler(req, res) {
+    // Enable CORS
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     const serial = req.query.serial;
     if (!serial) {
         return res.status(400).json({ error: 'Missing serial' });
     }
 
     try {
-        const dVal = new Date().toISOString();
-        const calendar = calculateCanChi(dVal);
-        const formattedDate = formatDate(dVal) || dVal;
+        // Parse date/time if provided
+        let dVal = new Date();
+        const saDate = req.query.sa_date;
+        const saHour = req.query.sa_hour;
+        const saMin = req.query.sa_minute;
+
+        if (saDate) {
+            const pad = n => String(n).padStart(2, '0');
+            const hour = saHour !== undefined ? pad(saHour) : '00';
+            const minute = saMin !== undefined ? pad(saMin) : '00';
+            dVal = new Date(`${saDate}T${hour}:${minute}:00`);
+        }
+
+        const isoStr = dVal.toISOString();
+        const calendar = calculateCanChi(isoStr);
+        const formattedDate = formatDate(isoStr) || isoStr;
 
         const nums = serial.split('').map(Number);
         const mid = Math.floor(nums.length / 2);
@@ -1467,6 +1489,7 @@ export default function handler(req, res) {
         else lines[idx] = 0;
 
         const data = calculateHexagramData(lines, calendar, serial, formattedDate);
+        const copyText = generateCopyText(data);
 
         res.setHeader('Content-Type', 'application/json; charset=utf-8');
         res.status(200).json({
@@ -1475,6 +1498,7 @@ export default function handler(req, res) {
             quaiChinh: data.mainName,
             quaiBien: data.changedName,
             haoDong: move,
+            copyText: copyText,
             data: data
         });
     } catch (e) {
