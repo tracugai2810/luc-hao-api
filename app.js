@@ -744,14 +744,6 @@ function captureAndDisplayImage() {
             });
         }, 300);
 
-        // If auto-run via URL parameters, automatically trigger image download/share!
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get('sa_serial') || urlParams.get('serial')) {
-            setTimeout(() => {
-                downloadImage();
-            }, 600);
-        }
-
     }).catch(err => {
         console.error('html2canvas error:', err);
 
