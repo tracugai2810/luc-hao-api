@@ -293,6 +293,44 @@ function init() {
     if (gioChiSelect) {
         gioChiSelect.value = getCurrentChiHour();
     }
+
+    // Auto fill and run from URL query parameters (for iOS Shortcuts and deep linking)
+    try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const serialParam = urlParams.get('sa_serial') || urlParams.get('serial');
+        if (serialParam) {
+            // Switch to Serial tab
+            switchTab('serial');
+            
+            // Fill serial input
+            const serialInput = document.getElementById('serialInput');
+            if (serialInput) {
+                serialInput.value = serialParam;
+            }
+
+            // Fill optional date/time if provided
+            const saDate = urlParams.get('sa_date');
+            const saHour = urlParams.get('sa_hour');
+            const saMin = urlParams.get('sa_minute');
+            if (saDate && saHour !== null && saMin !== null) {
+                const pad = n => String(n).padStart(2, '0');
+                const dtInput = document.getElementById('inputDate');
+                if (dtInput) {
+                    dtInput.value = `${saDate}T${pad(saHour)}:${pad(saMin)}`;
+                }
+            }
+
+            // Trigger click on submit button after a tiny delay
+            setTimeout(() => {
+                const submitBtn = document.querySelector('button.btn-submit');
+                if (submitBtn) {
+                    submitBtn.click();
+                }
+            }, 300);
+        }
+    } catch (e) {
+        console.error("Error auto-running from query params:", e);
+    }
 }
 
 function switchTab(tab) {
