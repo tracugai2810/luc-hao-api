@@ -733,8 +733,16 @@ function captureAndDisplayImage() {
         document.getElementById('loading-overlay').classList.remove('visible');
         document.getElementById('resultSection').classList.add('visible');
 
-        // Scroll to result
-        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Scroll to result (align bottom to show download buttons immediately)
+        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+        // Backup scroll to absolute bottom after render settles
+        setTimeout(() => {
+            window.scrollTo({
+                top: document.body.scrollHeight,
+                behavior: 'smooth'
+            });
+        }, 300);
 
     }).catch(err => {
         console.error('html2canvas error:', err);
