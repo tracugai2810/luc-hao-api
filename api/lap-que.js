@@ -1,5 +1,5 @@
-﻿/* ========================================
-   Lá»¤C HÃ€O WEBAPP - JAVASCRIPT
+/* ========================================
+   LỤC HÀO WEBAPP - JAVASCRIPT
    All divination logic and UI interactions
    ======================================== */
 
@@ -7,141 +7,141 @@
 // CONSTANTS & DATA
 // ============================================
 
-// 10 ThiÃªn Can
-const CAN = ['GiÃ¡p', 'áº¤t', 'BÃ­nh', 'Äinh', 'Máº­u', 'Ká»·', 'Canh', 'TÃ¢n', 'NhÃ¢m', 'QuÃ½'];
+// 10 Thiên Can
+const CAN = ['Giáp', 'Ất', 'Bính', 'Đinh', 'Mậu', 'Kỷ', 'Canh', 'Tân', 'Nhâm', 'Quý'];
 
-// 12 Äá»‹a Chi
-const CHI = ['TÃ½', 'Sá»­u', 'Dáº§n', 'MÃ£o', 'ThÃ¬n', 'Tá»µ', 'Ngá»', 'MÃ¹i', 'ThÃ¢n', 'Dáº­u', 'Tuáº¥t', 'Há»£i'];
+// 12 Địa Chi
+const CHI = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tỵ', 'Ngọ', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi'];
 
-// NgÅ© hÃ nh cá»§a tá»«ng Chi
+// Ngũ hành của từng Chi
 const NGU_HANH_CHI = {
-    'Há»£i': 'Thá»§y', 'TÃ½': 'Thá»§y',
-    'Dáº§n': 'Má»™c', 'MÃ£o': 'Má»™c',
-    'Tá»µ': 'Há»a', 'Ngá»': 'Há»a',
-    'ThÃ¢n': 'Kim', 'Dáº­u': 'Kim',
-    'ThÃ¬n': 'Thá»•', 'Tuáº¥t': 'Thá»•', 'Sá»­u': 'Thá»•', 'MÃ¹i': 'Thá»•'
+    'Hợi': 'Thủy', 'Tý': 'Thủy',
+    'Dần': 'Mộc', 'Mão': 'Mộc',
+    'Tỵ': 'Hỏa', 'Ngọ': 'Hỏa',
+    'Thân': 'Kim', 'Dậu': 'Kim',
+    'Thìn': 'Thổ', 'Tuất': 'Thổ', 'Sửu': 'Thổ', 'Mùi': 'Thổ'
 };
 
-// NgÅ© hÃ nh cá»§a 8 quÃ¡i
+// Ngũ hành của 8 quái
 const NGU_HANH_QUAI = {
-    'CÃ n': 'Kim', 'ÄoÃ i': 'Kim',
-    'Ly': 'Há»a',
-    'Cháº¥n': 'Má»™c', 'Tá»‘n': 'Má»™c',
-    'Kháº£m': 'Thá»§y',
-    'Cáº¥n': 'Thá»•', 'KhÃ´n': 'Thá»•'
+    'Càn': 'Kim', 'Đoài': 'Kim',
+    'Ly': 'Hỏa',
+    'Chấn': 'Mộc', 'Tốn': 'Mộc',
+    'Khảm': 'Thủy',
+    'Cấn': 'Thổ', 'Khôn': 'Thổ'
 };
 
-// 8 QuÃ¡i Ä‘Æ¡n vá»›i mÃ£ nhá»‹ phÃ¢n
+// 8 Quái đơn với mã nhị phân
 const QUAI_SO = [
-    { name: 'KhÃ´n', bin: '000', hanh: 'Thá»•' },
-    { name: 'Cáº¥n', bin: '001', hanh: 'Thá»•' },
-    { name: 'Kháº£m', bin: '010', hanh: 'Thá»§y' },
-    { name: 'Tá»‘n', bin: '011', hanh: 'Má»™c' },
-    { name: 'Cháº¥n', bin: '100', hanh: 'Má»™c' },
-    { name: 'Ly', bin: '101', hanh: 'Há»a' },
-    { name: 'ÄoÃ i', bin: '110', hanh: 'Kim' },
-    { name: 'CÃ n', bin: '111', hanh: 'Kim' }
+    { name: 'Khôn', bin: '000', hanh: 'Thổ' },
+    { name: 'Cấn', bin: '001', hanh: 'Thổ' },
+    { name: 'Khảm', bin: '010', hanh: 'Thủy' },
+    { name: 'Tốn', bin: '011', hanh: 'Mộc' },
+    { name: 'Chấn', bin: '100', hanh: 'Mộc' },
+    { name: 'Ly', bin: '101', hanh: 'Hỏa' },
+    { name: 'Đoài', bin: '110', hanh: 'Kim' },
+    { name: 'Càn', bin: '111', hanh: 'Kim' }
 ];
 
-// Báº£ng Mai Hoa (chuyá»ƒn sá»‘ sang 3 hÃ o)
+// Bảng Mai Hoa (chuyển số sang 3 hào)
 const MAI_HOA_BITS = {
     1: [1, 1, 1], 2: [1, 1, 2], 3: [1, 2, 1], 4: [1, 2, 2],
     5: [2, 1, 1], 6: [2, 1, 2], 7: [2, 2, 1], 8: [2, 2, 2], 0: [2, 2, 2]
 };
 
-// Báº£ng Náº¡p GiÃ¡p (6 chi cho má»—i quÃ¡i)
+// Bảng Nạp Giáp (6 chi cho mỗi quái)
 const NAP_GIAP = {
-    'CÃ n': ['TÃ½', 'Dáº§n', 'ThÃ¬n', 'Ngá»', 'ThÃ¢n', 'Tuáº¥t'],
-    'Kháº£m': ['Dáº§n', 'ThÃ¬n', 'Ngá»', 'ThÃ¢n', 'Tuáº¥t', 'TÃ½'],
-    'Cáº¥n': ['ThÃ¬n', 'Ngá»', 'ThÃ¢n', 'Tuáº¥t', 'TÃ½', 'Dáº§n'],
-    'Cháº¥n': ['TÃ½', 'Dáº§n', 'ThÃ¬n', 'Ngá»', 'ThÃ¢n', 'Tuáº¥t'],
-    'Tá»‘n': ['Sá»­u', 'Há»£i', 'Dáº­u', 'MÃ¹i', 'Tá»µ', 'MÃ£o'],
-    'Ly': ['MÃ£o', 'Sá»­u', 'Há»£i', 'Dáº­u', 'MÃ¹i', 'Tá»µ'],
-    'KhÃ´n': ['MÃ¹i', 'Tá»µ', 'MÃ£o', 'Sá»­u', 'Há»£i', 'Dáº­u'],
-    'ÄoÃ i': ['Tá»µ', 'MÃ£o', 'Sá»­u', 'Há»£i', 'Dáº­u', 'MÃ¹i']
+    'Càn': ['Tý', 'Dần', 'Thìn', 'Ngọ', 'Thân', 'Tuất'],
+    'Khảm': ['Dần', 'Thìn', 'Ngọ', 'Thân', 'Tuất', 'Tý'],
+    'Cấn': ['Thìn', 'Ngọ', 'Thân', 'Tuất', 'Tý', 'Dần'],
+    'Chấn': ['Tý', 'Dần', 'Thìn', 'Ngọ', 'Thân', 'Tuất'],
+    'Tốn': ['Sửu', 'Hợi', 'Dậu', 'Mùi', 'Tỵ', 'Mão'],
+    'Ly': ['Mão', 'Sửu', 'Hợi', 'Dậu', 'Mùi', 'Tỵ'],
+    'Khôn': ['Mùi', 'Tỵ', 'Mão', 'Sửu', 'Hợi', 'Dậu'],
+    'Đoài': ['Tỵ', 'Mão', 'Sửu', 'Hợi', 'Dậu', 'Mùi']
 };
 
-// Ma tráº­n 64 quáº»: TEN_QUE[Ngoáº¡i quÃ¡i][Ná»™i quÃ¡i]
+// Ma trận 64 quẻ: TEN_QUE[Ngoại quái][Nội quái]
 const TEN_QUE = [
-    ['BÃ¡t Thuáº§n KhÃ´n', 'Äá»‹a SÆ¡n KhiÃªm', 'Äá»‹a Thá»§y SÆ°', 'Äá»‹a Phong ThÄƒng', 'Äá»‹a LÃ´i Phá»¥c', 'Äá»‹a Há»a Minh Di', 'Äá»‹a Tráº¡ch LÃ¢m', 'Äá»‹a ThiÃªn ThÃ¡i'],
-    ['SÆ¡n Äá»‹a BÃ¡c', 'BÃ¡t Thuáº§n Cáº¥n', 'SÆ¡n Thá»§y MÃ´ng', 'SÆ¡n Phong Cá»•', 'SÆ¡n LÃ´i Di', 'SÆ¡n Há»a BÃ­', 'SÆ¡n Tráº¡ch Tá»•n', 'SÆ¡n ThiÃªn Äáº¡i SÃºc'],
-    ['Thá»§y Äá»‹a Tá»·', 'Thá»§y SÆ¡n Kiá»ƒn', 'BÃ¡t Thuáº§n Kháº£m', 'Thá»§y Phong Tá»‰nh', 'Thá»§y LÃ´i TruÃ¢n', 'Thá»§y Há»a KÃ½ Táº¿', 'Thá»§y Tráº¡ch Tiáº¿t', 'Thá»§y ThiÃªn Nhu'],
-    ['Phong Äá»‹a Quan', 'Phong SÆ¡n Tiá»‡m', 'Phong Thá»§y HoÃ¡n', 'BÃ¡t Thuáº§n Tá»‘n', 'Phong LÃ´i Ãch', 'Phong Há»a Gia NhÃ¢n', 'Phong Tráº¡ch Trung Phu', 'Phong ThiÃªn Tiá»ƒu SÃºc'],
-    ['LÃ´i Äá»‹a Dá»±', 'LÃ´i SÆ¡n Tiá»ƒu QuÃ¡', 'LÃ´i Thá»§y Giáº£i', 'LÃ´i Phong Háº±ng', 'BÃ¡t Thuáº§n Cháº¥n', 'LÃ´i Há»a Phong', 'LÃ´i Tráº¡ch Quy Muá»™i', 'LÃ´i ThiÃªn Äáº¡i TrÃ¡ng'],
-    ['Há»a Äá»‹a Táº¥n', 'Há»a SÆ¡n Lá»¯', 'Há»a Thá»§y Vá»‹ Táº¿', 'Há»a Phong Äá»‰nh', 'Há»a LÃ´i Phá»‡ Háº¡p', 'BÃ¡t Thuáº§n Ly', 'Há»a Tráº¡ch KhuÃª', 'Há»a ThiÃªn Äáº¡i Há»¯u'],
-    ['Tráº¡ch Äá»‹a Tá»¥y', 'Tráº¡ch SÆ¡n HÃ m', 'Tráº¡ch Thá»§y Khá»‘n', 'Tráº¡ch Phong Äáº¡i QuÃ¡', 'Tráº¡ch LÃ´i TÃ¹y', 'Tráº¡ch Há»a CÃ¡ch', 'BÃ¡t Thuáº§n ÄoÃ i', 'Tráº¡ch ThiÃªn Quáº£i'],
-    ['ThiÃªn Äá»‹a BÄ©', 'ThiÃªn SÆ¡n Äá»™n', 'ThiÃªn Thá»§y Tá»¥ng', 'ThiÃªn Phong Cáº¥u', 'ThiÃªn LÃ´i VÃ´ Vá»ng', 'ThiÃªn Há»a Äá»“ng NhÃ¢n', 'ThiÃªn Tráº¡ch LÃ½', 'BÃ¡t Thuáº§n CÃ n']
+    ['Bát Thuần Khôn', 'Địa Sơn Khiêm', 'Địa Thủy Sư', 'Địa Phong Thăng', 'Địa Lôi Phục', 'Địa Hỏa Minh Di', 'Địa Trạch Lâm', 'Địa Thiên Thái'],
+    ['Sơn Địa Bác', 'Bát Thuần Cấn', 'Sơn Thủy Mông', 'Sơn Phong Cổ', 'Sơn Lôi Di', 'Sơn Hỏa Bí', 'Sơn Trạch Tổn', 'Sơn Thiên Đại Súc'],
+    ['Thủy Địa Tỷ', 'Thủy Sơn Kiển', 'Bát Thuần Khảm', 'Thủy Phong Tỉnh', 'Thủy Lôi Truân', 'Thủy Hỏa Ký Tế', 'Thủy Trạch Tiết', 'Thủy Thiên Nhu'],
+    ['Phong Địa Quan', 'Phong Sơn Tiệm', 'Phong Thủy Hoán', 'Bát Thuần Tốn', 'Phong Lôi Ích', 'Phong Hỏa Gia Nhân', 'Phong Trạch Trung Phu', 'Phong Thiên Tiểu Súc'],
+    ['Lôi Địa Dự', 'Lôi Sơn Tiểu Quá', 'Lôi Thủy Giải', 'Lôi Phong Hằng', 'Bát Thuần Chấn', 'Lôi Hỏa Phong', 'Lôi Trạch Quy Muội', 'Lôi Thiên Đại Tráng'],
+    ['Hỏa Địa Tấn', 'Hỏa Sơn Lữ', 'Hỏa Thủy Vị Tế', 'Hỏa Phong Đỉnh', 'Hỏa Lôi Phệ Hạp', 'Bát Thuần Ly', 'Hỏa Trạch Khuê', 'Hỏa Thiên Đại Hữu'],
+    ['Trạch Địa Tụy', 'Trạch Sơn Hàm', 'Trạch Thủy Khốn', 'Trạch Phong Đại Quá', 'Trạch Lôi Tùy', 'Trạch Hỏa Cách', 'Bát Thuần Đoài', 'Trạch Thiên Quải'],
+    ['Thiên Địa Bĩ', 'Thiên Sơn Độn', 'Thiên Thủy Tụng', 'Thiên Phong Cấu', 'Thiên Lôi Vô Vọng', 'Thiên Hỏa Đồng Nhân', 'Thiên Trạch Lý', 'Bát Thuần Càn']
 ];
 
-// Danh sÃ¡ch quáº» Lá»¥c Xung (ngoÃ i BÃ¡t Thuáº§n)
-const LUC_XUNG_LIST = ['ThiÃªn LÃ´i VÃ´ Vá»ng', 'LÃ´i ThiÃªn Äáº¡i TrÃ¡ng'];
+// Danh sách quẻ Lục Xung (ngoài Bát Thuần)
+const LUC_XUNG_LIST = ['Thiên Lôi Vô Vọng', 'Lôi Thiên Đại Tráng'];
 
-// Danh sÃ¡ch quáº» Lá»¥c Há»£p
+// Danh sách quẻ Lục Hợp
 const LUC_HOP_LIST = [
-    'ThiÃªn Äá»‹a BÄ©', 'Äá»‹a ThiÃªn ThÃ¡i',
-    'Thá»§y Tráº¡ch Tiáº¿t', 'Tráº¡ch Thá»§y Khá»‘n',
-    'SÆ¡n Há»a BÃ­', 'Há»a SÆ¡n Lá»¯',
-    'Äá»‹a LÃ´i Phá»¥c', 'LÃ´i Äá»‹a Dá»±'
+    'Thiên Địa Bĩ', 'Địa Thiên Thái',
+    'Thủy Trạch Tiết', 'Trạch Thủy Khốn',
+    'Sơn Hỏa Bí', 'Hỏa Sơn Lữ',
+    'Địa Lôi Phục', 'Lôi Địa Dự'
 ];
 
 function getHexAttribute(hexName, type) {
-    if (type === 'Du Há»“n') return 'Du Há»“n';
-    if (type === 'Quy Há»“n') return 'Quy Há»“n';
-    if (type === 'BÃ¡t Thuáº§n' || LUC_XUNG_LIST.includes(hexName)) return 'Lá»¥c Xung';
-    if (LUC_HOP_LIST.includes(hexName)) return 'Lá»¥c Há»£p';
+    if (type === 'Du Hồn') return 'Du Hồn';
+    if (type === 'Quy Hồn') return 'Quy Hồn';
+    if (type === 'Bát Thuần' || LUC_XUNG_LIST.includes(hexName)) return 'Lục Xung';
+    if (LUC_HOP_LIST.includes(hexName)) return 'Lục Hợp';
     return '';
 }
 
-// Báº£ng tra thÃ´ng tin 64 quáº» (Há» quÃ¡i, Tháº¿ hÃ o, Loáº¡i)
+// Bảng tra thông tin 64 quẻ (Họ quái, Thế hào, Loại)
 const HEX_MAP = {};
 
 function initHexMap() {
     const add = (o, i, p, shi, t) => {
         HEX_MAP[(o << 3) | i] = { p, shi, type: t };
     };
-    // CÃ n cung
-    add(7, 7, 7, 6, 'BÃ¡t Thuáº§n'); add(7, 3, 7, 1, ''); add(7, 1, 7, 2, ''); add(7, 0, 7, 3, '');
-    add(3, 0, 7, 4, ''); add(1, 0, 7, 5, ''); add(5, 0, 7, 4, 'Du Há»“n'); add(5, 7, 7, 3, 'Quy Há»“n');
-    // Kháº£m cung
-    add(2, 2, 2, 6, 'BÃ¡t Thuáº§n'); add(2, 6, 2, 1, ''); add(2, 4, 2, 2, ''); add(2, 5, 2, 3, '');
-    add(6, 5, 2, 4, ''); add(4, 5, 2, 5, ''); add(0, 5, 2, 4, 'Du Há»“n'); add(0, 2, 2, 3, 'Quy Há»“n');
-    // Cáº¥n cung
-    add(1, 1, 1, 6, 'BÃ¡t Thuáº§n'); add(1, 5, 1, 1, ''); add(1, 7, 1, 2, ''); add(1, 6, 1, 3, '');
-    add(5, 6, 1, 4, ''); add(7, 6, 1, 5, ''); add(3, 6, 1, 4, 'Du Há»“n'); add(3, 1, 1, 3, 'Quy Há»“n');
-    // Cháº¥n cung
-    add(4, 4, 4, 6, 'BÃ¡t Thuáº§n'); add(4, 0, 4, 1, ''); add(4, 2, 4, 2, ''); add(4, 3, 4, 3, '');
-    add(0, 3, 4, 4, ''); add(2, 3, 4, 5, ''); add(6, 3, 4, 4, 'Du Há»“n'); add(6, 4, 4, 3, 'Quy Há»“n');
-    // Tá»‘n cung
-    add(3, 3, 3, 6, 'BÃ¡t Thuáº§n'); add(3, 7, 3, 1, ''); add(3, 5, 3, 2, ''); add(3, 4, 3, 3, '');
-    add(7, 4, 3, 4, ''); add(5, 4, 3, 5, ''); add(1, 4, 3, 4, 'Du Há»“n'); add(1, 3, 3, 3, 'Quy Há»“n');
+    // Càn cung
+    add(7, 7, 7, 6, 'Bát Thuần'); add(7, 3, 7, 1, ''); add(7, 1, 7, 2, ''); add(7, 0, 7, 3, '');
+    add(3, 0, 7, 4, ''); add(1, 0, 7, 5, ''); add(5, 0, 7, 4, 'Du Hồn'); add(5, 7, 7, 3, 'Quy Hồn');
+    // Khảm cung
+    add(2, 2, 2, 6, 'Bát Thuần'); add(2, 6, 2, 1, ''); add(2, 4, 2, 2, ''); add(2, 5, 2, 3, '');
+    add(6, 5, 2, 4, ''); add(4, 5, 2, 5, ''); add(0, 5, 2, 4, 'Du Hồn'); add(0, 2, 2, 3, 'Quy Hồn');
+    // Cấn cung
+    add(1, 1, 1, 6, 'Bát Thuần'); add(1, 5, 1, 1, ''); add(1, 7, 1, 2, ''); add(1, 6, 1, 3, '');
+    add(5, 6, 1, 4, ''); add(7, 6, 1, 5, ''); add(3, 6, 1, 4, 'Du Hồn'); add(3, 1, 1, 3, 'Quy Hồn');
+    // Chấn cung
+    add(4, 4, 4, 6, 'Bát Thuần'); add(4, 0, 4, 1, ''); add(4, 2, 4, 2, ''); add(4, 3, 4, 3, '');
+    add(0, 3, 4, 4, ''); add(2, 3, 4, 5, ''); add(6, 3, 4, 4, 'Du Hồn'); add(6, 4, 4, 3, 'Quy Hồn');
+    // Tốn cung
+    add(3, 3, 3, 6, 'Bát Thuần'); add(3, 7, 3, 1, ''); add(3, 5, 3, 2, ''); add(3, 4, 3, 3, '');
+    add(7, 4, 3, 4, ''); add(5, 4, 3, 5, ''); add(1, 4, 3, 4, 'Du Hồn'); add(1, 3, 3, 3, 'Quy Hồn');
     // Ly cung
-    add(5, 5, 5, 6, 'BÃ¡t Thuáº§n'); add(5, 1, 5, 1, ''); add(5, 3, 5, 2, ''); add(5, 2, 5, 3, '');
-    add(1, 2, 5, 4, ''); add(3, 2, 5, 5, ''); add(7, 2, 5, 4, 'Du Há»“n'); add(7, 5, 5, 3, 'Quy Há»“n');
-    // KhÃ´n cung
-    add(0, 0, 0, 6, 'BÃ¡t Thuáº§n'); add(0, 4, 0, 1, ''); add(0, 6, 0, 2, ''); add(0, 7, 0, 3, '');
-    add(4, 7, 0, 4, ''); add(6, 7, 0, 5, ''); add(2, 7, 0, 4, 'Du Há»“n'); add(2, 0, 0, 3, 'Quy Há»“n');
-    // ÄoÃ i cung
-    add(6, 6, 6, 6, 'BÃ¡t Thuáº§n'); add(6, 2, 6, 1, ''); add(6, 0, 6, 2, ''); add(6, 1, 6, 3, '');
-    add(2, 1, 6, 4, ''); add(0, 1, 6, 5, ''); add(4, 1, 6, 4, 'Du Há»“n'); add(4, 6, 6, 3, 'Quy Há»“n');
+    add(5, 5, 5, 6, 'Bát Thuần'); add(5, 1, 5, 1, ''); add(5, 3, 5, 2, ''); add(5, 2, 5, 3, '');
+    add(1, 2, 5, 4, ''); add(3, 2, 5, 5, ''); add(7, 2, 5, 4, 'Du Hồn'); add(7, 5, 5, 3, 'Quy Hồn');
+    // Khôn cung
+    add(0, 0, 0, 6, 'Bát Thuần'); add(0, 4, 0, 1, ''); add(0, 6, 0, 2, ''); add(0, 7, 0, 3, '');
+    add(4, 7, 0, 4, ''); add(6, 7, 0, 5, ''); add(2, 7, 0, 4, 'Du Hồn'); add(2, 0, 0, 3, 'Quy Hồn');
+    // Đoài cung
+    add(6, 6, 6, 6, 'Bát Thuần'); add(6, 2, 6, 1, ''); add(6, 0, 6, 2, ''); add(6, 1, 6, 3, '');
+    add(2, 1, 6, 4, ''); add(0, 1, 6, 5, ''); add(4, 1, 6, 4, 'Du Hồn'); add(4, 6, 6, 3, 'Quy Hồn');
 }
 initHexMap();
 
-// 12 cung TrÆ°á»ng Sinh (viáº¿t táº¯t)
-const LIFE_STAGES = ['T.Sinh', 'M.Dá»¥c', 'Q.Äá»›i', 'L.Quan', 'Ä.VÆ°á»£ng', 'Suy', 'Bá»‡nh', 'Tá»­', 'Má»™', 'Tuyá»‡t', 'Thai', 'DÆ°á»¡ng'];
-const LS_START = { 'Há»a': 2, 'Kim': 5, 'Má»™c': 11, 'Thá»§y': 8, 'Thá»•': 8 };
+// 12 cung Trường Sinh (viết tắt)
+const LIFE_STAGES = ['T.Sinh', 'M.Dục', 'Q.Đới', 'L.Quan', 'Đ.Vượng', 'Suy', 'Bệnh', 'Tử', 'Mộ', 'Tuyệt', 'Thai', 'Dưỡng'];
+const LS_START = { 'Hỏa': 2, 'Kim': 5, 'Mộc': 11, 'Thủy': 8, 'Thổ': 8 };
 
-// Lá»¥c ThÃº theo Can ngÃ y
+// Lục Thú theo Can ngày
 const LUC_THU = {
-    'GiÃ¡p': ['Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•', 'Huyá»n VÅ©'],
-    'áº¤t': ['Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•', 'Huyá»n VÅ©'],
-    'BÃ­nh': ['Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•', 'Huyá»n VÅ©', 'Thanh Long'],
-    'Äinh': ['Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•', 'Huyá»n VÅ©', 'Thanh Long'],
-    'Máº­u': ['CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•', 'Huyá»n VÅ©', 'Thanh Long', 'Chu TÆ°á»›c'],
-    'Ká»·': ['Äáº±ng XÃ ', 'Báº¡ch Há»•', 'Huyá»n VÅ©', 'Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n'],
-    'Canh': ['Báº¡ch Há»•', 'Huyá»n VÅ©', 'Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ '],
-    'TÃ¢n': ['Báº¡ch Há»•', 'Huyá»n VÅ©', 'Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ '],
-    'NhÃ¢m': ['Huyá»n VÅ©', 'Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•'],
-    'QuÃ½': ['Huyá»n VÅ©', 'Thanh Long', 'Chu TÆ°á»›c', 'CÃ¢u Tráº§n', 'Äáº±ng XÃ ', 'Báº¡ch Há»•'],
+    'Giáp': ['Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ', 'Huyền Vũ'],
+    'Ất': ['Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ', 'Huyền Vũ'],
+    'Bính': ['Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ', 'Huyền Vũ', 'Thanh Long'],
+    'Đinh': ['Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ', 'Huyền Vũ', 'Thanh Long'],
+    'Mậu': ['Câu Trần', 'Đằng Xà', 'Bạch Hổ', 'Huyền Vũ', 'Thanh Long', 'Chu Tước'],
+    'Kỷ': ['Đằng Xà', 'Bạch Hổ', 'Huyền Vũ', 'Thanh Long', 'Chu Tước', 'Câu Trần'],
+    'Canh': ['Bạch Hổ', 'Huyền Vũ', 'Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà'],
+    'Tân': ['Bạch Hổ', 'Huyền Vũ', 'Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà'],
+    'Nhâm': ['Huyền Vũ', 'Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ'],
+    'Quý': ['Huyền Vũ', 'Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ'],
 };
 
 // Store generated image data URL
@@ -151,7 +151,7 @@ let currentTuViData = null;
 let currentTabType = 'default';
 
 // ============================================
-// CALENDAR CALCULATION (TÃ­nh Can Chi)
+// CALENDAR CALCULATION (Tính Can Chi)
 // ============================================
 
 function getSolarTerm(year) {
@@ -245,7 +245,7 @@ function calculateCanChi(dateInput) {
     const tk2 = CHI[(diff - 1 + 12) % 12];
 
     let dayOfYear = Math.floor((d - new Date(y, 0, 0)) / 86400000);
-    const termNames = ['Tiá»ƒu HÃ n', 'Äáº¡i HÃ n', 'Láº­p XuÃ¢n', 'VÅ© Thá»§y', 'Kinh Tráº­p', 'XuÃ¢n PhÃ¢n', 'Thanh Minh', 'Cá»‘c VÅ©', 'Láº­p Háº¡', 'Tiá»ƒu MÃ£n', 'Mang Chá»§ng', 'Háº¡ ChÃ­', 'Tiá»ƒu Thá»­', 'Äáº¡i Thá»­', 'Láº­p Thu', 'Xá»­ Thá»­', 'Báº¡ch Lá»™', 'Thu PhÃ¢n', 'HÃ n Lá»™', 'SÆ°Æ¡ng GiÃ¡ng', 'Láº­p ÄÃ´ng', 'Tiá»ƒu Tuyáº¿t', 'Äáº¡i Tuyáº¿t', 'ÄÃ´ng ChÃ­'];
+    const termNames = ['Tiểu Hàn', 'Đại Hàn', 'Lập Xuân', 'Vũ Thủy', 'Kinh Trập', 'Xuân Phân', 'Thanh Minh', 'Cốc Vũ', 'Lập Hạ', 'Tiểu Mãn', 'Mang Chủng', 'Hạ Chí', 'Tiểu Thử', 'Đại Thử', 'Lập Thu', 'Xử Thử', 'Bạch Lộ', 'Thu Phân', 'Hàn Lộ', 'Sương Giáng', 'Lập Đông', 'Tiểu Tuyết', 'Đại Tuyết', 'Đông Chí'];
     let tIdx = Math.floor(dayOfYear / 15.22);
     if (tIdx > 23) tIdx = 23;
 
@@ -271,14 +271,14 @@ function init() {
         const div = document.createElement('div');
         div.className = 'line-row';
         div.innerHTML = `
-            <div class="line-label">HÃ o ${i}</div>
+            <div class="line-label">Hào ${i}</div>
             <select id="line-${i}" class="line-select">
-                <option value="yang">â”€â”€â”€ DÆ°Æ¡ng</option>
-                <option value="yin">â”€ â”€ Ã‚m</option>
+                <option value="yang">─── Dương</option>
+                <option value="yin">─ ─ Âm</option>
             </select>
             <label class="line-moving-label">
                 <input type="checkbox" id="moving-${i}" class="line-moving-checkbox">
-                <span class="moving-text">Äá»™ng</span>
+                <span class="moving-text">Động</span>
             </label>
         `;
         container.appendChild(div);
@@ -288,7 +288,7 @@ function init() {
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     document.getElementById('inputDate').value = now.toISOString().slice(0, 16);
 
-    // Set default giá» chi for number tab
+    // Set default giờ chi for number tab
     const gioChiSelect = document.getElementById('numGioChi');
     if (gioChiSelect) {
         gioChiSelect.value = getCurrentChiHour();
@@ -314,23 +314,23 @@ function tossCoins() {
     for (let i = 1; i <= 6; i++) {
         const r = Math.random();
         // Original probability: 0=12.5%, 1=37.5%, 2=37.5%, 3=12.5%
-        // 0 = LÃ£o Ã‚m (Ã‚m + Äá»™ng), 1 = Thiáº¿u DÆ°Æ¡ng (DÆ°Æ¡ng + TÄ©nh)
-        // 2 = Thiáº¿u Ã‚m (Ã‚m + TÄ©nh), 3 = LÃ£o DÆ°Æ¡ng (DÆ°Æ¡ng + Äá»™ng)
+        // 0 = Lão Âm (Âm + Động), 1 = Thiếu Dương (Dương + Tĩnh)
+        // 2 = Thiếu Âm (Âm + Tĩnh), 3 = Lão Dương (Dương + Động)
         let isYang, isMoving;
         if (r < 0.125) {
-            // LÃ£o Ã‚m
+            // Lão Âm
             isYang = false;
             isMoving = true;
         } else if (r < 0.5) {
-            // Thiáº¿u DÆ°Æ¡ng
+            // Thiếu Dương
             isYang = true;
             isMoving = false;
         } else if (r < 0.875) {
-            // Thiáº¿u Ã‚m
+            // Thiếu Âm
             isYang = false;
             isMoving = false;
         } else {
-            // LÃ£o DÆ°Æ¡ng
+            // Lão Dương
             isYang = true;
             isMoving = true;
         }
@@ -344,24 +344,24 @@ function cleanSerialInput(el) {
     el.value = el.value.replace(/[^0-9]/g, '');
 }
 
-// Tráº£ vá» sá»‘ giá» chi (1-12) dá»±a trÃªn giá» hiá»‡n táº¡i
+// Trả về số giờ chi (1-12) dựa trên giờ hiện tại
 function getCurrentChiHour() {
     const h = new Date().getHours();
-    if (h >= 23 || h < 1) return 1;  // TÃ½
-    if (h < 3) return 2;   // Sá»­u
-    if (h < 5) return 3;   // Dáº§n
-    if (h < 7) return 4;   // MÃ£o
-    if (h < 9) return 5;   // ThÃ¬n
-    if (h < 11) return 6;  // Tá»µ
-    if (h < 13) return 7;  // Ngá»
-    if (h < 15) return 8;  // MÃ¹i
-    if (h < 17) return 9;  // ThÃ¢n
-    if (h < 19) return 10; // Dáº­u
-    if (h < 21) return 11; // Tuáº¥t
-    return 12; // Há»£i
+    if (h >= 23 || h < 1) return 1;  // Tý
+    if (h < 3) return 2;   // Sửu
+    if (h < 5) return 3;   // Dần
+    if (h < 7) return 4;   // Mão
+    if (h < 9) return 5;   // Thìn
+    if (h < 11) return 6;  // Tỵ
+    if (h < 13) return 7;  // Ngọ
+    if (h < 15) return 8;  // Mùi
+    if (h < 17) return 9;  // Thân
+    if (h < 19) return 10; // Dậu
+    if (h < 21) return 11; // Tuất
+    return 12; // Hợi
 }
 
-// TÃ­nh vÃ  hiá»ƒn thá»‹ hÃ o Ä‘á»™ng real-time
+// Tính và hiển thị hào động real-time
 function updateHaoDong() {
     const n1 = parseInt(document.getElementById('num1').value);
     const n2 = parseInt(document.getElementById('num2').value);
@@ -369,12 +369,12 @@ function updateHaoDong() {
     const display = document.getElementById('haoDongDisplay');
 
     if (isNaN(n1) || isNaN(n2) || isNaN(gioChi)) {
-        display.textContent = 'â†’ HÃ o Ä‘á»™ng: --';
+        display.textContent = '→ Hào động: --';
         return;
     }
 
     const move = (n1 + n2 + gioChi) % 6 || 6;
-    display.textContent = `â†’ HÃ o Ä‘á»™ng: ${move}`;
+    display.textContent = `→ Hào động: ${move}`;
 }
 
 function formatDate(isoStr) {
@@ -394,7 +394,7 @@ function processDivination() {
 
     const dVal = document.getElementById('inputDate').value;
     if (!dVal) {
-        alert("Vui lÃ²ng chá»n ngÃ y giá» gieo quáº»!");
+        alert("Vui lòng chọn ngày giờ gieo quẻ!");
         return;
     }
 
@@ -412,20 +412,20 @@ function processDivination() {
             const isMoving = document.getElementById(`moving-${i}`).checked;
             const isYang = (lineType === 'yang');
 
-            // Convert to original values: 0=LÃ£o Ã‚m, 1=Thiáº¿u DÆ°Æ¡ng, 2=Thiáº¿u Ã‚m, 3=LÃ£o DÆ°Æ¡ng
+            // Convert to original values: 0=Lão Âm, 1=Thiếu Dương, 2=Thiếu Âm, 3=Lão Dương
             let v;
-            if (isYang && isMoving) v = 3;      // LÃ£o DÆ°Æ¡ng (Äá»™ng)
-            else if (isYang && !isMoving) v = 1; // Thiáº¿u DÆ°Æ¡ng (TÄ©nh)
-            else if (!isYang && isMoving) v = 0; // LÃ£o Ã‚m (Äá»™ng)
-            else v = 2;                          // Thiáº¿u Ã‚m (TÄ©nh)
+            if (isYang && isMoving) v = 3;      // Lão Dương (Động)
+            else if (isYang && !isMoving) v = 1; // Thiếu Dương (Tĩnh)
+            else if (!isYang && isMoving) v = 0; // Lão Âm (Động)
+            else v = 2;                          // Thiếu Âm (Tĩnh)
 
             lines.push(v);
         }
-        methodText = "Lá»¥c hÃ o";
+        methodText = "Lục hào";
     } else if (currentTab === 'serial') {
         const s = document.getElementById('serialInput').value;
         if (s.length < 2) {
-            alert("Nháº­p Ã­t nháº¥t 2 sá»‘!");
+            alert("Nhập ít nhất 2 số!");
             return;
         }
 
@@ -450,7 +450,7 @@ function processDivination() {
         const gioChi = parseInt(document.getElementById('numGioChi').value);
 
         if (isNaN(n1) || isNaN(n2)) {
-            alert("Vui lÃ²ng nháº­p Ä‘á»§ Sá»‘ 1 vÃ  Sá»‘ 2!");
+            alert("Vui lòng nhập đủ Số 1 và Số 2!");
             return;
         }
 
@@ -501,15 +501,15 @@ function getBit(val, changed) {
 }
 
 function getRelation(el, palaceEl) {
-    const els = ['Kim', 'Thá»§y', 'Má»™c', 'Há»a', 'Thá»•'];
+    const els = ['Kim', 'Thủy', 'Mộc', 'Hỏa', 'Thổ'];
     const pI = els.indexOf(palaceEl);
     const lI = els.indexOf(el);
 
-    if (pI === lI) return "Huynh Äá»‡";
-    if ((pI + 1) % 5 === lI) return "Tá»­ TÃ´n";
-    if ((lI + 1) % 5 === pI) return "Phá»¥ Máº«u";
-    if ((pI + 2) % 5 === lI) return "ThÃª TÃ i";
-    if ((lI + 2) % 5 === pI) return "Quan Quá»·";
+    if (pI === lI) return "Huynh Đệ";
+    if ((pI + 1) % 5 === lI) return "Tử Tôn";
+    if ((lI + 1) % 5 === pI) return "Phụ Mẫu";
+    if ((pI + 2) % 5 === lI) return "Thê Tài";
+    if ((lI + 2) % 5 === pI) return "Quan Quỷ";
     return "";
 }
 
@@ -543,16 +543,16 @@ function renderCaptureHTML(data) {
     // Construct HTML using the prepared data
     let rowsHtml = '';
 
-    // Lines are stored 0-5 (HÃ o 1-6), display 6-1
+    // Lines are stored 0-5 (Hào 1-6), display 6-1
     for (let i = 5; i >= 0; i--) {
         const line = linesData[i];
         const rowClass = line.isMoving ? 'row-moving' : 'row-static';
 
-        let sym = (line.val === 1) ? 'â€”' : (line.val === 2) ? '--' : (line.val === 3) ? 'O' : 'X';
+        let sym = (line.val === 1) ? '—' : (line.val === 2) ? '--' : (line.val === 3) ? 'O' : 'X';
 
         let sy = '';
-        if (line.isShi) sy = `<span class="marker-the">Tháº¿</span>`;
-        if (line.isYing) sy = `<span class="marker-ung">á»¨ng</span>`;
+        if (line.isShi) sy = `<span class="marker-the">Thế</span>`;
+        if (line.isYing) sy = `<span class="marker-ung">Ứng</span>`;
 
         let phucHtml = '-';
         if (line.phucThan) {
@@ -562,7 +562,7 @@ function renderCaptureHTML(data) {
         const isTK = line.isTK ? 'K' : '-';
         const isCTK = line.isCTK ? 'K' : '-';
 
-        // Changed part (Quáº» Biáº¿n)
+        // Changed part (Quẻ Biến)
         let cRel = line.changed ? line.changed.relation : getRelation(line.hanh, data.palaceEl); // Default to main if not moving/changed logic handled in calc
         // Actually, for static lines, the relation is same as main if we consider it doesn't change. 
         // But in the original code: 
@@ -593,9 +593,9 @@ function renderCaptureHTML(data) {
     target.innerHTML = `
         <div class="info-header">
             <div class="info-content">
-                <div class="info-line"><strong>NgÃ y giá»:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>PhÆ°Æ¡ng phÃ¡p:</strong> <span class="highlight">${methodText}</span></div>
-                <div class="info-line"><strong>Can chi:</strong> ${dateInfo.fullCanChi} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuáº§n KhÃ´ng:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
-                <div class="info-line"><strong>Nháº­t Tháº§n:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyá»‡t Lá»‡nh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
+                <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
+                <div class="info-line"><strong>Can chi:</strong> ${dateInfo.fullCanChi} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
+                <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
             </div>
         </div>
         
@@ -603,27 +603,27 @@ function renderCaptureHTML(data) {
             <div class="hex-box">
                 <div class="hex-title">${mainName}</div>
                 ${renderHexVisual(data.lines, false)}
-                <div class="hex-family">Há» ${palaceName}${mainAttr ? ' - ' + mainAttr : ''}</div>
+                <div class="hex-family">Họ ${palaceName}${mainAttr ? ' - ' + mainAttr : ''}</div>
             </div>
             <div class="hex-box">
                 <div class="hex-title">${changedName}</div>
                 ${renderHexVisual(data.lines, true)}
-                <div class="hex-family">Há» ${changedPalaceName}${changedAttr ? ' - ' + changedAttr : ''}</div>
+                <div class="hex-family">Họ ${changedPalaceName}${changedAttr ? ' - ' + changedAttr : ''}</div>
             </div>
         </div>
 
         <table>
             <thead>
                 <tr>
-                    <th>HÃ o</th>
-                    <th>T/Æ¯</th>
-                    <th>Lá»¥c ThÃ¢n</th>
+                    <th>Hào</th>
+                    <th>T/Ư</th>
+                    <th>Lục Thân</th>
                     <th>Can Chi</th>
-                    <th>P.Tháº§n</th>
+                    <th>P.Thần</th>
                     <th>TK</th>
-                    <th class="sep-col">Lá»¥c ThÃ¢n</th>
+                    <th class="sep-col">Lục Thân</th>
                     <th>Can Chi</th>
-                    <th>Lá»¥c ThÃº</th>
+                    <th>Lục Thú</th>
                     <th>TK</th>
                 </tr>
             </thead>
@@ -631,7 +631,7 @@ function renderCaptureHTML(data) {
         </table>
         
         <div class="shensha-section">
-            <div class="shensha-title">Tháº§n SÃ¡t</div>
+            <div class="shensha-title">Thần Sát</div>
             <div class="shensha-grid">
                 ${(() => {
             const movingChiSet = new Set();
@@ -688,7 +688,7 @@ function captureAndDisplayImage() {
 
         const img = document.createElement('img');
         img.src = currentImageDataUrl;
-        img.alt = 'Káº¿t quáº£ quáº» Lá»¥c HÃ o';
+        img.alt = 'Kết quả quẻ Lục Hào';
         imageDisplay.appendChild(img);
 
         // Hide loading, show result
@@ -709,7 +709,7 @@ function captureAndDisplayImage() {
         // Hide loading
         document.getElementById('loading-overlay').classList.remove('visible');
 
-        alert('CÃ³ lá»—i khi táº¡o áº£nh. Vui lÃ²ng thá»­ láº¡i!');
+        alert('Có lỗi khi tạo ảnh. Vui lòng thử lại!');
     });
 }
 
@@ -728,7 +728,7 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
     const palaceName = QUAI_SO[info.p].name;
     const palaceEl = NGU_HANH_QUAI[palaceName];
 
-    // XÃ¡c Ä‘á»‹nh thuá»™c tÃ­nh Quáº» ChÃ­nh
+    // Xác định thuộc tính Quẻ Chính
     const mainAttr = getHexAttribute(mainName, info.type);
 
     const cBits = lines.map(v => getBit(v, true));
@@ -756,7 +756,7 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
     const linesData = [];
     const movingLines = [];
 
-    for (let i = 0; i < 6; i++) { // 0 to 5 (HÃ o 1-6)
+    for (let i = 0; i < 6; i++) { // 0 to 5 (Hào 1-6)
         const lineVal = lines[i];
         const isMoving = (lineVal === 0 || lineVal === 3);
         const idx = i;
@@ -776,9 +776,9 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
         const isYing = (ying === i + 1);
 
         let phucThan = null;
-        if (!presentRelations.has("Tá»­ TÃ´n") || !presentRelations.has("ThÃª TÃ i") ||
-            !presentRelations.has("Quan Quá»·") || !presentRelations.has("Phá»¥ Máº«u") ||
-            !presentRelations.has("Huynh Äá»‡")) {
+        if (!presentRelations.has("Tử Tôn") || !presentRelations.has("Thê Tài") ||
+            !presentRelations.has("Quan Quỷ") || !presentRelations.has("Phụ Mẫu") ||
+            !presentRelations.has("Huynh Đệ")) {
             const pureTri = QUAI_SO[info.p].name;
             const pureBranch = NAP_GIAP[pureTri][i];
             const pureEl = NGU_HANH_CHI[pureBranch];
@@ -832,27 +832,27 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
 
     const shensha = calculateShenSha(cal.ngay.can, cal.ngay.chi, cal.thang.chi);
 
-    // QuÃ¡i ThÃ¢n
+    // Quái Thân
     const shiPos = info.shi; // 1-6
     const shiLine = linesData[shiPos - 1];
     const isYang = (shiLine.val === 1 || shiLine.val === 3); // 1=yang static, 3=yang moving(old yang)
     const quaiThanMap = isYang
-        ? { 1: 'TÃ½', 2: 'Sá»­u', 3: 'Dáº§n', 4: 'MÃ£o', 5: 'ThÃ¬n', 6: 'Tá»µ' }
-        : { 1: 'Ngá»', 2: 'MÃ¹i', 3: 'ThÃ¢n', 4: 'Dáº­u', 5: 'Tuáº¥t', 6: 'Há»£i' };
+        ? { 1: 'Tý', 2: 'Sửu', 3: 'Dần', 4: 'Mão', 5: 'Thìn', 6: 'Tỵ' }
+        : { 1: 'Ngọ', 2: 'Mùi', 3: 'Thân', 4: 'Dậu', 5: 'Tuất', 6: 'Hợi' };
     const quaiThanChi = quaiThanMap[shiPos];
     const existsInLines = linesData.some(l => l.chi === quaiThanChi);
-    const quaiThanValue = existsInLines ? quaiThanChi : 'KhÃ´ng';
-    shensha.push(`<strong>QuÃ¡i ThÃ¢n:</strong> ${quaiThanValue}`);
+    const quaiThanValue = existsInLines ? quaiThanChi : 'Không';
+    shensha.push(`<strong>Quái Thân:</strong> ${quaiThanValue}`);
 
-    // Tháº¿ ThÃ¢n
+    // Thế Thân
     const shiChi = shiLine.chi;
     const theThanPosMap = {
-        'TÃ½': 1, 'Ngá»': 1, 'Sá»­u': 2, 'MÃ¹i': 2, 'Dáº§n': 3, 'ThÃ¢n': 3,
-        'MÃ£o': 4, 'Dáº­u': 4, 'ThÃ¬n': 5, 'Tuáº¥t': 5, 'Tá»µ': 6, 'Há»£i': 6
+        'Tý': 1, 'Ngọ': 1, 'Sửu': 2, 'Mùi': 2, 'Dần': 3, 'Thân': 3,
+        'Mão': 4, 'Dậu': 4, 'Thìn': 5, 'Tuất': 5, 'Tỵ': 6, 'Hợi': 6
     };
     const theThanPos = theThanPosMap[shiChi];
     const theThanLine = linesData[theThanPos - 1];
-    shensha.push(`<strong>Tháº¿ ThÃ¢n:</strong> ${theThanLine.chi}`);
+    shensha.push(`<strong>Thế Thân:</strong> ${theThanLine.chi}`);
 
     return {
         mainName,
@@ -870,7 +870,7 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
         formattedDate,
         methodText,
         dateInfo: {
-            fullCanChi: `Giá» ${cal.gio.can} ${cal.gio.chi}, NgÃ y ${cal.ngay.can} ${cal.ngay.chi}`,
+            fullCanChi: `Giờ ${cal.gio.can} ${cal.gio.chi}, Ngày ${cal.ngay.can} ${cal.ngay.chi}`,
             tietKhi: cal.tietKhi,
             tuanKhong: cal.tuanKhong.join(', '),
             nhatThan: `${cal.ngay.chi} - ${cal.ngay.hanh}`,
@@ -889,10 +889,10 @@ function generateCopyText(data) {
         dateInfo, changedAttr, mainAttr
     } = data;
 
-    let text = "HÃ£y Ã¡p dá»¥ng nghiÃªm ngáº·t bá»™ quy táº¯c luáº­n giáº£i Ä‘Ã£ Ä‘Æ°á»£c tÃ¹y chá»‰nh. Sá»­ dá»¥ng cháº¿ Ä‘á»™ quÃ©t chuyÃªn sÃ¢u toÃ n bá»™ cÃ¡c nguá»“n tÃ i liá»‡u trong NotebookLM vÃ  hÃ£y sá»­ dá»¥ng mÃ´ hÃ¬nh AI má»›i nháº¥t Ä‘á»ƒ phÃ¢n tÃ­ch vÃ  luáº­n giáº£i quáº» dá»‹ch dÆ°á»›i Ä‘Ã¢y: \n\n";
+    let text = "Hãy áp dụng nghiêm ngặt bộ quy tắc luận giải đã được tùy chỉnh. Sử dụng chế độ quét chuyên sâu toàn bộ các nguồn tài liệu trong NotebookLM và hãy sử dụng mô hình AI mới nhất để phân tích và luận giải quẻ dịch dưới đây: \n\n";
 
     // 2. Nhat/Nguyet Lenh
-    text += `- Nháº­t Lá»‡nh: [${dateInfo.nhatThan}]; Nguyá»‡t Lá»‡nh: [${dateInfo.nguyetLenh}]\n`;
+    text += `- Nhật Lệnh: [${dateInfo.nhatThan}]; Nguyệt Lệnh: [${dateInfo.nguyetLenh}]\n`;
 
     // 3. Than Sat
     // 3. Than Sat
@@ -900,10 +900,10 @@ function generateCopyText(data) {
     if (Array.isArray(dateInfo.shenshaRaw)) {
         ssText = dateInfo.shenshaRaw.map(s => s.replace(/<[^>]*>/g, '')).filter(s => !s.endsWith('-')).join('; ');
     }
-    text += `- Tháº§n sÃ¡t: [${ssText}]\n`;
+    text += `- Thần sát: [${ssText}]\n`;
 
     // 4. Tuan Khong
-    text += `- Tuáº§n khÃ´ng: ${dateInfo.tuanKhong}\n`;
+    text += `- Tuần không: ${dateInfo.tuanKhong}\n`;
 
     // 5. Ten Que - no instructional text
     // 5. Ten Que - no instructional text
@@ -911,17 +911,17 @@ function generateCopyText(data) {
     if (movingLines.length > 0 && changedAttr) {
         queBienText += ` (${changedAttr})`;
     } else if (movingLines.length === 0) {
-        queBienText = "Quáº» TÄ©nh";
+        queBienText = "Quẻ Tĩnh";
     }
     let dongHaoText = "";
     if (movingLines.length > 0) {
-        dongHaoText = " [" + movingLines.map(h => `Ä‘á»™ng hÃ o ${h}`).join(', ') + "]";
+        dongHaoText = " [" + movingLines.map(h => `động hào ${h}`).join(', ') + "]";
     }
     let mainQueText = mainName;
     if (mainAttr) {
         mainQueText += ` (${mainAttr})`;
     }
-    text += `- TÃªn Quáº» Chá»§: ${mainQueText} -> TÃªn Quáº» Biáº¿n: ${queBienText}${dongHaoText}\n`;
+    text += `- Tên Quẻ Chủ: ${mainQueText} -> Tên Quẻ Biến: ${queBienText}${dongHaoText}\n`;
 
     // 6. Lines (6 to 1) - no header with instructional text
     for (let i = 5; i >= 0; i--) {
@@ -930,27 +930,27 @@ function generateCopyText(data) {
 
         // Build main hexagram part
         let mainPart = `${line.lucThu} - ${line.relation} ${line.chi} ${line.hanh}`;
-        if (line.isShi) mainPart += " (Tháº¿)";
-        else if (line.isYing) mainPart += " (á»¨ng)";
-        if (line.isTK) mainPart += " (Tuáº§n KhÃ´ng)";
+        if (line.isShi) mainPart += " (Thế)";
+        else if (line.isYing) mainPart += " (Ứng)";
+        if (line.isTK) mainPart += " (Tuần Không)";
 
         // Build changed part if moving
         let changedPart = "";
         if (line.isMoving) {
-            changedPart = ` -> Äá»™ng HÃ³a ${line.changed.relation} ${line.changed.branch} ${line.changed.hanh}`;
-            if (line.isCTK) changedPart += " (Tuáº§n KhÃ´ng)";
+            changedPart = ` -> Động Hóa ${line.changed.relation} ${line.changed.branch} ${line.changed.hanh}`;
+            if (line.isCTK) changedPart += " (Tuần Không)";
         }
 
         // Build phuc than part if exists
         let phucPart = "";
         if (line.phucThan) {
-            phucPart = ` (Phá»¥c tháº§n: ${line.phucThan.rel} ${line.phucThan.branch})`;
+            phucPart = ` (Phục thần: ${line.phucThan.rel} ${line.phucThan.branch})`;
         }
 
-        text += `- HÃ o ${lineNum}: [${mainPart}]${changedPart}${phucPart};\n`;
+        text += `- Hào ${lineNum}: [${mainPart}]${changedPart}${phucPart};\n`;
     }
 
-    text += "\nCÃ¢u há»i: ";
+    text += "\nCâu hỏi: ";
 
     return text;
 }
@@ -958,7 +958,7 @@ function generateCopyText(data) {
 function copyToClipboard() {
     if (currentTab === 'tuvi') {
         if (!currentTuViData) {
-            alert("Vui lÃ²ng láº­p lÃ¡ sá»‘ trÆ°á»›c!");
+            alert("Vui lòng lập lá số trước!");
             return;
         }
         const text = generateTuViText(currentTuViData);
@@ -967,7 +967,7 @@ function copyToClipboard() {
     }
 
     if (!currentHexData) {
-        alert("Vui lÃ²ng láº­p quáº» trÆ°á»›c!");
+        alert("Vui lòng lập quẻ trước!");
         return;
     }
 
@@ -979,7 +979,7 @@ function copyTextToClipboard(text) {
     // Try modern Clipboard API first
     if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(text).then(() => {
-            showToast("ÄÃ£ sao chÃ©p thÃ nh cÃ´ng!");
+            showToast("Đã sao chép thành công!");
         }).catch(err => {
             console.error('Clipboard API failed, trying fallback: ', err);
             fallbackCopyText(text);
@@ -1029,14 +1029,14 @@ function fallbackCopyText(text) {
     try {
         const successful = document.execCommand('copy');
         if (successful) {
-            showToast("ÄÃ£ sao chÃ©p thÃ nh cÃ´ng!");
+            showToast("Đã sao chép thành công!");
         } else {
             console.error('execCommand copy was unsuccessful');
-            alert("KhÃ´ng thá»ƒ sao chÃ©p tá»± Ä‘á»™ng. Vui lÃ²ng thá»­ láº¡i hoáº·c chá»n vÄƒn báº£n thá»§ cÃ´ng.");
+            alert("Không thể sao chép tự động. Vui lòng thử lại hoặc chọn văn bản thủ công.");
         }
     } catch (err) {
         console.error('Fallback copy failed: ', err);
-        alert("Lá»—i khi sao chÃ©p vÄƒn báº£n.");
+        alert("Lỗi khi sao chép văn bản.");
     }
 
     document.body.removeChild(textArea);
@@ -1044,7 +1044,7 @@ function fallbackCopyText(text) {
 
 async function copyImageToClipboard() {
     if (!currentImageDataUrl) {
-        alert("Vui lÃ²ng láº­p quáº» trÆ°á»›c!");
+        alert("Vui lòng lập quẻ trước!");
         return;
     }
 
@@ -1059,21 +1059,21 @@ async function copyImageToClipboard() {
                 'image/png': blob
             });
             await navigator.clipboard.write([clipboardItem]);
-            showToast("ÄÃ£ sao chÃ©p áº£nh thÃ nh cÃ´ng!");
+            showToast("Đã sao chép ảnh thành công!");
         } else {
             // Fallback: open image in new tab for manual copy
             const newTab = window.open();
             newTab.document.write(`<img src="${currentImageDataUrl}" style="max-width:100%">`);
-            newTab.document.title = "Nháº¥n Ctrl+A, Ctrl+C Ä‘á»ƒ sao chÃ©p";
-            showToast("Má»Ÿ tab má»›i - nháº¥n Ctrl+A, Ctrl+C Ä‘á»ƒ sao chÃ©p");
+            newTab.document.title = "Nhấn Ctrl+A, Ctrl+C để sao chép";
+            showToast("Mở tab mới - nhấn Ctrl+A, Ctrl+C để sao chép");
         }
     } catch (err) {
         console.error('Copy image failed:', err);
         // Fallback: open image in new tab
         const newTab = window.open();
         newTab.document.write(`<img src="${currentImageDataUrl}" style="max-width:100%">`);
-        newTab.document.title = "Nháº¥n Ctrl+A, Ctrl+C Ä‘á»ƒ sao chÃ©p";
-        showToast("Má»Ÿ tab má»›i - nháº¥n Ctrl+A, Ctrl+C Ä‘á»ƒ sao chÃ©p");
+        newTab.document.title = "Nhấn Ctrl+A, Ctrl+C để sao chép";
+        showToast("Mở tab mới - nhấn Ctrl+A, Ctrl+C để sao chép");
     }
 }
 
@@ -1106,7 +1106,7 @@ function showToast(message) {
 
 function downloadImage() {
     if (!currentImageDataUrl) {
-        alert('ChÆ°a cÃ³ áº£nh Ä‘á»ƒ táº£i!');
+        alert('Chưa có ảnh để tải!');
         return;
     }
 
@@ -1127,7 +1127,7 @@ function downloadImage() {
 
                 if (navigator.canShare(shareData)) {
                     navigator.share(shareData)
-                        .then(() => showToast('ÄÃ£ chia sáº» thÃ nh cÃ´ng!'))
+                        .then(() => showToast('Đã chia sẻ thành công!'))
                         .catch((err) => {
                             console.log('Share cancelled or failed, trying fallback');
                             fallbackDownload(blob, filename);
@@ -1138,7 +1138,7 @@ function downloadImage() {
 
             // Desktop and fallback: Direct download
             fallbackDownload(blob, filename);
-            showToast('ÄÃ£ táº£i áº£nh thÃ nh cÃ´ng!');
+            showToast('Đã tải ảnh thành công!');
         })
         .catch(err => {
             console.error('Download error:', err);
@@ -1176,75 +1176,75 @@ function calculateShenSha(dCan, dChi, mChi) {
     };
 
     const quy = {
-        'GiÃ¡p': ['Sá»­u', 'MÃ¹i'], 'Máº­u': ['Sá»­u', 'MÃ¹i'],
-        'áº¤t': ['TÃ½', 'ThÃ¢n'], 'Ká»·': ['TÃ½', 'ThÃ¢n'],
-        'BÃ­nh': ['Há»£i', 'Dáº­u'], 'Äinh': ['Há»£i', 'Dáº­u'],
-        'NhÃ¢m': ['MÃ£o', 'Tá»µ'], 'QuÃ½': ['MÃ£o', 'Tá»µ'],
-        'Canh': ['Sá»­u', 'MÃ¹i'], 'TÃ¢n': ['Ngá»', 'Dáº§n']
+        'Giáp': ['Sửu', 'Mùi'], 'Mậu': ['Sửu', 'Mùi'],
+        'Ất': ['Tý', 'Thân'], 'Kỷ': ['Tý', 'Thân'],
+        'Bính': ['Hợi', 'Dậu'], 'Đinh': ['Hợi', 'Dậu'],
+        'Nhâm': ['Mão', 'Tỵ'], 'Quý': ['Mão', 'Tỵ'],
+        'Canh': ['Sửu', 'Mùi'], 'Tân': ['Ngọ', 'Dần']
     };
-    add('QuÃ½ NhÃ¢n', quy[dCan]);
+    add('Quý Nhân', quy[dCan]);
 
-    const loc = { 'GiÃ¡p': 'Dáº§n', 'áº¤t': 'MÃ£o', 'BÃ­nh': 'Tá»µ', 'Máº­u': 'Tá»µ', 'Äinh': 'Ngá»', 'Ká»·': 'Ngá»', 'Canh': 'ThÃ¢n', 'TÃ¢n': 'Dáº­u', 'NhÃ¢m': 'Há»£i', 'QuÃ½': 'TÃ½' };
-    add('Lá»™c Tháº§n', loc[dCan]);
+    const loc = { 'Giáp': 'Dần', 'Ất': 'Mão', 'Bính': 'Tỵ', 'Mậu': 'Tỵ', 'Đinh': 'Ngọ', 'Kỷ': 'Ngọ', 'Canh': 'Thân', 'Tân': 'Dậu', 'Nhâm': 'Hợi', 'Quý': 'Tý' };
+    add('Lộc Thần', loc[dCan]);
 
-    const kinh = { 'GiÃ¡p': 'MÃ£o', 'áº¤t': 'Dáº§n', 'BÃ­nh': 'Ngá»', 'Máº­u': 'Ngá»', 'Äinh': 'Tá»µ', 'Ká»·': 'Tá»µ', 'Canh': 'Dáº­u', 'TÃ¢n': 'ThÃ¢n', 'NhÃ¢m': 'TÃ½', 'QuÃ½': 'Há»£i' };
-    add('DÆ°Æ¡ng Nháº­n', kinh[dCan]);
+    const kinh = { 'Giáp': 'Mão', 'Ất': 'Dần', 'Bính': 'Ngọ', 'Mậu': 'Ngọ', 'Đinh': 'Tỵ', 'Kỷ': 'Tỵ', 'Canh': 'Dậu', 'Tân': 'Thân', 'Nhâm': 'Tý', 'Quý': 'Hợi' };
+    add('Dương Nhận', kinh[dCan]);
 
-    const van = { 'GiÃ¡p': 'Tá»µ', 'áº¤t': 'Ngá»', 'BÃ­nh': 'ThÃ¢n', 'Máº­u': 'ThÃ¢n', 'Äinh': 'Dáº­u', 'Ká»·': 'Dáº­u', 'Canh': 'Há»£i', 'TÃ¢n': 'TÃ½', 'NhÃ¢m': 'Dáº§n', 'QuÃ½': 'MÃ£o' };
-    add('VÄƒn XÆ°Æ¡ng', van[dCan]);
+    const van = { 'Giáp': 'Tỵ', 'Ất': 'Ngọ', 'Bính': 'Thân', 'Mậu': 'Thân', 'Đinh': 'Dậu', 'Kỷ': 'Dậu', 'Canh': 'Hợi', 'Tân': 'Tý', 'Nhâm': 'Dần', 'Quý': 'Mão' };
+    add('Văn Xương', van[dCan]);
 
     const triadMap = {
-        'ThÃ¢n': 'Thá»§y', 'TÃ½': 'Thá»§y', 'ThÃ¬n': 'Thá»§y',
-        'Dáº§n': 'Há»a', 'Ngá»': 'Há»a', 'Tuáº¥t': 'Há»a',
-        'Tá»µ': 'Kim', 'Dáº­u': 'Kim', 'Sá»­u': 'Kim',
-        'Há»£i': 'Má»™c', 'MÃ£o': 'Má»™c', 'MÃ¹i': 'Má»™c'
+        'Thân': 'Thủy', 'Tý': 'Thủy', 'Thìn': 'Thủy',
+        'Dần': 'Hỏa', 'Ngọ': 'Hỏa', 'Tuất': 'Hỏa',
+        'Tỵ': 'Kim', 'Dậu': 'Kim', 'Sửu': 'Kim',
+        'Hợi': 'Mộc', 'Mão': 'Mộc', 'Mùi': 'Mộc'
     };
     const group = triadMap[dChi];
 
     if (group) {
-        const dm = { 'Thá»§y': 'Dáº§n', 'Há»a': 'ThÃ¢n', 'Kim': 'Há»£i', 'Má»™c': 'Tá»µ' };
-        add('Dá»‹ch MÃ£', dm[group]);
+        const dm = { 'Thủy': 'Dần', 'Hỏa': 'Thân', 'Kim': 'Hợi', 'Mộc': 'Tỵ' };
+        add('Dịch Mã', dm[group]);
 
-        const dao = { 'Thá»§y': 'Dáº­u', 'Há»a': 'MÃ£o', 'Kim': 'Ngá»', 'Má»™c': 'TÃ½' };
-        add('ÄÃ o Hoa', dao[group]);
+        const dao = { 'Thủy': 'Dậu', 'Hỏa': 'Mão', 'Kim': 'Ngọ', 'Mộc': 'Tý' };
+        add('Đào Hoa', dao[group]);
 
-        const tuong = { 'Thá»§y': 'TÃ½', 'Há»a': 'Ngá»', 'Kim': 'Dáº­u', 'Má»™c': 'MÃ£o' };
-        add('TÆ°á»›ng Tinh', tuong[group]);
+        const tuong = { 'Thủy': 'Tý', 'Hỏa': 'Ngọ', 'Kim': 'Dậu', 'Mộc': 'Mão' };
+        add('Tướng Tinh', tuong[group]);
 
-        const kiep = { 'Thá»§y': 'Tá»µ', 'Há»a': 'Há»£i', 'Kim': 'Dáº§n', 'Má»™c': 'ThÃ¢n' };
-        add('Kiáº¿p SÃ¡t', kiep[group]);
+        const kiep = { 'Thủy': 'Tỵ', 'Hỏa': 'Hợi', 'Kim': 'Dần', 'Mộc': 'Thân' };
+        add('Kiếp Sát', kiep[group]);
 
-        const hoa = { 'Thá»§y': 'ThÃ¬n', 'Há»a': 'Tuáº¥t', 'Kim': 'Sá»­u', 'Má»™c': 'MÃ¹i' };
-        add('Hoa CÃ¡i', hoa[group]);
+        const hoa = { 'Thủy': 'Thìn', 'Hỏa': 'Tuất', 'Kim': 'Sửu', 'Mộc': 'Mùi' };
+        add('Hoa Cái', hoa[group]);
 
-        const muu = { 'Thá»§y': 'Tuáº¥t', 'Kim': 'MÃ¹i', 'Há»a': 'ThÃ¬n', 'Má»™c': 'Sá»­u' };
-        add('MÆ°u Tinh', muu[group]);
+        const muu = { 'Thủy': 'Tuất', 'Kim': 'Mùi', 'Hỏa': 'Thìn', 'Mộc': 'Sửu' };
+        add('Mưu Tinh', muu[group]);
 
-        const tai = { 'Thá»§y': 'Ngá»', 'Há»a': 'TÃ½', 'Kim': 'MÃ£o', 'Má»™c': 'Dáº­u' };
-        add('Tai SÃ¡t', tai[group]);
+        const tai = { 'Thủy': 'Ngọ', 'Hỏa': 'Tý', 'Kim': 'Mão', 'Mộc': 'Dậu' };
+        add('Tai Sát', tai[group]);
 
-        const vong = { 'Thá»§y': 'Há»£i', 'Há»a': 'Tá»µ', 'Kim': 'ThÃ¢n', 'Má»™c': 'Dáº§n' };
-        add('Vong Tháº§n', vong[group]);
+        const vong = { 'Thủy': 'Hợi', 'Hỏa': 'Tỵ', 'Kim': 'Thân', 'Mộc': 'Dần' };
+        add('Vong Thần', vong[group]);
     } else {
         for (let i = 0; i < 8; i++) add('', '');
     }
 
-    const branches = ['TÃ½', 'Sá»­u', 'Dáº§n', 'MÃ£o', 'ThÃ¬n', 'Tá»µ', 'Ngá»', 'MÃ¹i', 'ThÃ¢n', 'Dáº­u', 'Tuáº¥t', 'Há»£i'];
+    const branches = ['Tý', 'Sửu', 'Dần', 'Mão', 'Thìn', 'Tỵ', 'Ngọ', 'Mùi', 'Thân', 'Dậu', 'Tuất', 'Hợi'];
     const mIdx = branches.indexOf(mChi);
     if (mIdx !== -1) {
         const ty = branches[(mIdx - 1 + 12) % 12];
-        add('ThiÃªn Y', ty);
+        add('Thiên Y', ty);
     } else {
-        add('ThiÃªn Y', '-');
+        add('Thiên Y', '-');
     }
 
     const muaMap = {
-        'Dáº§n': 'Tuáº¥t', 'MÃ£o': 'Tuáº¥t', 'ThÃ¬n': 'Tuáº¥t',
-        'Tá»µ': 'Sá»­u', 'Ngá»': 'Sá»­u', 'MÃ¹i': 'Sá»­u',
-        'ThÃ¢n': 'ThÃ¬n', 'Dáº­u': 'ThÃ¬n', 'Tuáº¥t': 'ThÃ¬n',
-        'Há»£i': 'MÃ¹i', 'TÃ½': 'MÃ¹i', 'Sá»­u': 'MÃ¹i'
+        'Dần': 'Tuất', 'Mão': 'Tuất', 'Thìn': 'Tuất',
+        'Tỵ': 'Sửu', 'Ngọ': 'Sửu', 'Mùi': 'Sửu',
+        'Thân': 'Thìn', 'Dậu': 'Thìn', 'Tuất': 'Thìn',
+        'Hợi': 'Mùi', 'Tý': 'Mùi', 'Sửu': 'Mùi'
     };
-    add('ThiÃªn Há»‰', muaMap[mChi]);
+    add('Thiên Hỉ', muaMap[mChi]);
 
     return list;
 }
@@ -1272,9 +1272,9 @@ function startCoinToss() {
     resultsList.innerHTML = '';
     tossBtn.style.display = 'inline-flex';
     tossBtn.disabled = false;
-    tossBtn.innerHTML = 'Gieo HÃ o 1'; // Reset button text
+    tossBtn.innerHTML = 'Gieo Hào 1'; // Reset button text
     finishBtn.style.display = 'none';
-    statusText.innerText = 'Sáºµn sÃ ng gieo hÃ o 1...';
+    statusText.innerText = 'Sẵn sàng gieo hào 1...';
 
     // Reset Coins Rotation
     coins.forEach(coin => {
@@ -1320,38 +1320,38 @@ function performToss() {
     const yangCount = coinResults.filter(r => r).length;
 
     // Calculate Line Result
-    // 0 Yang -> LÃ£o Ã‚m (Line 0)
-    // 1 Yang -> Thiáº¿u DÆ°Æ¡ng (Line 1)
-    // 2 Yang -> Thiáº¿u Ã‚m (Line 2)
-    // 3 Yang -> LÃ£o DÆ°Æ¡ng (Line 3)
+    // 0 Yang -> Lão Âm (Line 0)
+    // 1 Yang -> Thiếu Dương (Line 1)
+    // 2 Yang -> Thiếu Âm (Line 2)
+    // 3 Yang -> Lão Dương (Line 3)
     let lineValue, lineText, lineSymbol;
     let isMoving = false;
     let isYangLine = false;
 
     if (yangCount === 0) {
-        lineValue = 0; // LÃ£o Ã‚m
-        lineText = "LÃ£o Ã‚m (Ã‚m Ä‘á»™ng)";
+        lineValue = 0; // Lão Âm
+        lineText = "Lão Âm (Âm động)";
         lineSymbol = "X";
         isMoving = true;
-        isYangLine = false; // Ã‚m
+        isYangLine = false; // Âm
     } else if (yangCount === 1) {
-        lineValue = 1; // Thiáº¿u DÆ°Æ¡ng
-        lineText = "Thiáº¿u DÆ°Æ¡ng (DÆ°Æ¡ng tÄ©nh)";
-        lineSymbol = "â€”";
+        lineValue = 1; // Thiếu Dương
+        lineText = "Thiếu Dương (Dương tĩnh)";
+        lineSymbol = "—";
         isMoving = false;
-        isYangLine = true; // DÆ°Æ¡ng
+        isYangLine = true; // Dương
     } else if (yangCount === 2) {
-        lineValue = 2; // Thiáº¿u Ã‚m
-        lineText = "Thiáº¿u Ã‚m (Ã‚m tÄ©nh)";
+        lineValue = 2; // Thiếu Âm
+        lineText = "Thiếu Âm (Âm tĩnh)";
         lineSymbol = "--";
         isMoving = false;
-        isYangLine = false; // Ã‚m
+        isYangLine = false; // Âm
     } else {
-        lineValue = 3; // LÃ£o DÆ°Æ¡ng
-        lineText = "LÃ£o DÆ°Æ¡ng (DÆ°Æ¡ng Ä‘á»™ng)";
+        lineValue = 3; // Lão Dương
+        lineText = "Lão Dương (Dương động)";
         lineSymbol = "O";
         isMoving = true;
-        isYangLine = true; // DÆ°Æ¡ng
+        isYangLine = true; // Dương
     }
 
     tossResults.push({
@@ -1383,13 +1383,13 @@ function performToss() {
         currentTossIndex++;
 
         if (currentTossIndex <= 6) {
-            tossBtn.innerHTML = `Gieo HÃ o ${currentTossIndex}`;
+            tossBtn.innerHTML = `Gieo Hào ${currentTossIndex}`;
             tossBtn.disabled = false;
-            document.getElementById('toss-status').innerText = `Sáºµn sÃ ng gieo hÃ o ${currentTossIndex}...`;
+            document.getElementById('toss-status').innerText = `Sẵn sàng gieo hào ${currentTossIndex}...`;
         } else {
             tossBtn.style.display = 'none';
             document.getElementById('finish-toss-btn').style.display = 'inline-flex';
-            document.getElementById('toss-status').innerText = "ÄÃ£ gieo xong 6 hÃ o!";
+            document.getElementById('toss-status').innerText = "Đã gieo xong 6 hào!";
         }
 
     }, 1500);
@@ -1400,7 +1400,7 @@ function addResultToStack(index, text, symbol, isMoving) {
     const row = document.createElement('div');
     row.className = `result-row ${isMoving ? 'moving' : ''}`;
     row.innerHTML = `
-        <div class="result-label">HÃ o ${index}</div>
+        <div class="result-label">Hào ${index}</div>
         <div class="result-value">
             <span class="result-text">${text}</span>
             <span class="result-symbol">${symbol}</span>
@@ -1419,7 +1419,7 @@ function addResultToStack(index, text, symbol, isMoving) {
 
 function finishTossSequence() {
     // Populate Main Form
-    // tossResults[0] is HÃ o 1 (Result of first toss) -> #line-1
+    // tossResults[0] is Hào 1 (Result of first toss) -> #line-1
     tossResults.forEach((res, idx) => {
         const lineNum = idx + 1;
         const select = document.getElementById(`line-${lineNum}`);
@@ -1440,6 +1440,7 @@ function finishTossSequence() {
 // DOM removed
 
 // End of Divination functions
+
 
 export default function handler(req, res) {
     const serial = req.query.serial;
@@ -1467,6 +1468,7 @@ export default function handler(req, res) {
 
         const data = calculateHexagramData(lines, calendar, serial, formattedDate);
 
+        res.setHeader('Content-Type', 'application/json; charset=utf-8');
         res.status(200).json({
             success: true,
             serial: serial,
