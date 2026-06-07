@@ -128,6 +128,12 @@ initHexMap();
 
 // 12 cung Trường Sinh (viết tắt)
 const LIFE_STAGES = ['T.Sinh', 'M.Dục', 'Q.Đới', 'L.Quan', 'Đ.Vượng', 'Suy', 'Bệnh', 'Tử', 'Mộ', 'Tuyệt', 'Thai', 'Dưỡng'];
+const LIFE_STAGES_FULL = {
+    'T.Sinh': 'Trường Sinh', 'M.Dục': 'Mộc Dục', 'Q.Đới': 'Quan Đới',
+    'L.Quan': 'Lâm Quan', 'Đ.Vượng': 'Đế Vượng', 'Suy': 'Suy',
+    'Bệnh': 'Bệnh', 'Tử': 'Tử', 'Mộ': 'Mộ', 'Tuyệt': 'Tuyệt',
+    'Thai': 'Thai', 'Dưỡng': 'Dưỡng'
+};
 const LS_START = { 'Hỏa': 2, 'Kim': 5, 'Mộc': 11, 'Thủy': 8, 'Thổ': 8 };
 
 // Lục Thú theo Can ngày
@@ -623,6 +629,7 @@ function renderCaptureHTML(data) {
             <td>${line.changed.branch}-${line.changed.hanh}</td>
             <td>${line.lucThu}</td>
             <td>${isCTK}</td>
+            <td>${line.tsNgay}</td>
         </tr>`;
     }
 
@@ -663,6 +670,7 @@ function renderCaptureHTML(data) {
                     <th>Can Chi</th>
                     <th>Lục Thú</th>
                     <th>TK</th>
+                    <th>T.S-Ngày</th>
                 </tr>
             </thead>
             <tbody>${rowsHtml}</tbody>
@@ -987,13 +995,17 @@ function generateCopyText(data) {
             if (line.isCTK) changedPart += " (Tuần Không)";
         }
 
+        // Build truong sinh part
+        const tsFullName = LIFE_STAGES_FULL[line.tsNgay] || line.tsNgay;
+        const tsPart = ` - ${tsFullName} tại Nhật Lệnh`;
+
         // Build phuc than part if exists
         let phucPart = "";
         if (line.phucThan) {
             phucPart = ` (Phục thần: ${line.phucThan.rel} ${line.phucThan.branch})`;
         }
 
-        text += `- Hào ${lineNum}: [${mainPart}]${changedPart}${phucPart};\n`;
+        text += `- Hào ${lineNum}: [${mainPart}${tsPart}]${changedPart}${phucPart};\n`;
     }
 
     text += "\nCâu hỏi: ";
