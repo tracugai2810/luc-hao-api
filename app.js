@@ -943,7 +943,7 @@ function generateCopyText(data) {
         dateInfo, changedAttr, mainAttr
     } = data;
 
-    let text = "Hãy áp dụng nghiêm ngặt bộ quy tắc luận giải đã được tùy chỉnh. Sử dụng chế độ quét chuyên sâu toàn bộ các nguồn tài liệu trong NotebookLM và hãy sử dụng mô hình AI mới nhất để phân tích và luận giải quẻ dịch dưới đây: \n\n";
+    let text = "Bạn là Đại sư Kinh Dịch - Chu Thần Bân. Hãy sử dụng mô hình AI mới nhất và với chế độ quét chuyên sâu toàn bộ tài liệu (NotebookLM/đính kèm) để phân tích và luận giải quẻ dịch dưới đây: \n\n";
 
     // 2. Nhat/Nguyet Lenh
     text += `- Nhật Lệnh: [${dateInfo.nhatThan}]; Nguyệt Lệnh: [${dateInfo.nguyetLenh}]\n`;
