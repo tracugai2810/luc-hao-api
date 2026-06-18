@@ -1480,6 +1480,12 @@ export default function handler(req, res) {
     }
 
     try {
+        // Parse date/time if provided
+        let dVal = new Date();
+        const saDate = req.query.sa_date;
+        const saHour = req.query.sa_hour;
+        const saMin = req.query.sa_minute;
+
         if (saDate) {
             const pad = n => String(n).padStart(2, '0');
             const hour = saHour !== undefined ? pad(saHour) : '00';
