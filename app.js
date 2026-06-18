@@ -204,14 +204,20 @@ function calculateSolarTermDate(year, termIndex) {
 }
 
 function calculateCanChi(dateInput) {
-    let d = new Date(dateInput);
-    if (d.getHours() >= 23) d.setDate(d.getDate() + 1);
+    let input = dateInput;
+    if (typeof input === 'string' && !input.includes('Z') && !input.includes('+') && !input.match(/-\d{2}:\d{2}$/)) {
+        input = input + '+07:00';
+    }
 
-    const y = d.getFullYear();
-    const a = Math.floor((14 - (d.getMonth() + 1)) / 12);
-    const yJD = d.getFullYear() + 4800 - a;
-    const mJD = (d.getMonth() + 1) + 12 * a - 3;
-    const jd = d.getDate() + Math.floor((153 * mJD + 2) / 5) + 365 * yJD + Math.floor(yJD / 4) - Math.floor(yJD / 100) + Math.floor(yJD / 400) - 32045;
+    const actualDate = new Date(input);
+    let d = new Date(actualDate.getTime() + 7 * 60 * 60 * 1000);
+    if (d.getUTCHours() >= 23) d.setUTCDate(d.getUTCDate() + 1);
+
+    const y = d.getUTCFullYear();
+    const a = Math.floor((14 - (d.getUTCMonth() + 1)) / 12);
+    const yJD = d.getUTCFullYear() + 4800 - a;
+    const mJD = (d.getUTCMonth() + 1) + 12 * a - 3;
+    const jd = d.getUTCDate() + Math.floor((153 * mJD + 2) / 5) + 365 * yJD + Math.floor(yJD / 4) - Math.floor(yJD / 100) + Math.floor(yJD / 400) - 32045;
 
     const canNgayIdx = (jd + 9) % 10;
     const chiNgayIdx = (jd + 1) % 12;
@@ -220,20 +226,20 @@ function calculateCanChi(dateInput) {
     const termsPrev = getSolarTerm(y - 1);
     const lapXuan = terms[2];
 
-    let solarYear = d < lapXuan ? y - 1 : y;
+    let solarYear = actualDate < lapXuan ? y - 1 : y;
     let canNamIdx = (solarYear - 4) % 10;
     if (canNamIdx < 0) canNamIdx += 10;
     let chiNamIdx = (solarYear - 4) % 12;
     if (chiNamIdx < 0) chiNamIdx += 12;
 
     let chiThangIdx = 1;
-    if (d >= termsPrev[22] && d < terms[0]) {
+    if (actualDate >= termsPrev[22] && actualDate < terms[0]) {
         chiThangIdx = 0;
     } else {
         const checkOrder = [22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0];
         const mapping = { 2: 2, 4: 3, 6: 4, 8: 5, 10: 6, 12: 7, 14: 8, 16: 9, 18: 10, 20: 11, 22: 0, 0: 1 };
         for (let tIdx of checkOrder) {
-            if (d >= terms[tIdx]) {
+            if (actualDate >= terms[tIdx]) {
                 chiThangIdx = mapping[tIdx];
                 break;
             }
@@ -242,7 +248,7 @@ function calculateCanChi(dateInput) {
 
     const canThangIdx = ((canNamIdx * 2 + 2) + (chiThangIdx - 2 + 12)) % 10;
 
-    let h = d.getHours();
+    let h = d.getUTCHours();
     const chiGioIdx = (h >= 23 || h < 1) ? 0 : Math.floor((h + 1) / 2) % 12;
     const canGioIdx = (((canNgayIdx % 5) * 2) + chiGioIdx) % 10;
 
@@ -250,7 +256,7 @@ function calculateCanChi(dateInput) {
     const tk1 = CHI[(diff - 2 + 12) % 12];
     const tk2 = CHI[(diff - 1 + 12) % 12];
 
-    let dayOfYear = Math.floor((d - new Date(y, 0, 0)) / 86400000);
+    let dayOfYear = Math.floor((d.getTime() - Date.UTC(y, 0, 0)) / 86400000);
     const termNames = ['Tiểu Hàn', 'Đại Hàn', 'Lập Xuân', 'Vũ Thủy', 'Kinh Trập', 'Xuân Phân', 'Thanh Minh', 'Cốc Vũ', 'Lập Hạ', 'Tiểu Mãn', 'Mang Chủng', 'Hạ Chí', 'Tiểu Thử', 'Đại Thử', 'Lập Thu', 'Xử Thử', 'Bạch Lộ', 'Thu Phân', 'Hàn Lộ', 'Sương Giáng', 'Lập Đông', 'Tiểu Tuyết', 'Đại Tuyết', 'Đông Chí'];
     let tIdx = Math.floor(dayOfYear / 15.22);
     if (tIdx > 23) tIdx = 23;
@@ -423,9 +429,13 @@ function updateHaoDong() {
 
 function formatDate(isoStr) {
     if (!isoStr) return "";
-    const d = new Date(isoStr);
+    let input = isoStr;
+    if (typeof input === 'string' && !input.includes('Z') && !input.includes('+') && !input.match(/-\d{2}:\d{2}$/)) {
+        input = input + '+07:00';
+    }
+    const d = new Date(new Date(input).getTime() + 7 * 60 * 60 * 1000);
     const p = n => n < 10 ? '0' + n : n;
-    return `${p(d.getDate())}/${p(d.getMonth() + 1)}/${d.getFullYear()} - ${p(d.getHours())}:${p(d.getMinutes())}`;
+    return `${p(d.getUTCDate())}/${p(d.getUTCMonth() + 1)}/${d.getUTCFullYear()} - ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}`;
 }
 
 // ============================================
