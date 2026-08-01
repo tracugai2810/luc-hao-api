@@ -705,7 +705,7 @@ function renderCaptureHTML(data) {
         <div class="info-header">
             <div class="info-content">
                 <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
-                <div class="info-line"><strong>Hào tâm niệm:</strong> <span class="highlight">${dateInfo.haoTam}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
+                <div class="info-line"><strong>Tàng hào:</strong> <span class="highlight">${dateInfo.haoTam}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
                 <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
             </div>
         </div>
