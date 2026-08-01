@@ -92,6 +92,62 @@ function getHexAttribute(hexName, type) {
     return '';
 }
 
+// Các cặp Quái Phản Ngâm (xung nhau)
+const PHAN_NGAM_PAIRS = {
+    7: 3, 3: 7,  // Càn ↔ Tốn
+    5: 2, 2: 5,  // Ly ↔ Khảm
+    4: 6, 6: 4,  // Chấn ↔ Đoài
+    1: 0, 0: 1   // Cấn ↔ Khôn
+};
+
+// Cặp Quái Phục Ngâm (Càn ↔ Chấn, cùng hệ nạp chi)
+const PHUC_NGAM_PAIRS = {
+    7: 4, 4: 7   // Càn ↔ Chấn
+};
+
+// Hàm kiểm tra Phản Ngâm / Phục Ngâm ở cấp độ Quẻ
+function checkNgam(mainInIdx, mainOutIdx, changedInIdx, changedOutIdx) {
+    let noiResult = '';
+    let ngoaiResult = '';
+
+    // Kiểm tra Nội quái (hào 1-3)
+    if (mainInIdx !== changedInIdx) {
+        if (PHUC_NGAM_PAIRS[mainInIdx] === changedInIdx) {
+            noiResult = 'phuc';
+        } else if (PHAN_NGAM_PAIRS[mainInIdx] === changedInIdx) {
+            noiResult = 'phan';
+        }
+    }
+
+    // Kiểm tra Ngoại quái (hào 4-6)
+    if (mainOutIdx !== changedOutIdx) {
+        if (PHUC_NGAM_PAIRS[mainOutIdx] === changedOutIdx) {
+            ngoaiResult = 'phuc';
+        } else if (PHAN_NGAM_PAIRS[mainOutIdx] === changedOutIdx) {
+            ngoaiResult = 'phan';
+        }
+    }
+
+    // Tổng hợp kết quả
+    const results = [];
+
+    // Toàn quẻ
+    if (noiResult && ngoaiResult && noiResult === ngoaiResult) {
+        if (noiResult === 'phan') results.push('Toàn Quẻ Phản Ngâm');
+        else results.push('Toàn Quẻ Phục Ngâm');
+        return results;
+    }
+
+    // Từng quái riêng lẻ
+    if (ngoaiResult === 'phan') results.push('Ngoại Quái Phản Ngâm');
+    else if (ngoaiResult === 'phuc') results.push('Ngoại Quái Phục Ngâm');
+
+    if (noiResult === 'phan') results.push('Nội Quái Phản Ngâm');
+    else if (noiResult === 'phuc') results.push('Nội Quái Phục Ngâm');
+
+    return results;
+}
+
 // Bảng tra thông tin 64 quẻ (Họ quái, Thế hào, Loại)
 const HEX_MAP = {};
 
@@ -649,7 +705,7 @@ function renderCaptureHTML(data) {
         <div class="info-header">
             <div class="info-content">
                 <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
-                <div class="info-line"><strong>Can chi:</strong> ${dateInfo.fullCanChi} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
+                <div class="info-line"><strong>Hào tâm niệm:</strong> <span class="highlight">${dateInfo.haoTam}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
                 <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
             </div>
         </div>
@@ -660,6 +716,7 @@ function renderCaptureHTML(data) {
                 ${renderHexVisual(data.lines, false)}
                 <div class="hex-family">Họ ${palaceName}${mainAttr ? ' - ' + mainAttr : ''}</div>
             </div>
+            <div class="hex-ngam-indicator">${data.ngamResult && data.ngamResult.length > 0 ? data.ngamResult.map(t => `<span>${t}</span>`).join('') : ''}</div>
             <div class="hex-box">
                 <div class="hex-title">${changedName}</div>
                 ${renderHexVisual(data.lines, true)}
@@ -805,6 +862,9 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
     const changedPalaceName = QUAI_SO[infoChanged.p].name;
     const changedAttr = getHexAttribute(changedName, infoChanged.type);
 
+    // Kiểm tra Phản Ngâm / Phục Ngâm
+    const ngamResult = checkNgam(mInIdx, mOutIdx, cInIdx, cOutIdx);
+
     const lucThuList = LUC_THU[cal.ngay.can];
 
     const presentRelations = new Set();
@@ -862,9 +922,6 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
         const cBranch = NAP_GIAP[cTriName][i];
         const cEl = NGU_HANH_CHI[cBranch];
         const cRel = getRelation(cEl, palaceEl);
-        // Note: Relation of changed line is usually also compared to the Palace Element of the Main Hexagram in many systems.
-        // The original code used `palaceEl` which was `NGU_HANH_QUAI[palaceName]` (Main Palace).
-        // So `cRel` is correct as per original code.
 
         const isCTK = cal.tuanKhong.includes(cBranch);
 
@@ -918,6 +975,50 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
     const theThanLine = linesData[theThanPos - 1];
     shensha.push(`<strong>Thế Thân:</strong> ${theThanLine.chi}`);
 
+    // Hào Tâm Niệm Logic
+    const shiIdx = linesData.findIndex(l => l.isShi);
+    const haoThe = linesData[shiIdx];
+    const hao5 = linesData[4];
+
+    const getTangHao = (idx) => {
+        const pureTri = QUAI_SO[info.p].name;
+        const pureBranch = NAP_GIAP[pureTri][idx];
+        const pureEl = NGU_HANH_CHI[pureBranch];
+        const pureRel = getRelation(pureEl, palaceEl);
+        return {
+            rel: pureRel,
+            branch: pureBranch
+        };
+    };
+
+    let haoTam = null;
+
+    if (!haoThe.isMoving && haoThe.changed.relation !== haoThe.relation) {
+        haoTam = { rel: haoThe.changed.relation, branch: haoThe.changed.branch };
+    } else {
+        const tangHaoThe = getTangHao(shiIdx);
+        if (tangHaoThe.rel !== haoThe.relation) {
+            haoTam = tangHaoThe;
+        } else {
+            if (hao5.relation === haoThe.relation || hao5.isMoving) {
+                haoTam = getTangHao(4);
+            } else {
+                haoTam = { rel: hao5.relation, branch: hao5.chi };
+            }
+        }
+    }
+
+    function getShortRel(rel) {
+        if (rel.startsWith('Tử Tôn')) return 'Tử';
+        if (rel.startsWith('Thê Tài')) return 'Tài';
+        if (rel.startsWith('Phụ Mẫu')) return 'Phụ';
+        if (rel.startsWith('Huynh Đệ')) return 'Huynh';
+        if (rel.startsWith('Quan Quỷ')) return 'Quan';
+        return rel.split(' ')[0];
+    }
+    const haoTamStr = `${getShortRel(haoTam.rel)} - ${haoTam.branch}`;
+    const haoTamFullStr = `${haoTam.rel} ${haoTam.branch} ${NGU_HANH_CHI[haoTam.branch] || ''}`;
+
     return {
         mainName,
         changedName,
@@ -931,11 +1032,14 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
         linesData,
         shensha,
         movingLines,
+        ngamResult,
         formattedDate,
         methodText,
         dateInfo: {
             fullCanChi: `Giờ ${cal.gio.can} ${cal.gio.chi}, Ngày ${cal.ngay.can} ${cal.ngay.chi}`,
             tietKhi: cal.tietKhi,
+            haoTam: haoTamStr,
+            haoTamFull: haoTamFullStr,
             tuanKhong: cal.tuanKhong.join(', '),
             nhatThan: `${cal.ngay.chi} - ${cal.ngay.hanh}`,
             nguyetLenh: `${cal.thang.chi} - ${cal.thang.hanh}`,
@@ -950,7 +1054,8 @@ function generateCopyText(data) {
     const {
         mainName, changedName,
         linesData, movingLines,
-        dateInfo, changedAttr, mainAttr
+        dateInfo, changedAttr, mainAttr,
+        ngamResult
     } = data;
 
     let text = "Bạn là Đại sư Kinh Dịch - Chu Thần Bân. Hãy sử dụng mô hình AI mới nhất và với chế độ quét chuyên sâu toàn bộ tài liệu (NotebookLM/đính kèm) để phân tích và luận giải quẻ dịch dưới đây: \n\n";
@@ -958,7 +1063,6 @@ function generateCopyText(data) {
     // 2. Nhat/Nguyet Lenh
     text += `- Nhật Lệnh: [${dateInfo.nhatThan}]; Nguyệt Lệnh: [${dateInfo.nguyetLenh}]\n`;
 
-    // 3. Than Sat
     // 3. Than Sat
     let ssText = "";
     if (Array.isArray(dateInfo.shenshaRaw)) {
@@ -969,8 +1073,12 @@ function generateCopyText(data) {
     // 4. Tuan Khong
     text += `- Tuần không: ${dateInfo.tuanKhong}\n`;
 
-    // 5. Ten Que - no instructional text
-    // 5. Ten Que - no instructional text
+    // Hào tâm niệm (Dạng đầy đủ)
+    if (dateInfo.haoTamFull) {
+        text += `- Hào tâm niệm: ${dateInfo.haoTamFull}\n`;
+    }
+
+    // 5. Ten Que
     let queBienText = (movingLines.length > 0) ? changedName : "";
     if (movingLines.length > 0 && changedAttr) {
         queBienText += ` (${changedAttr})`;
@@ -987,7 +1095,12 @@ function generateCopyText(data) {
     }
     text += `- Tên Quẻ Chủ: ${mainQueText} -> Tên Quẻ Biến: ${queBienText}${dongHaoText}\n`;
 
-    // 6. Lines (6 to 1) - no header with instructional text
+    // Nội ngoại quái phản ngâm, phục ngâm (nếu có mới hiển thị)
+    if (ngamResult && ngamResult.length > 0) {
+        text += `- ${ngamResult.join('\n- ')}\n`;
+    }
+
+    // 6. Lines (6 to 1)
     for (let i = 5; i >= 0; i--) {
         const line = linesData[i];
         const lineNum = i + 1;
