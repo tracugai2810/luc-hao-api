@@ -505,8 +505,8 @@ body {
 
 #captureTarget {
     width: 1000px;
-    background-color: #f9f7f2;
-    padding: 22px;
+    background-color: #f6f5f1;
+    padding: 20px;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     color: #1a1a1a;
@@ -530,20 +530,6 @@ body {
     z-index: 0;
 }
 
-#captureTarget::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image:
-        radial-gradient(circle at 10% 15%, rgba(180, 83, 9, 0.03) 0%, transparent 40%),
-        radial-gradient(circle at 90% 85%, rgba(139, 37, 37, 0.03) 0%, transparent 40%);
-    pointer-events: none;
-    z-index: 0;
-}
-
 #captureTarget>* {
     position: relative;
     z-index: 1;
@@ -555,7 +541,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 2px solid #c8baa4;
+    border-bottom: 2px solid #c0c0c0;
     padding: 5px 10px;
     margin-bottom: 10px;
     min-height: 110px;
@@ -593,7 +579,7 @@ body {
     align-items: flex-start;
     gap: 60px;
     padding: 20px 0;
-    border-bottom: 2px solid #bba890;
+    border-bottom: 2px solid #888;
     margin-bottom: 10px;
 }
 
@@ -696,7 +682,7 @@ body {
 #captureTarget th,
 #captureTarget td {
     border: none;
-    border-bottom: 1px solid #e2d9cc;
+    border-bottom: 1px solid #d0c8b8;
     padding: 8px 6px;
     text-align: center;
     white-space: nowrap;
@@ -704,18 +690,18 @@ body {
 }
 
 #captureTarget th {
-    background: rgba(180, 130, 80, 0.07);
+    background: rgba(0, 0, 0, 0.04);
     font-weight: 700;
     color: #1a1a1a;
     font-size: 17px;
     padding: 10px 4px;
-    border-bottom: 1px solid #c8baa4;
+    border-bottom: 1px solid #bbb;
     text-transform: uppercase;
     letter-spacing: 0.3px;
 }
 
 #captureTarget .sep-col {
-    border-left: 1px solid rgba(140, 110, 80, 0.3);
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 #captureTarget .row-moving td {
@@ -756,7 +742,7 @@ body {
 
 #captureTarget .shensha-section {
     margin-top: 10px;
-    border-top: 2px solid #c8baa4;
+    border-top: 2px solid #c0c0c0;
     padding-top: 12px;
 }
 
@@ -769,7 +755,7 @@ body {
     text-align: center;
     letter-spacing: 1px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #d8ccba;
+    border-bottom: 1px solid #d0c8b8;
 }
 
 #captureTarget .shensha-grid {
@@ -781,10 +767,10 @@ body {
 #captureTarget .ss-item {
     font-size: 18px;
     padding: 8px 10px;
-    border: 1px solid #d8ccba;
+    border: 1px solid #d0c8b8;
     border-radius: 6px;
     color: #1a1a1a;
-    background: rgba(255, 255, 255, 0.45);
+    background: rgba(0, 0, 0, 0.02);
     display: flex;
     flex-direction: column;
     align-items: center;
