@@ -505,12 +505,13 @@ body {
 
 #captureTarget {
     width: 1000px;
-    background-color: #f6f5f1;
-    padding: 20px;
+    background-color: #f9f7f2;
+    padding: 22px;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     color: #1a1a1a;
     position: relative;
+    box-sizing: border-box;
 }
 
 #captureTarget::before {
@@ -520,12 +521,25 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1000 1200' width='1000' height='1200'%3E%3Cdefs%3E%3Cg id='coin'%3E%3Ccircle cx='0' cy='0' r='145' fill='none' stroke='%237c2d12' stroke-width='2.4'/%3E%3Ccircle cx='0' cy='0' r='138' fill='none' stroke='%23b45309' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='122' fill='none' stroke='%237c2d12' stroke-width='1' stroke-dasharray='3.5,3.5'/%3E%3Ccircle cx='0' cy='0' r='114' fill='none' stroke='%23b45309' stroke-width='0.8'/%3E%3Crect x='-44' y='-44' width='88' height='88' rx='2' fill='none' stroke='%237c2d12' stroke-width='2.4'/%3E%3Crect x='-51' y='-51' width='102' height='102' rx='3' fill='none' stroke='%23b45309' stroke-width='1'/%3E%3Cline x1='-80' y1='-80' x2='-51' y2='-51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cline x1='80' y1='-80' x2='51' y2='-51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cline x1='-80' y1='80' x2='-51' y2='51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cline x1='80' y1='80' x2='51' y2='51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cg transform='translate(0, -82) scale(0.8)'%3E%3Cline x1='-22' y1='-14' x2='22' y2='-14' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='-2' x2='22' y2='-2' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='10' x2='22' y2='10' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(0, 82) scale(0.8)'%3E%3Cline x1='-22' y1='-10' x2='-4' y2='-10' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='4' y1='-10' x2='22' y2='-10' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='2' x2='-4' y2='2' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='4' y1='2' x2='22' y2='2' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='14' x2='-4' y2='14' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='4' y1='14' x2='22' y2='14' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(-82, 0) scale(0.8)'%3E%3Ccircle cx='0' cy='0' r='13' fill='none' stroke='%237c2d12' stroke-width='1.8'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%237c2d12'/%3E%3C/g%3E%3Cg transform='translate(82, 0) scale(0.8)'%3E%3Cpath d='M-10,-12 C-2,0 -2,0 -10,12 M10,-12 C2,0 2,0 10,12' fill='none' stroke='%237c2d12' stroke-width='1.8' stroke-linecap='round'/%3E%3C/g%3E%3C/g%3E%3Cg id='ruyi-corner'%3E%3Cpath d='M15,80 C15,40 40,15 80,15' fill='none' stroke='%238b2525' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M25,75 C25,45 45,25 75,25' fill='none' stroke='%23b45309' stroke-width='1.2' stroke-linecap='round'/%3E%3Cpath d='M40,55 C40,42 48,35 60,35 C70,35 75,45 68,55 C60,65 45,55 52,45' fill='none' stroke='%238b2525' stroke-width='1.2' stroke-linecap='round'/%3E%3C/g%3E%3C/defs%3E%3Crect x='14' y='14' width='972' height='1172' rx='12' fill='none' stroke='%23b45309' stroke-width='1.8'/%3E%3Crect x='22' y='22' width='956' height='1156' rx='8' fill='none' stroke='%238b2525' stroke-width='1' stroke-dasharray='8,5'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='20' y='20'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='0' y='0' transform='translate(980, 20) scale(-1, 1)'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='0' y='0' transform='translate(20, 1180) scale(1, -1)'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='0' y='0' transform='translate(980, 1180) scale(-1, -1)'/%3E%3Cg transform='translate(500, 480) scale(1.05)' opacity='0.75'%3E%3Cuse href='%23coin' xlink:href='%23coin'/%3E%3C/g%3E%3Cg transform='translate(365, 710) scale(0.98) rotate(-14)' opacity='0.75'%3E%3Cuse href='%23coin' xlink:href='%23coin'/%3E%3C/g%3E%3Cg transform='translate(635, 710) scale(0.98) rotate(14)' opacity='0.75'%3E%3Cuse href='%23coin' xlink:href='%23coin'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#captureTarget::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image:
-        radial-gradient(circle at 15% 25%, rgba(32, 89, 166, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 85% 75%, rgba(32, 89, 166, 0.04) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(32, 89, 166, 0.02) 0%, transparent 70%),
-        repeating-linear-gradient(45deg, transparent 0px, transparent 30px, rgba(32, 89, 166, 0.015) 30px, rgba(32, 89, 166, 0.015) 31px),
-        repeating-linear-gradient(-45deg, transparent 0px, transparent 30px, rgba(32, 89, 166, 0.015) 30px, rgba(32, 89, 166, 0.015) 31px);
+        radial-gradient(circle at 10% 15%, rgba(180, 83, 9, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 90% 85%, rgba(139, 37, 37, 0.03) 0%, transparent 40%);
     pointer-events: none;
     z-index: 0;
 }
@@ -541,7 +555,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 2px solid #c0c0c0;
+    border-bottom: 2px solid #c8baa4;
     padding: 5px 10px;
     margin-bottom: 10px;
     min-height: 110px;
@@ -579,7 +593,7 @@ body {
     align-items: flex-start;
     gap: 60px;
     padding: 20px 0;
-    border-bottom: 2px solid #888;
+    border-bottom: 2px solid #bba890;
     margin-bottom: 10px;
 }
 
@@ -682,7 +696,7 @@ body {
 #captureTarget th,
 #captureTarget td {
     border: none;
-    border-bottom: 1px solid #d0c8b8;
+    border-bottom: 1px solid #e2d9cc;
     padding: 8px 6px;
     text-align: center;
     white-space: nowrap;
@@ -690,18 +704,18 @@ body {
 }
 
 #captureTarget th {
-    background: rgba(0, 0, 0, 0.04);
+    background: rgba(180, 130, 80, 0.07);
     font-weight: 700;
     color: #1a1a1a;
     font-size: 17px;
     padding: 10px 4px;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #c8baa4;
     text-transform: uppercase;
     letter-spacing: 0.3px;
 }
 
 #captureTarget .sep-col {
-    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(140, 110, 80, 0.3);
 }
 
 #captureTarget .row-moving td {
@@ -742,7 +756,7 @@ body {
 
 #captureTarget .shensha-section {
     margin-top: 10px;
-    border-top: 2px solid #c0c0c0;
+    border-top: 2px solid #c8baa4;
     padding-top: 12px;
 }
 
@@ -755,7 +769,7 @@ body {
     text-align: center;
     letter-spacing: 1px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #d0c8b8;
+    border-bottom: 1px solid #d8ccba;
 }
 
 #captureTarget .shensha-grid {
@@ -767,10 +781,10 @@ body {
 #captureTarget .ss-item {
     font-size: 18px;
     padding: 8px 10px;
-    border: 1px solid #d0c8b8;
+    border: 1px solid #d8ccba;
     border-radius: 6px;
     color: #1a1a1a;
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(255, 255, 255, 0.45);
     display: flex;
     flex-direction: column;
     align-items: center;
