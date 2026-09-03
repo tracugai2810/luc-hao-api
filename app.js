@@ -388,13 +388,20 @@ function init() {
                 }
             }
 
-            // Trigger click on submit button after a tiny delay
-            setTimeout(() => {
+            // Wait for fonts to load before auto-triggering to prevent layout shift during scroll
+            const triggerAutoRun = () => {
                 const submitBtn = document.querySelector('button.btn-submit');
                 if (submitBtn) {
                     submitBtn.click();
                 }
-            }, 300);
+            };
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => {
+                    requestAnimationFrame(triggerAutoRun);
+                });
+            } else {
+                setTimeout(triggerAutoRun, 500);
+            }
         }
     } catch (e) {
         console.error("Error auto-running from query params:", e);
@@ -804,20 +811,31 @@ function captureAndDisplayImage() {
         img.alt = 'Kết quả quẻ Lục Hào';
         imageDisplay.appendChild(img);
 
-        // Hide loading, show result
-        document.getElementById('loading-overlay').classList.remove('visible');
-        document.getElementById('resultSection').classList.add('visible');
+        // Wait for image to fully decode, then show result and scroll
+        const showAndScroll = () => {
+            document.getElementById('loading-overlay').classList.remove('visible');
+            document.getElementById('resultSection').classList.add('visible');
 
-        // Scroll to result (align bottom to show download buttons immediately)
-        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'end' });
-
-        // Backup scroll to absolute bottom after render settles
-        setTimeout(() => {
-            window.scrollTo({
-                top: document.body.scrollHeight,
-                behavior: 'smooth'
+            // Wait two animation frames for layout to fully settle
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const downloadBtn = document.getElementById('downloadBtn');
+                    if (downloadBtn) {
+                        downloadBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'end' });
+                    }
+                });
             });
-        }, 300);
+        };
+
+        // Use img.decode() for modern browsers to ensure image is rendered before scroll
+        if (typeof img.decode === 'function') {
+            img.decode().then(showAndScroll).catch(showAndScroll);
+        } else {
+            img.onload = showAndScroll;
+            img.onerror = showAndScroll;
+        }
 
     }).catch(err => {
         console.error('html2canvas error:', err);
