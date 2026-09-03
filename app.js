@@ -816,17 +816,24 @@ function captureAndDisplayImage() {
             document.getElementById('loading-overlay').classList.remove('visible');
             document.getElementById('resultSection').classList.add('visible');
 
-            // Wait two animation frames for layout to fully settle
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    const downloadBtn = document.getElementById('downloadBtn');
-                    if (downloadBtn) {
-                        downloadBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    } else {
-                        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'end' });
-                    }
-                });
-            });
+            // Scroll helper
+            const doScroll = () => {
+                const downloadBtn = document.getElementById('downloadBtn');
+                if (downloadBtn) {
+                    downloadBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }
+            };
+
+            // Delay to let Safari's dynamic viewport (address bar) fully stabilize on first navigation.
+            // On first load from iOS Shortcuts, the address bar is animating and viewport height is unstable.
+            setTimeout(() => {
+                doScroll();
+                // Retry after first smooth scroll completes (~500ms) to correct for
+                // any viewport shift caused by address bar collapsing during the first scroll.
+                setTimeout(doScroll, 800);
+            }, 500);
         };
 
         // Use img.decode() for modern browsers to ensure image is rendered before scroll
