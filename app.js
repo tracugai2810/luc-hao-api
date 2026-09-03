@@ -506,6 +506,11 @@ function formatDate(isoStr) {
 // ============================================
 
 function processDivination() {
+    // Blur any active inputs/checkboxes to prevent focus lock and scroll interruption
+    if (document.activeElement && typeof document.activeElement.blur === 'function') {
+        document.activeElement.blur();
+    }
+
     // Original Luc Hao Logic ONLY
     // No Tu Vi check here
 
@@ -811,27 +816,40 @@ function captureAndDisplayImage() {
         img.alt = 'Kết quả quẻ Lục Hào';
         imageDisplay.appendChild(img);
 
-        // Wait for image to fully decode, then show result and scroll
-        const showAndScroll = () => {
-            document.getElementById('loading-overlay').classList.remove('visible');
-            document.getElementById('resultSection').classList.add('visible');
+        // Hide loading, show result immediately without blocking
+        document.getElementById('loading-overlay').classList.remove('visible');
+        document.getElementById('resultSection').classList.add('visible');
 
-            // Smoothly scroll the result section into view (buttons are right at top on mobile)
-            setTimeout(() => {
+        // Scroll to the download button (on mobile it's at top, on PC at bottom)
+        const scrollToButton = (smooth = true) => {
+            const downloadBtn = document.getElementById('downloadBtn');
+            if (downloadBtn) {
+                downloadBtn.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' });
+            } else {
                 const resultSection = document.getElementById('resultSection');
                 if (resultSection) {
-                    resultSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    resultSection.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
                 }
-            }, 100);
+            }
         };
 
-        // Use img.decode() for modern browsers to ensure image is rendered before scroll
-        if (typeof img.decode === 'function') {
-            img.decode().then(showAndScroll).catch(showAndScroll);
-        } else {
-            img.onload = showAndScroll;
-            img.onerror = showAndScroll;
-        }
+        // Smooth scroll after layout pass
+        requestAnimationFrame(() => {
+            setTimeout(() => scrollToButton(true), 150);
+        });
+
+        // Fail-safe: if smooth scroll was cancelled, stuck midway, or interrupted, ensure button is visible
+        setTimeout(() => {
+            const downloadBtn = document.getElementById('downloadBtn');
+            if (downloadBtn) {
+                const rect = downloadBtn.getBoundingClientRect();
+                const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+                // If button is outside visible viewport, snap to it immediately
+                if (rect.top < 0 || rect.bottom > viewHeight) {
+                    scrollToButton(false);
+                }
+            }
+        }, 700);
 
     }).catch(err => {
         console.error('html2canvas error:', err);
