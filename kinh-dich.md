@@ -2,12 +2,6 @@
 
 Dưới đây là tóm tắt các lý luận cốt lõi từ văn bản của Chu Thần Bân về Lục Hào, tập trung vào định nghĩa, quy luật và phương pháp luận:
 
-### 1. Định nghĩa Âm Dương (Nguyên tắc Giản Phồn)
-*   **Quy luật phân chia:** "Giản hư là mặt dương, phồn thật là mặt âm".
-*   **Ứng dụng:** 
-    *   Mặt không có chữ/hư vô/đơn giản là Dương (Lão dương, dương tận biến Thiếu âm).
-    *   Mặt có chữ/hữu hình/phức tạp là Âm (Lão âm, âm tận biến Thiếu dương).
-
 ### 2. Xem quẻ nhiều lần (Khách quan vs Chủ quan)
 *   **Khách quan:** Khi quẻ tượng phức tạp, lý luận chưa thông suốt, có thể gieo lại nhưng cần tránh xem liên tục lập tức. Nên chờ hôm sau.
 *   **Chủ quan:** Khi đã biết kết quả xấu nhưng cố tình gieo lại để tìm quẻ tốt. Đây là tâm lý "lừa mình dối người", làm quẻ tượng mất giá trị tham khảo.
