@@ -1,4 +1,4 @@
-﻿# BÍ KÍP KINH DỊCH RÚT GỌN
+# BÍ KÍP KINH DỊCH RÚT GỌN
 
 Dưới đây là tóm tắt các lý luận cốt lõi từ văn bản của Chu Thần Bân về Lục Hào, tập trung vào định nghĩa, quy luật và phương pháp luận:
 
@@ -1583,4 +1583,7 @@ Chào bạn, với tư cách là người nghiên cứu Kinh Dịch, tôi xin t�
 *   **Quái thân:** Sự việc mưu cầu, dùng làm dụng thần khi quẻ mơ hồ.
 *   **Hôn nhân:** Dụng thần ở Ứng không đúng Quan/Tài thì chủ sự lo lắng cho đối phương (ví dụ Tử tôn trì Thế lo con cái ảnh hưởng hôn nhân).
 
----\n
+---
+
+## Các nội dung quan trọng cần áp dụng đúng
+* Khi lấy dụng thần, có thể lấy dụng thần ở bên hào biến nếu hào đó động.
