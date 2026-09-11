@@ -1587,3 +1587,5 @@ Chào bạn, với tư cách là người nghiên cứu Kinh Dịch, tôi xin t�
 
 ## Các nội dung quan trọng cần áp dụng đúng
 * Khi lấy dụng thần, có thể lấy dụng thần ở bên hào biến nếu hào đó động.
+* Hào tĩnh khi được nhật hợp, nguyệt hợp -> tính là vượng.
+* Hào mà vượng tại nguyệt là được tính là vượng rồi. Còn hào không vượng tại nguyệt, mà chỉ có nhật sinh cho, cũng không tính là vượng.
