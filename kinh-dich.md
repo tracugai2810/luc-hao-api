@@ -1590,3 +1590,4 @@ Chào bạn, với tư cách là người nghiên cứu Kinh Dịch, tôi xin t�
 * Hào tĩnh khi được nhật hợp, nguyệt hợp -> tính là vượng.
 * Hào mà vượng tại nguyệt là được tính là vượng. Còn hào không vượng tại nguyệt, mà chỉ có nhật sinh cho -> không tính là vượng.
 * Với quẻ thay mặt hỏi. Hỏi cho ai, thì lấy lục thân người đó làm dụng thần. Ví dụ mẹ hỏi về hôn nhân cho con, thì lấy hào Tử Tôn làm dụng thần, đại diện cho hôn nhân của con -> chứ KHÔNG phải lấy Quan Quỷ hay Thê Tài
+* Đảm bảo tuyệt đối, luôn phải luận giải kèm tượng của thần sát mà tôi cung cấp. 
