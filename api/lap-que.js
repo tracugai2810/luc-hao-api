@@ -592,6 +592,55 @@ function getLifeStage(el, baseChi) {
     return LIFE_STAGES[diff];
 }
 
+// Lục Xung Địa Chi (chi xung nhau)
+const LUC_XUNG_MAP = {
+    'Tý': 'Ngọ', 'Ngọ': 'Tý', 'Sửu': 'Mùi', 'Mùi': 'Sửu',
+    'Dần': 'Thân', 'Thân': 'Dần', 'Mão': 'Dậu', 'Dậu': 'Mão',
+    'Thìn': 'Tuất', 'Tuất': 'Thìn', 'Tỵ': 'Hợi', 'Hợi': 'Tỵ'
+};
+
+// Lục Hợp Địa Chi (chi hợp nhau)
+const LUC_HOP_MAP = {
+    'Tý': 'Sửu', 'Sửu': 'Tý', 'Dần': 'Hợi', 'Hợi': 'Dần',
+    'Mão': 'Tuất', 'Tuất': 'Mão', 'Thìn': 'Dậu', 'Dậu': 'Thìn',
+    'Tỵ': 'Thân', 'Thân': 'Tỵ', 'Ngọ': 'Mùi', 'Mùi': 'Ngọ'
+};
+
+// Ngũ hành sinh (key sinh value)
+const NGU_HANH_SINH = {
+    'Kim': 'Thủy', 'Thủy': 'Mộc', 'Mộc': 'Hỏa',
+    'Hỏa': 'Thổ', 'Thổ': 'Kim'
+};
+
+// Ngũ hành khắc (key khắc value)
+const NGU_HANH_KHAC = {
+    'Kim': 'Mộc', 'Mộc': 'Thổ', 'Thổ': 'Thủy',
+    'Thủy': 'Hỏa', 'Hỏa': 'Kim'
+};
+
+// Bình Tướng: tháng Thổ → hành mùa đang kết thúc
+const BINH_TUONG_MAP = {
+    'Sửu': 'Thủy', 'Thìn': 'Mộc', 'Mùi': 'Hỏa', 'Tuất': 'Kim'
+};
+
+// Vượng Suy tại Nguyệt Lệnh
+function getVuongSuyThang(haoChi, haoHanh, thangChi, thangHanh) {
+    // 1. Xung → Suy (ưu tiên cao nhất, kể cả cùng hành)
+    if (LUC_XUNG_MAP[haoChi] === thangChi) return 'Suy';
+    // 2. Hợp → Vượng
+    if (LUC_HOP_MAP[haoChi] === thangChi) return 'Vượng';
+    // 3. Cùng hành / lâm nguyệt kiến → Vượng
+    if (haoHanh === thangHanh) return 'Vượng';
+    // 4. Tháng sinh hào → Vượng
+    if (NGU_HANH_SINH[thangHanh] === haoHanh) return 'Vượng';
+    // 5. Tháng khắc hào → Suy (trước Bình Tướng)
+    if (NGU_HANH_KHAC[thangHanh] === haoHanh) return 'Suy';
+    // 6. Bình Tướng (tháng Thổ, hành mùa trước)
+    if (BINH_TUONG_MAP[thangChi] === haoHanh) return 'Bình';
+    // 7. Còn lại → Suy
+    return 'Suy';
+}
+
 function renderHexVisual(lines, isChanged) {
     const bits = lines.map(v => getBit(v, isChanged));
     let html = '';
@@ -658,6 +707,7 @@ function renderCaptureHTML(data) {
             <td>${line.lucThu}</td>
             <td>${isCTK}</td>
             <td>${line.tsNgay}</td>
+            <td>${line.vsThang}</td>
         </tr>`;
     }
 
@@ -699,6 +749,7 @@ function renderCaptureHTML(data) {
                     <th>Lục Thú</th>
                     <th>TK</th>
                     <th>T.S-Ngày</th>
+                    <th>V.S-Tháng</th>
                 </tr>
             </thead>
             <tbody>${rowsHtml}</tbody>
@@ -846,6 +897,7 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
 
         const tsNgay = getLifeStage(mEl, cal.ngay.chi);
         const tsThang = getLifeStage(mEl, cal.thang.chi);
+        const vsThang = getVuongSuyThang(mBranch, mEl, cal.thang.chi, cal.thang.hanh);
 
         const shi = info.shi;
         const ying = (shi + 3) > 6 ? shi - 3 : shi + 3;
@@ -891,6 +943,7 @@ function calculateHexagramData(lines, cal, methodText, formattedDate) {
             lucThu: lucThuList[i],
             tsNgay,
             tsThang,
+            vsThang,
             changed: {
                 relation: cRel,
                 branch: cBranch,
@@ -1077,13 +1130,17 @@ function generateCopyText(data) {
         const tsFullName = LIFE_STAGES_FULL[line.tsNgay] || line.tsNgay;
         const tsPart = ` - ${tsFullName} tại Nhật Lệnh`;
 
+        // Build vuong suy thang part
+        const vsThangText = line.vsThang === 'Bình' ? 'Bình Tướng' : line.vsThang;
+        const vsPart = ` - ${vsThangText} tại Nguyệt Lệnh`;
+
         // Build phuc than part if exists
         let phucPart = "";
         if (line.phucThan) {
             phucPart = ` (Phục thần: ${line.phucThan.rel} ${line.phucThan.branch})`;
         }
 
-        text += `- Hào ${lineNum}: [${mainPart}${tsPart}]${changedPart}${phucPart};\n`;
+        text += `- Hào ${lineNum}: [${mainPart}${tsPart}${vsPart}]${changedPart}${phucPart};\n`;
     }
 
     text += "\nCâu hỏi: ";
