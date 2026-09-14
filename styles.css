@@ -522,7 +522,7 @@ body {
 }
 
 #captureTarget {
-    width: 1000px;
+    width: 1160px;
     background-color: #f6f5f1;
     padding: 20px;
     font-family: 'Inter', sans-serif;
@@ -691,6 +691,7 @@ body {
 
 #captureTarget table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     font-size: 18px;
     background: transparent;
@@ -712,7 +713,7 @@ body {
     font-weight: 700;
     color: #1a1a1a;
     font-size: 16px;
-    padding: 10px 3px;
+    padding: 10px 4px;
     border-bottom: 1px solid #bbb;
     text-transform: uppercase;
     letter-spacing: 0.3px;

@@ -736,6 +736,20 @@ function renderCaptureHTML(data) {
         </div>
 
         <table>
+            <colgroup>
+                <col style="width: 5%;">
+                <col style="width: 6%;">
+                <col style="width: 10.5%;">
+                <col style="width: 10.5%;">
+                <col style="width: 10.5%;">
+                <col style="width: 4.5%;">
+                <col style="width: 9.5%;">
+                <col style="width: 10%;">
+                <col style="width: 11.5%;">
+                <col style="width: 4%;">
+                <col style="width: 9%;">
+                <col style="width: 9%;">
+            </colgroup>
             <thead>
                 <tr>
                     <th>Hào</th>
