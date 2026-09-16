@@ -421,6 +421,37 @@ function calculateCanChi(dateInput) {
 // APP STATE & UI
 // ============================================
 
+function autoDetectTimezone(selectEl) {
+    if (!selectEl) return;
+    try {
+        const offsetMin = -new Date().getTimezoneOffset();
+        const sign = offsetMin >= 0 ? '+' : '-';
+        const absMin = Math.abs(offsetMin);
+        const hours = String(Math.floor(absMin / 60)).padStart(2, '0');
+        const mins = String(absMin % 60).padStart(2, '0');
+        const tzString = `${sign}${hours}:${mins}`;
+
+        let found = false;
+        for (let i = 0; i < selectEl.options.length; i++) {
+            if (selectEl.options[i].value === tzString) {
+                selectEl.selectedIndex = i;
+                found = true;
+                break;
+            }
+        }
+
+        if (!found) {
+            const opt = document.createElement('option');
+            opt.value = tzString;
+            opt.textContent = `Vị trí hiện tại (${tzString})`;
+            selectEl.insertBefore(opt, selectEl.firstChild);
+            selectEl.selectedIndex = 0;
+        }
+    } catch (e) {
+        console.warn('Auto-detect timezone error:', e);
+    }
+}
+
 let currentTab = 'coins';
 
 function init() {
@@ -455,9 +486,13 @@ function init() {
     // Auto fill and run from URL query parameters (for iOS Shortcuts and deep linking)
     try {
         const urlParams = new URLSearchParams(window.location.search);
+        const tzEl = document.getElementById('inputTimezone');
         const tzParam = urlParams.get('tz') || urlParams.get('timezone');
         if (tzParam) {
             window.customTimezone = tzParam.startsWith('+') || tzParam.startsWith('-') ? tzParam : '+' + tzParam;
+            if (tzEl) tzEl.value = window.customTimezone;
+        } else if (tzEl) {
+            autoDetectTimezone(tzEl);
         }
         const serialParam = urlParams.get('sa_serial') || urlParams.get('serial');
         if (serialParam) {
