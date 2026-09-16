@@ -259,30 +259,139 @@ function calculateSolarTermDate(year, termIndex) {
     return new Date(Date.UTC(yy, month - 1, Math.floor(day), Math.floor(totalSec / 3600), Math.floor((totalSec % 3600) / 60)));
 }
 
-function calculateCanChi(dateInput) {
-    let input = dateInput;
-    if (typeof input === 'string' && !input.includes('Z') && !input.includes('+') && !input.match(/-\d{2}:\d{2}$/)) {
+let LunarLib = null;
+try {
+    LunarLib = require('lunar-javascript');
+} catch (e) {}
+
+const GAN_MAP = { '甲': 'Giáp', '乙': 'Ất', '丙': 'Bính', '丁': 'Đinh', '戊': 'Mậu', '己': 'Kỷ', '庚': 'Canh', '辛': 'Tân', '壬': 'Nhâm', '癸': 'Quý' };
+const ZHI_MAP = { '子': 'Tý', '丑': 'Sửu', '寅': 'Dần', '卯': 'Mão', '辰': 'Thìn', '巳': 'Tỵ', '午': 'Ngọ', '未': 'Mùi', '申': 'Thân', '酉': 'Dậu', '戌': 'Tuất', '亥': 'Hợi' };
+const SOLAR_TERM_NAMES_VI = {
+    '立春': 'Lập Xuân', '雨水': 'Vũ Thủy', '惊蛰': 'Kinh Trập', '春分': 'Xuân Phân',
+    '清明': 'Thanh Minh', '谷雨': 'Cốc Vũ', '立夏': 'Lập Hạ', '小满': 'Tiểu Mãn',
+    '芒种': 'Mang Chủng', '夏至': 'Hạ Chí', '小暑': 'Tiểu Thử', '大暑': 'Đại Thử',
+    '立秋': 'Lập Thu', '处暑': 'Xử Thử', '白露': 'Bạch Lộ', '秋分': 'Thu Phân',
+    '寒露': 'Hàn Lộ', '霜降': 'Sương Giáng', '立冬': 'Lập Đông', '小雪': 'Tiểu Tuyết',
+    '大雪': 'Đại Tuyết', '冬至': 'Đông Chí', '小寒': 'Tiểu Hàn', '大寒': 'Đại Hàn'
+};
+
+function getExactSolarTermName(actualDate, y, terms, termsPrev) {
+    const termNames = ['Tiểu Hàn', 'Đại Hàn', 'Lập Xuân', 'Vũ Thủy', 'Kinh Trập', 'Xuân Phân', 'Thanh Minh', 'Cốc Vũ', 'Lập Hạ', 'Tiểu Mãn', 'Mang Chủng', 'Hạ Chí', 'Tiểu Thử', 'Đại Thử', 'Lập Thu', 'Xử Thử', 'Bạch Lộ', 'Thu Phân', 'Hàn Lộ', 'Sương Giáng', 'Lập Đông', 'Tiểu Tuyết', 'Đại Tuyết', 'Đông Chí'];
+    if (actualDate < terms[0]) {
+        if (actualDate >= termsPrev[23]) return termNames[23];
+        if (actualDate >= termsPrev[22]) return termNames[22];
+        return termNames[23];
+    }
+    for (let i = 23; i >= 0; i--) {
+        if (actualDate >= terms[i]) {
+            return termNames[i];
+        }
+    }
+    return termNames[0];
+}
+
+function parseDatePartsWithTimezone(dateInput) {
+    let input = String(dateInput).trim();
+    if (!input.includes('Z') && !input.includes('+') && !input.match(/-\d{2}:\d{2}$/)) {
         input = input + '+07:00';
     }
-
     const actualDate = new Date(input);
-    let d = new Date(actualDate.getTime() + 7 * 60 * 60 * 1000);
-    if (d.getUTCHours() >= 23) d.setUTCDate(d.getUTCDate() + 1);
+    let targetYear, targetMonth, targetDay, targetHour, targetMinute;
 
-    const y = d.getUTCFullYear();
-    const a = Math.floor((14 - (d.getUTCMonth() + 1)) / 12);
-    const yJD = d.getUTCFullYear() + 4800 - a;
-    const mJD = (d.getUTCMonth() + 1) + 12 * a - 3;
-    const jd = d.getUTCDate() + Math.floor((153 * mJD + 2) / 5) + 365 * yJD + Math.floor(yJD / 4) - Math.floor(yJD / 100) + Math.floor(yJD / 400) - 32045;
+    const tzMatch = input.match(/([+-]\d{2}):?(\d{2})$/);
+    if (tzMatch) {
+        const sign = tzMatch[1].startsWith('-') ? -1 : 1;
+        const tzHours = parseInt(tzMatch[1].replace('+', '').replace('-', ''), 10);
+        const tzMins = parseInt(tzMatch[2], 10);
+        const offsetTotalMinutes = sign * (tzHours * 60 + tzMins);
+        
+        const targetLocalMs = actualDate.getTime() + offsetTotalMinutes * 60000;
+        const targetDateObj = new Date(targetLocalMs);
+        targetYear = targetDateObj.getUTCFullYear();
+        targetMonth = targetDateObj.getUTCMonth() + 1;
+        targetDay = targetDateObj.getUTCDate();
+        targetHour = targetDateObj.getUTCHours();
+        targetMinute = targetDateObj.getUTCMinutes();
+    } else {
+        targetYear = actualDate.getFullYear();
+        targetMonth = actualDate.getMonth() + 1;
+        targetDay = actualDate.getDate();
+        targetHour = actualDate.getHours();
+        targetMinute = actualDate.getMinutes();
+    }
+    return { actualDate, targetYear, targetMonth, targetDay, targetHour, targetMinute };
+}
+
+function calculateCanChi(dateInput) {
+    const { actualDate, targetYear, targetMonth, targetDay, targetHour, targetMinute } = parseDatePartsWithTimezone(dateInput);
+
+    // Tính Can Chi Ngày và Giờ theo giờ địa phương của nơi gieo quẻ
+    let dayCalc = new Date(Date.UTC(targetYear, targetMonth - 1, targetDay, targetHour, targetMinute));
+    if (targetHour >= 23) {
+        dayCalc.setUTCDate(dayCalc.getUTCDate() + 1);
+    }
+
+    const yJD = dayCalc.getUTCFullYear() + 4800 - Math.floor((14 - (dayCalc.getUTCMonth() + 1)) / 12);
+    const mJD = (dayCalc.getUTCMonth() + 1) + 12 * Math.floor((14 - (dayCalc.getUTCMonth() + 1)) / 12) - 3;
+    const jd = dayCalc.getUTCDate() + Math.floor((153 * mJD + 2) / 5) + 365 * yJD + Math.floor(yJD / 4) - Math.floor(yJD / 100) + Math.floor(yJD / 400) - 32045;
 
     const canNgayIdx = (jd + 9) % 10;
     const chiNgayIdx = (jd + 1) % 12;
 
-    const terms = getSolarTerm(y);
-    const termsPrev = getSolarTerm(y - 1);
+    let h = targetHour;
+    const chiGioIdx = (h >= 23 || h < 1) ? 0 : Math.floor((h + 1) / 2) % 12;
+    const canGioIdx = (((canNgayIdx % 5) * 2) + chiGioIdx) % 10;
+
+    const diff = (chiNgayIdx - canNgayIdx + 12) % 12;
+    const tk1 = CHI[(diff - 2 + 12) % 12];
+    const tk2 = CHI[(diff - 1 + 12) % 12];
+
+    // Ưu tiên sử dụng thư viện Lunar (độ chính xác thiên văn cao nhất)
+    const LunarObj = (typeof Lunar !== 'undefined') ? Lunar : (LunarLib ? LunarLib.Lunar : null);
+    const SolarObj = (typeof Solar !== 'undefined') ? Solar : (LunarLib ? LunarLib.Solar : null);
+
+    if (SolarObj && LunarObj) {
+        const msBeijing = actualDate.getTime() + 8 * 3600 * 1000 + 59 * 1000;
+        const bDate = new Date(msBeijing);
+        const solar = SolarObj.fromYmdHms(
+            bDate.getUTCFullYear(),
+            bDate.getUTCMonth() + 1,
+            bDate.getUTCDate(),
+            bDate.getUTCHours(),
+            bDate.getUTCMinutes(),
+            bDate.getUTCSeconds()
+        );
+        const lunar = solar.getLunar();
+
+        const yGz = lunar.getYearInGanZhiExact();
+        const canNam = GAN_MAP[yGz[0]] || yGz[0];
+        const chiNam = ZHI_MAP[yGz[1]] || yGz[1];
+
+        const mGz = lunar.getMonthInGanZhiExact();
+        const canThang = GAN_MAP[mGz[0]] || mGz[0];
+        const chiThang = ZHI_MAP[mGz[1]] || mGz[1];
+
+        const prevJq = lunar.getPrevJieQi(false);
+        const rawJqName = prevJq ? prevJq.getName() : '';
+        const tietKhi = SOLAR_TERM_NAMES_VI[rawJqName] || rawJqName;
+
+        return {
+            nam: { can: canNam, chi: chiNam },
+            thang: { can: canThang, chi: chiThang, hanh: NGU_HANH_CHI[chiThang] },
+            ngay: { can: CAN[canNgayIdx], chi: CHI[chiNgayIdx], hanh: NGU_HANH_CHI[CHI[chiNgayIdx]] },
+            gio: { can: CAN[canGioIdx], chi: CHI[chiGioIdx] },
+            tuanKhong: [tk1, tk2],
+            tietKhi: tietKhi
+        };
+    }
+
+    // Thuật toán dự phòng Jean Meeus (đã tách mốc actualDate không bị nhảy ngày ở 23h)
+    const actualYear = actualDate.getFullYear();
+    const terms = getSolarTerm(actualYear);
+    const termsPrev = getSolarTerm(actualYear - 1);
     const lapXuan = terms[2];
 
-    let solarYear = actualDate < lapXuan ? y - 1 : y;
+    let solarYear = actualDate < lapXuan ? actualYear - 1 : actualYear;
     let canNamIdx = (solarYear - 4) % 10;
     if (canNamIdx < 0) canNamIdx += 10;
     let chiNamIdx = (solarYear - 4) % 12;
@@ -303,19 +412,7 @@ function calculateCanChi(dateInput) {
     }
 
     const canThangIdx = ((canNamIdx * 2 + 2) + (chiThangIdx - 2 + 12)) % 10;
-
-    let h = d.getUTCHours();
-    const chiGioIdx = (h >= 23 || h < 1) ? 0 : Math.floor((h + 1) / 2) % 12;
-    const canGioIdx = (((canNgayIdx % 5) * 2) + chiGioIdx) % 10;
-
-    const diff = (chiNgayIdx - canNgayIdx + 12) % 12;
-    const tk1 = CHI[(diff - 2 + 12) % 12];
-    const tk2 = CHI[(diff - 1 + 12) % 12];
-
-    let dayOfYear = Math.floor((d.getTime() - Date.UTC(y, 0, 0)) / 86400000);
-    const termNames = ['Tiểu Hàn', 'Đại Hàn', 'Lập Xuân', 'Vũ Thủy', 'Kinh Trập', 'Xuân Phân', 'Thanh Minh', 'Cốc Vũ', 'Lập Hạ', 'Tiểu Mãn', 'Mang Chủng', 'Hạ Chí', 'Tiểu Thử', 'Đại Thử', 'Lập Thu', 'Xử Thử', 'Bạch Lộ', 'Thu Phân', 'Hàn Lộ', 'Sương Giáng', 'Lập Đông', 'Tiểu Tuyết', 'Đại Tuyết', 'Đông Chí'];
-    let tIdx = Math.floor(dayOfYear / 15.22);
-    if (tIdx > 23) tIdx = 23;
+    const exactTermName = getExactSolarTermName(actualDate, actualYear, terms, termsPrev);
 
     return {
         nam: { can: CAN[canNamIdx], chi: CHI[chiNamIdx] },
@@ -323,7 +420,7 @@ function calculateCanChi(dateInput) {
         ngay: { can: CAN[canNgayIdx], chi: CHI[chiNgayIdx], hanh: NGU_HANH_CHI[CHI[chiNgayIdx]] },
         gio: { can: CAN[canGioIdx], chi: CHI[chiGioIdx] },
         tuanKhong: [tk1, tk2],
-        tietKhi: termNames[tIdx]
+        tietKhi: exactTermName
     };
 }
 
@@ -451,9 +548,9 @@ function formatDate(isoStr) {
     if (typeof input === 'string' && !input.includes('Z') && !input.includes('+') && !input.match(/-\d{2}:\d{2}$/)) {
         input = input + '+07:00';
     }
-    const d = new Date(new Date(input).getTime() + 7 * 60 * 60 * 1000);
+    const { targetYear, targetMonth, targetDay, targetHour, targetMinute } = parseDatePartsWithTimezone(input);
     const p = n => n < 10 ? '0' + n : n;
-    return `${p(d.getUTCDate())}/${p(d.getUTCMonth() + 1)}/${d.getUTCFullYear()} - ${p(d.getUTCHours())}:${p(d.getUTCMinutes())}`;
+    return `${p(targetDay)}/${p(targetMonth)}/${targetYear} - ${p(targetHour)}:${p(targetMinute)}`;
 }
 
 // ============================================
@@ -1670,19 +1767,25 @@ export default function handler(req, res) {
         const saDate = req.query.sa_date;
         const saHour = req.query.sa_hour;
         const saMin = req.query.sa_minute;
+        let tz = req.query.tz || req.query.timezone || '+07:00';
+        if (!tz.startsWith('+') && !tz.startsWith('-')) {
+            tz = '+' + tz;
+        }
 
+        let dInputStr = "";
         if (saDate) {
             const pad = n => String(n).padStart(2, '0');
             const hour = saHour !== undefined ? pad(saHour) : '00';
             const minute = saMin !== undefined ? pad(saMin) : '00';
-            dVal = new Date(`${saDate}T${hour}:${minute}:00+07:00`);
+            dInputStr = `${saDate}T${hour}:${minute}:00${tz}`;
+            dVal = new Date(dInputStr);
         } else {
             dVal = new Date();
+            dInputStr = dVal.toISOString();
         }
 
-        const isoStr = dVal.toISOString();
-        const calendar = calculateCanChi(isoStr);
-        const formattedDate = formatDate(isoStr) || isoStr;
+        const calendar = calculateCanChi(dInputStr);
+        const formattedDate = formatDate(dInputStr) || dInputStr;
 
         const nums = serial.split('').map(Number);
         const mid = Math.floor(nums.length / 2);

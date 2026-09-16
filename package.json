@@ -1,0 +1,8 @@
+{
+  "name": "luc-hao-api",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "lunar-javascript": "^1.6.12"
+  }
+}
