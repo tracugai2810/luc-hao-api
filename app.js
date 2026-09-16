@@ -288,7 +288,8 @@ function getExactSolarTermName(actualDate, y, terms, termsPrev) {
 function parseDatePartsWithTimezone(dateInput) {
     let input = String(dateInput).trim();
     if (!input.includes('Z') && !input.includes('+') && !input.match(/-\d{2}:\d{2}$/)) {
-        input = input + (window.customTimezone || '+07:00');
+        const tzEl = typeof document !== 'undefined' ? document.getElementById('inputTimezone') : null;
+        input = input + (tzEl ? tzEl.value : (window.customTimezone || '+07:00'));
     }
     const actualDate = new Date(input);
     let targetYear, targetMonth, targetDay, targetHour, targetMinute;
@@ -476,6 +477,8 @@ function init() {
             const saTz = urlParams.get('tz') || urlParams.get('timezone');
             if (saTz) {
                 window.customTimezone = (saTz.startsWith('+') || saTz.startsWith('-')) ? saTz : '+' + saTz;
+                const tzEl = document.getElementById('inputTimezone');
+                if (tzEl) tzEl.value = window.customTimezone;
             }
             if (saDate && saHour !== null && saMin !== null) {
                 const pad = n => String(n).padStart(2, '0');
@@ -616,9 +619,12 @@ function processDivination() {
         alert("Vui lòng chọn ngày giờ gieo quẻ!");
         return;
     }
+    const tzEl = document.getElementById('inputTimezone');
+    if (tzEl && tzEl.value) window.customTimezone = tzEl.value;
+    const fullDateInput = (tzEl && tzEl.value) ? `${dVal}:00${tzEl.value}` : dVal;
 
-    const calendar = calculateCanChi(dVal);
-    const formattedDate = formatDate(dVal);
+    const calendar = calculateCanChi(fullDateInput);
+    const formattedDate = formatDate(fullDateInput);
 
     let lines = [];
     let methodText = "";

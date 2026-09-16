@@ -1,3 +1,5 @@
+import { Solar, Lunar } from 'lunar-javascript';
+
 /* ========================================
    LỤC HÀO WEBAPP - JAVASCRIPT
    All divination logic and UI interactions
@@ -259,10 +261,7 @@ function calculateSolarTermDate(year, termIndex) {
     return new Date(Date.UTC(yy, month - 1, Math.floor(day), Math.floor(totalSec / 3600), Math.floor((totalSec % 3600) / 60)));
 }
 
-let LunarLib = null;
-try {
-    LunarLib = require('lunar-javascript');
-} catch (e) {}
+let LunarLib = { Solar, Lunar };
 
 const GAN_MAP = { '甲': 'Giáp', '乙': 'Ất', '丙': 'Bính', '丁': 'Đinh', '戊': 'Mậu', '己': 'Kỷ', '庚': 'Canh', '辛': 'Tân', '壬': 'Nhâm', '癸': 'Quý' };
 const ZHI_MAP = { '子': 'Tý', '丑': 'Sửu', '寅': 'Dần', '卯': 'Mão', '辰': 'Thìn', '巳': 'Tỵ', '午': 'Ngọ', '未': 'Mùi', '申': 'Thân', '酉': 'Dậu', '戌': 'Tuất', '亥': 'Hợi' };
