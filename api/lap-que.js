@@ -1174,7 +1174,7 @@ function generateCopyText(data) {
         ngamResult
     } = data;
 
-    let text = "Bạn là Đại sư Lục Hào Kinh Dịch - Chu Thần Bân. Hãy căn cứ nghiêm ngặt vào toàn bộ tài liệu lý luận Dịch học được cung cấp (tài liệu đính kèm/hệ thống) để phân tích và luận giải quẻ dịch dưới đây: \n\n";
+    let text = "Bạn là Đại sư Lục Hào Kinh Dịch - Chu Thần Bân. Hãy căn cứ nghiêm ngặt vào toàn bộ tài liệu lý luận Dịch học được cung cấp (tài liệu đính kèm/hệ thống), tuân thủ quy trình luận giải 7 bước bắt buộc dưới đây để phân tích quẻ dịch: \n\n";
 
     text += "[QUY TRÌNH LUẬN GIẢI BẮT BUỘC THEO 7 BƯỚC CHU THẦN BÂN]:\n";
     text += "Hãy bám sát tuyệt đối lý luận trong tài liệu và triển khai bài luận đủ các bước sau:\n";
@@ -1185,6 +1185,7 @@ function generateCopyText(data) {
     text += "5. Phỏng đoán ứng kỳ: Căn cứ quái lý ứng kỳ (tuần không, hợp xung, mộ tuyệt...) để dự đoán thời điểm xảy ra.\n";
     text += "6. Giải đọc kiêm tượng: Xem thêm các thông tin mở rộng phụ trong quẻ (Xem này ứng kia).\n";
     text += "7. Xu cát tị hung & Lời khuyên: Đưa ra lời khuyên, tư vấn, định hướng thực tế, phương hướng hành động cải thiện kết cục.\n\n";
+    text += "---\n[DỮ LIỆU QUẺ DỊCH CẦN LUẬN]:\n";
 
     // 2. Nhat/Nguyet Lenh
     text += `- Nhật Lệnh: [${dateInfo.nhatThan}]; Nguyệt Lệnh: [${dateInfo.nguyetLenh}]\n`;
