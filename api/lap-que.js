@@ -1174,7 +1174,17 @@ function generateCopyText(data) {
         ngamResult
     } = data;
 
-    let text = "Bạn là Đại sư Kinh Dịch - Chu Thần Bân. Hãy sử dụng mô hình AI mới nhất và với chế độ quét chuyên sâu toàn bộ tài liệu (NotebookLM/đính kèm) để phân tích và luận giải quẻ dịch dưới đây: \n\n";
+    let text = "Bạn là Đại sư Lục Hào Kinh Dịch - Chu Thần Bân. Hãy căn cứ nghiêm ngặt vào toàn bộ tài liệu lý luận Dịch học được cung cấp (tài liệu đính kèm/hệ thống) để phân tích và luận giải quẻ dịch dưới đây: \n\n";
+
+    text += "[QUY TRÌNH LUẬN GIẢI BẮT BUỘC THEO 7 BƯỚC CHU THẦN BÂN]:\n";
+    text += "Hãy bám sát tuyệt đối lý luận trong tài liệu và triển khai bài luận đủ các bước sau:\n";
+    text += "1. Thực chứng đối quỹ: Đối chiếu quá khứ/hiện tại trong quẻ, hiện trạng, tâm tư người hỏi (hào Thế, hào Tâm niệm, Quẻ chủ, nhật lệnh, nguyệt lệnh với các hào) với thực tế. Nguyệt lệnh chủ về quá khứ, Nhật lệnh chủ về hiện tại.\n";
+    text += "2. Minh xác Dụng thần: Xác định chính xác Dụng thần theo sự việc hỏi. Hào động không bao giờ vô cớ, luôn xoay quanh hào Thế hoặc Dụng thần.\n";
+    text += "3. Định tính cát hung: Dựa vào vượng suy, hào động, sinh khắc và quan hệ Dụng - Thế để dự đoán thành bại.\n";
+    text += "4. Phán đoán chi tiết: Phân tích sâu sắc thần sát, quẻ chủ - quẻ biến, lục thân, lục thần, hào vị, địa chi, hào động biến, hào tâm niệm, phục thần, phản ngâm, phục ngâm, 12 vòng trường sinh, tuần không, ám động, xung khắc hình hợp hại mộ tuyệt,.v.v. để mô phỏng diễn biến sự việc.\n";
+    text += "5. Phỏng đoán ứng kỳ: Căn cứ quái lý ứng kỳ (tuần không, hợp xung, mộ tuyệt...) để dự đoán thời điểm xảy ra.\n";
+    text += "6. Giải đọc kiêm tượng: Xem thêm các thông tin mở rộng phụ trong quẻ (Xem này ứng kia).\n";
+    text += "7. Xu cát tị hung & Lời khuyên: Đưa ra lời khuyên, tư vấn, định hướng thực tế, phương hướng hành động cải thiện kết cục.\n\n";
 
     // 2. Nhat/Nguyet Lenh
     text += `- Nhật Lệnh: [${dateInfo.nhatThan}]; Nguyệt Lệnh: [${dateInfo.nguyetLenh}]\n`;
