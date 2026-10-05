@@ -522,7 +522,7 @@ body {
 }
 
 #captureTarget {
-    width: 1160px;
+    width: 1200px;
     background-color: #f6f5f1;
     padding: 20px 20px 26px 20px;
     font-family: 'Inter', sans-serif;
@@ -822,7 +822,7 @@ body {
 #captureTarget .capture-footer-note {
     margin-top: 14px;
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
     font-style: italic;
     color: #3a3a3a;
     line-height: 1.5;
