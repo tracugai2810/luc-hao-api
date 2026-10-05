@@ -681,7 +681,7 @@ function processDivination() {
 
             lines.push(v);
         }
-        methodText = "Gieo xu Lục Hào";
+        methodText = "Lục Hào";
     } else if (currentTab === 'serial') {
         const s = document.getElementById('serialInput').value;
         if (s.length < 2) {
@@ -984,7 +984,7 @@ function renderCaptureHTML(data) {
         </div>
         
         <div class="capture-footer-note">
-            Đây là quẻ Kinh Dịch được lập bằng phương pháp <span class="highlight">${methodText}</span> theo thông tin bạn cung cấp.
+            Đây là quẻ Kinh Dịch được gieo bằng phương pháp <span class="highlight">${methodText}</span> theo thông tin bạn cung cấp.
         </div>
     `;
 }
