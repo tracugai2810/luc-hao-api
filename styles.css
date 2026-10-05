@@ -822,9 +822,9 @@ body {
 #captureTarget .capture-footer-note {
     margin-top: 14px;
     text-align: center;
-    font-size: 15px;
+    font-size: 17px;
     font-style: italic;
-    color: #555555;
+    color: #3a3a3a;
     line-height: 1.5;
     letter-spacing: 0.2px;
 }
