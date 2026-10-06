@@ -681,7 +681,7 @@ function processDivination() {
 
             lines.push(v);
         }
-        methodText = "Lục hào";
+        methodText = "Lục Hào";
     } else if (currentTab === 'serial') {
         const s = document.getElementById('serialInput').value;
         if (s.length < 2) {
@@ -703,7 +703,7 @@ function processDivination() {
         if (lines[idx] === 1) lines[idx] = 3;
         else lines[idx] = 0;
 
-        methodText = `${s}`;
+        methodText = `Seri tiền ${s}`;
     } else if (currentTab === 'number') {
         const n1 = parseInt(document.getElementById('num1').value);
         const n2 = parseInt(document.getElementById('num2').value);
@@ -731,7 +731,7 @@ function processDivination() {
         if (lines[idx] === 1) lines[idx] = 3;
         else lines[idx] = 0;
 
-        methodText = `${n1} - ${n2}`;
+        methodText = `Chọn số ${n1} - ${n2}`;
     }
 
     // Calculate hexagram data
@@ -981,6 +981,10 @@ function renderCaptureHTML(data) {
             }).join('');
         })()}
             </div>
+        </div>
+        
+        <div class="capture-footer-note">
+            Đây là quẻ Kinh Dịch được gieo bằng phương pháp <span class="highlight">${methodText}</span> theo thông tin bạn cung cấp.
         </div>
     `;
 }

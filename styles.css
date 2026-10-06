@@ -524,7 +524,7 @@ body {
 #captureTarget {
     width: 1160px;
     background-color: #f6f5f1;
-    padding: 20px;
+    padding: 20px 20px 26px 20px;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     color: #1a1a1a;
@@ -817,6 +817,21 @@ body {
 #captureTarget .ss-item.ss-moving .ss-value {
     color: #e60000;
     font-weight: normal;
+}
+
+#captureTarget .capture-footer-note {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 18px;
+    font-style: italic;
+    color: #3a3a3a;
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+}
+
+#captureTarget .capture-footer-note .highlight {
+    color: #e60000;
+    font-weight: 700;
 }
 
 /* --- Loading Overlay --- */
