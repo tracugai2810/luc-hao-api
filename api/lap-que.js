@@ -1181,7 +1181,7 @@ function generateCopyText(data) {
     text += "1. Thực chứng đối quỹ: Đối chiếu quá khứ/hiện tại trong quẻ, hiện trạng, tâm tư người hỏi (hào Thế, hào Tâm niệm, Quẻ chủ, nhật lệnh, nguyệt lệnh với các hào) với thực tế. Nguyệt lệnh chủ về quá khứ, Nhật lệnh chủ về hiện tại.\n";
     text += "2. Minh xác Dụng thần: Xác định chính xác Dụng thần theo sự việc hỏi. Hào động không bao giờ vô cớ, luôn xoay quanh hào Thế hoặc Dụng thần.\n";
     text += "3. Định tính cát hung: Dựa vào vượng suy, hào động, sinh khắc và quan hệ Dụng - Thế để dự đoán thành bại.\n";
-    text += "4. Phán đoán chi tiết: Phân tích sâu sắc thần sát, quẻ chủ - quẻ biến, lục thân, lục thần, hào vị, địa chi, hào động biến, hào tâm niệm, phục thần, phản ngâm, phục ngâm, 12 vòng trường sinh, tuần không, ám động, xung khắc hình hợp hại mộ tuyệt,.v.v. để mô phỏng diễn biến sự việc.\n";
+    text += "4. Phán đoán chi tiết: Phân tích sâu sắc thần sát, quẻ chủ - quẻ biến, lục thân, lục thần, địa chi, hào động biến, hào tâm niệm, phục thần, phản ngâm, phục ngâm, 12 vòng trường sinh, tuần không, ám động, xung khắc hình hợp hại mộ tuyệt,.v.v. để mô phỏng diễn biến sự việc.\n";
     text += "5. Giải đọc kiêm tượng: Xem thêm các thông tin mở rộng phụ trong quẻ (Xem này ứng kia).\n";
     text += "6. Xu cát tị hung & Lời khuyên: Đưa ra lời khuyên, tư vấn, định hướng thực tế, phương hướng hành động cải thiện kết cục.\n\n";
     text += "---\n[DỮ LIỆU QUẺ DỊCH CẦN LUẬN]:\n";
