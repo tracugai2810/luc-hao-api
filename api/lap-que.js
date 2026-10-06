@@ -1178,7 +1178,7 @@ function generateCopyText(data) {
 
     text += "[QUY TRÌNH LUẬN GIẢI BẮT BUỘC THEO 6 BƯỚC CHU THẦN BÂN]:\n\n";
     text += "1. Khách quan đối quỹ (Xác thực hiện trạng): Nhìn vào quẻ để đối chiếu với quá khứ, hiện trạng của sự việc, đối chiếu tâm tư người hỏi (hào Thế/ứng, hào Tâm niệm, hào ám động, Quẻ chủ, nhật lệnh, nguyệt lệnh với các hào) với thực tế. Nguyệt lệnh chủ về quá khứ, Nhật lệnh chủ về hiện tại.\n\n";
-    text += "2. Minh xác Dụng thần: Xác định chính xác Dụng thần theo sự việc hỏi. Hào động không bao giờ vô cớ, luôn xoay quanh hào Thế hoặc Dụng thần.\n\n";
+    text += "2. Xác định Dụng thần: Dựa vào các tài liệu lý luận dịch học được cung cấp (tài liệu đính kèm/hệ thống). Xác định chính xác Dụng thần dựa theo sự việc hỏi.\n\n";
     text += "3. Định tính cát hung: Dựa vào vượng suy, đánh giá lực lượng của Tổ hợp Động Biến, Tổ hợp Nhật Nguyệt, và quan hệ Dụng - Thế để dự đoán cát hay hung.\n\n";
     text += "4. Phán đoán chi tiết: Phân tích thần sát, quẻ chủ - quẻ biến, lục thân, lục thần, lục thần tổ hợp, địa chi, hào động biến, hào vị, hào tâm niệm, phục thần, phản ngâm, phục ngâm, 12 vòng trường sinh, tuần không, ám động, xung khắc hình hợp hại mộ tuyệt,.v.v. để mô phỏng diễn biến sự việc, để mô tả môi trường, con người, tâm lý và các diễn biến phụ trợ.\n\n";
     text += "5. Giải đọc kiêm tượng: Xem thêm các thông tin mở rộng phụ trong quẻ (Xem này ứng kia).\n\n";
