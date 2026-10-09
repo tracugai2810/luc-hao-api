@@ -83,19 +83,10 @@
   3. Quẻ Song Hạch Tâm và vai trò hào Ứng
   4. Phân tích Độc Phát, Độc Tĩnh và Toàn Động
 
-- **PHẦN XIV: CẨM NANG THỰC CHIẾN - TRA CỨU HÀO VỊ, LỤC THÂN, LỤC THẦN, 64 QUẺ & HÓA GIẢI**
-  1. Hệ thống an sao và tra cứu thần sát
-  2. Ý nghĩa tượng trưng của Hào vị, Lục thân, Lục thú
-  3. Tượng phong thủy & đời sống của 64 quẻ
-  4. Ứng dụng đoán Bệnh tật, Thai sản, Cầu tài, Tính cách
-  5. Phương pháp Hóa giải phong thủy theo Lục Hào Chu Thần Bân
-
 - **PHẦN XV: QUY TẮC BỔ TRỢ ĐẶC THÙ & BÍ KÝ THỰC CHIẾN TỔNG HỢP**
   1. Lý luận Tam Hình và Lục Hại
   2. Quẻ Du Hồn và Quẻ Quy Hồn
-  3. Hương Khuê Sàng Trướng (Chuyên Luận Hôn Nhân & Tình Dục)
-  4. Tinh Sát và Mưu Tinh (Hệ Thống Thần Sát Sáng Tạo)
-  5. Manh Phái Ứng Dụng Trong Luận Tính Cách & Diện Mạo
+  3. 13 Thần sát thực dụng của Chu Thần Bân
 
 ---
 ## PHẦN I: LÝ LUẬN XÁC ĐỊNH & LỰA CHỌN DỤNG THẦN
@@ -338,9 +329,12 @@ Chu Thần Bân đính chính một trong những sai lầm lớn nhất của c
   - *Toàn quẻ Phản ngâm:* Toàn bộ các hào của nội quẻ và ngoại quẻ đều phát động hóa tương xung (ví dụ Càn biến Khôn) -> Sự việc đảo lộn, lặp đi lặp lại nhiều lần, tiến thoái lưỡng nan, dằn vặt tổn thương.
   - *Nội Phản ngâm:* Bất an trong nội bộ gia đình, nội tâm dằn vặt, trăn trở khôn nguôi.
   - *Ngoại Phản ngâm:* Công việc, đối tác bên ngoài biến động, trắc trở, đổi thay liên tục.
+  - *Ý nghĩa & Tượng quẻ:* Biểu thị sự thay đổi thất thường, lặp đi lặp lại, thành rồi lại bại, bại rồi lại thành, làm việc gì cũng phải qua nhiều lần trắc trở, dời đổi mới xong. Hôn nhân / Tình cảm: Mâu thuẫn dai dẳng, chia tay rồi lại hòa giải, ý chí không kiên định, lúc hợp lúc tan; Công danh / Sự nghiệp: Công việc bị điều chuyển liên tục, thăng xuống thất thường, làm xong lại hủy bỏ làm lại; Tài vận: Tiền bạc tụ tán vô thường, khó giữ cố định; Bệnh tật: Bệnh tình trồi sụt, lúc tăng lúc giảm, kéo dài dai dẳng; Xuất hành: Đi nửa đường lại quay về, đi lại chật vật vất vả. *Lưu ý:* Phản ngâm chủ yếu mô tả tiến trình/trạng thái gian truân của sự việc, còn kết cục Cát Hung cuối cùng vẫn căn cứ vào vượng suy và sinh khắc của Dụng thần/Thế.
 - **Phục Ngâm (Động biến như một, rên rỉ nghẽn tắc):**
   - Hào động biến ra chi giống hệt bản thân (Tý biến Tý, Dần biến Dần...).
   - Tượng vạn sự đình trệ, bế tắc, không lối thoát, rên rỉ than khóc, bất đắc chí.
+  - Ý nghĩa & Tượng quẻ: Biểu thị trạng thái đình trệ, dậm chân tại chỗ, tiến thoái lưỡng nan, lo âu rên rỉ. Tâm lý: Nội tâm trăn trở, dằn dặt, do dự không quyết, nhiều nỗi phiền muộn u sầu; Sự việc: Bị kẹt cứng, tốn công uổng phí tâm cơ nhưng cuối cùng sự việc vẫn quay về vị trí ban đầu. *Lưu ý:* Phục ngâm chủ yếu mô tả tiến trình/trạng thái gian truân của sự việc, còn kết cục Cát Hung cuối cùng vẫn căn cứ vào vượng suy và sinh khắc của Dụng thần/Thế.
+
 
 ---
 
@@ -441,32 +435,20 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 - **Quẻ Ý:** Là sự thăng hoa của tượng quẻ, vượt thoát khỏi công thức sinh khắc máy móc để nhìn thẳng vào bản chất hình ảnh thực tế của sự việc.
 - Chu Thần Bân chỉ ra: Trong đại đa số trường hợp, Quẻ Lý quyết định Cát Hung cơ bản. Nhưng khi quẻ xuất hiện những dấu hiệu đặc thù rõ nét, **Quẻ Ý sẽ dẫn dắt Quẻ Lý**, giúp giải mã những quẻ mà công thức sinh khắc thông thường không thể giải thích nổi.
 
-### 2. Chi Tiết 12 Phương Pháp Phân Tích Quẻ Ý
+### 2. Chi Tiết 12 Phương Pháp Phân Tích Quẻ Ý (*điều kiện bắt buộc*, là chỉ áp dụng khi không có quẻ lý)
 
-1. **Quẻ Ý từ Tên Quẻ (Quẻ Danh):** Biểu tượng của 64 quẻ (Ví dụ: quẻ *Thái* là hanh thông giao hòa; quẻ *Bĩ* là bế tắc phân ly; quẻ *Đồng Nhân* là chung lòng hợp tác; quẻ *Tụng* là tranh cãi kiện tụng; quẻ *Cổ* là mục nát hư hỏng cần cải cách; quẻ *Khốn* là cùng quẫn kiệt quệ).
-2. **Quẻ Ý từ Nạp Âm Ngũ Hành:** Nạp âm của từng hào bổ trợ thêm tính chất vật lý của sự vật (Kim bạc kim, Giản hạ thủy, Tích lịch hỏa...).
-3. **Quẻ Ý từ Hào Vị (Không gian & Cấp bậc):**
-   - Hào 1 (Sơ hào): Nền móng, mặt đất, ngón chân, cấp dưới, người dân.
-   - Hào 2: Nhà cửa, phòng ngủ, cẳng chân, vợ/chồng, nhân viên.
-   - Hào 3: Cửa ngõ, phòng làm việc, đùi, hông, chức việc cơ sở.
-   - Hào 4: Cổng lớn, ngực, nội tạng, cơ quan cấp trên, phó ban, thứ trưởng.
-   - Hào 5: Đường đi, mặt, mắt, ngai vàng, tổng giám đốc, lãnh đạo cao nhất.
-   - Hào 6: Mái nhà, trời cao, đầu tóc, bậc tiền bối nghỉ hưu, cố vấn cấp cao.
-4. **Quẻ Ý từ Lục Thú (Tâm trạng & Tính chất sự việc):**
-   - *Thanh Long:* Hỷ sự, vui vẻ, chính trực, yến tiệc, tiền tài quang minh, con cái.
-   - *Chu Tước:* Văn thư, giấy tờ, tin tức, tranh cãi, khẩu thiệt, chim muông, thi cử.
-   - *Câu Trần:* Đất đai, nhà cửa, ruộng vườn, chậm trễ, giam cầm, ngột ngạt, việc cũ dây dưa.
-   - *Đằng Xà:* Quái dị, kinh sợ, hoang mang, giấc mộng, dối trá, lừa lọc, dây dưa như rắn quấn.
-   - *Bạch Hổ:* Hung hãn, máu me, thương tích, tai nạn xe cộ, tang chế, bệnh tật nan y, phẫu thuật, bạo lực.
-   - *Huyền Vũ:* Mờ ám, trộm cắp, bí mật, dâm dục, tiểu nhân, lừa đảo, dòng nước ngầm, chuyện khuất tất.
-5. **Quẻ Ý từ Thế Ứng Tương Hợp:** Khách chủ thuận hòa, đối tác đồng lòng, vợ chồng thấu hiểu.
-6. **Quẻ Ý từ Hào Biến Tương Hợp Với Dụng/Thế:** Hào động biến ra hào tương hợp với Dụng hoặc Thế -> Sự việc tuy quẻ lý bình thường nhưng lại bất ngờ thành công nhờ các mối quan hệ hỗ trợ bên lề.
-7. **Quẻ Ý từ Hào Biến Tương Xung:** Động biến ra hào tương xung với Dụng/Thế -> Dù việc có thành nhưng kết quả để lại vết rạn nứt, bất mãn trong lòng.
-8. **Quẻ Ý từ Hào Tâm Niệm:** Hào phản ánh tâm sự giấu kín của đương sự.
-9. **Quẻ Ý từ Hình Thái Độc Phát / Độc Tĩnh:** Sự việc chỉ xoay quanh một điểm then chốt duy nhất.
-10. **Quẻ Ý từ Bát Quái Tương Hỗ:** Nội quái và Ngoại quái tác động qua lại hình thành bối cảnh môi trường.
-11. **Quẻ Ý từ Quy Tắc Xu Cát Tị Hung:** Chỉ dẫn hành động thực tế để đảo ngược tình thế.
-12. **Quẻ Ý từ Tượng Hình Học Phản Chiếu Hiện Thực:** Các ký hiệu vạch quẻ tương ứng trực tiếp với đồ vật, kiến trúc thực tế bên ngoài đời thực.
+1. **Thế hóa dụng kỵ pháp:** Tự xem cho bản thân gieo được quẻ thế động tự biến ra dụng thần hoặc kỵ thần, lại không hồi đầu tác dụng hào thế (sinh, khắc, tiến, thoái, tuyệt) thì hóa dụng thần là cát, hóa kỵ thần là hung.
+2. **Dụng kỵ hóa lẫn nhau pháp:** Dụng thần phát động biến ra kỵ thần, hoặc kỵ thần phát động biến ra dụng thần, dụng thần biến ra cừu thần, cừu thần biến ra dụng thần -> đều là điểm dữ (thường trong quẻ xem thay mặt) - cừu thần là cái bị dụng thần khắc. Ví dụ thay mặt xem cho bố: Dụng thần là phụ mẫu động hóa ra tử tôn (tử tôn là cừu thần -> nên hung)
+3. **Quỷ dụng hóa lẫn nhau pháp:** Dụng thần biến ra quan quỷ hoặc quan quỷ biến ra dụng thần thì là tai họa dây dưa, dù dụng thần vượng tướng cũng khó sữa đổi điềm dữ của dụng quỷ hóa lẫn nhau. Ngoại trừ dụng thần là phụ mẫu động hóa ra quan quỷ là hồi đầu sinh (thì đây là quẻ lý rồi).
+4. **Thế động hóa quỷ pháp** Hào thế động hóa ra quan quỷ, hào biến lại không hồi đầu tác dụng lại với hào thế, cũng là điềm dữ. Nếu dụng thần là quan quỷ, thì khi này, hào thế hóa quan quỷ mà quan quỷ vượng là cát (tượng Thế hóa dụng thần); còn nếu quan quỷ suy thì là hung (tượng Thế động hóa quỷ).
+5. **Thế dụng bối hướng pháp:** Ví dụ dần mộc là hào thế, trong quẻ có dụng thần ngọ hỏa động biến xuất ra hào thân kim - dần thân xung nhau -> phán đoán là xấu. Tương tự nếu mà biến ra hào là hợp hào thế thì có thể phán đoán là cát. Trong quẻ nếu hào ứng động mà dụng thần không động, có thể dùng hào biến của hào ứng để phán đoán quẻ ý này.
+6. **Bắc cầu biến pháp:** Không có quẻ lý, thế dụng biến ra dần mộc, lại có hào khác là dần mộc biến ra ngọ hỏa. Thì có thể coi như thế dụng biến ra ngọ hỏa để phân tích cát hung. (Không hồi đầu sinh khắc, không phải phá, không phải trị nhật nguyệt, không phải tiến thoái đồng thời hào động, hào biến khác đó không có tác dụng đến dụng thần - khi này quẻ lý không rõ, thì mới sử dung quẻ ý này).
+7. **Khiên liên tụ hợp pháp:** Ví dụ nữ xem hôn nhân, Hào thế động biến ra quan quỷ là điềm tốt, tụ hợp. Loại thứ 2 là hào thế và dụng thần cùng trong tam hợp cục, ngụ ý được lợi (thường dùng hỏi đi đường, hỏi hôn nhân tình cảm, duyên phận, tụ họp) Cụ thể ví dụ, hào ứng là dụng thần, thế lại động biến ra hào có cùng ngũ hành dụng thần, là tụ họp, tương liên với cái khác, chứ không phải cái dụng thần cần hỏi.
+8. **Đại nhập xác nhận pháp:** Phương pháp này cũng gọi là "thế thân pháp" lấy người và sự việc tương quan với việc cần hỏi đưa vào hào trong quẻ. Ví dụ hỏi tình cảm, hào thế là ta, ứng là người kia, hào tương xung với hào thế là tình địch của ta. (thường dùng hào tương xung, tương hợp với dụng thần hoặc hào thế để luận, xung đại biểu đối thủ, hợp là bằng hữu trong hôn nhân thì là người phối ngẫu, tương đồng thuộc tính đại biểu đồng loại). Ví dụ cầu tài, thế là mùi thổ, tài động hóa ra tuất thổ thì nghĩa là tài bị người ta cướp mất.
+9. **Tàng hào xác nhận pháp:** Khi xem mục tiêu chỉ định, hoặc mục tiêu rõ ràng: như hỏi có thể thành hôn không, tìm ai đó có giúp được không, hợp tác có tài không, tìm ai đó được quan không, xuất ngoại có sự nghiệp không. Mà dụng thần tàng phục không lộ, là đặc thù của phương pháp này. Lúc này, hào ứng đại biểu mục tiêu, nếu dụng thần tàng phục và hào thế ứng tương xung hoặc tương đồng thuộc tính, thì ngụ ý cầu tại chỗ khác, không phải chỗ mà đã hỏi. Nếu dụng thần tàng ở hào ứng thì là điềm báo may mắn tìm đúng chỗ.
+10. **Gian hào cách trở pháp:** Là quẻ lý không thấy thông tin, thì hào động tại gian hào, nó là cách trở, là hung.
+11. **Xung hợp báo hiệu pháp:** Dụng thần phục tàng, hào độc phát không tác dụng thế dụng, không ở vị trí gian hào, không có quẻ lý gì cả. Khi này nó xung hoặc hợp dụng thần thì phán đoán. Xung biểu thị đi ngược với ý của dụng thần, nếu hào động đó hóa suy ngụ ý rời bỏ, ngược lại là điềm lành, nếu nó biến vượng thì báo trước sức mạnh đi ngược đang được tăng cường, không có chuyện tốt, là điềm hung.
+12. **Động động tương liên pháp:** Cát hung, ưu tiên phân tích hào động với hào động mà không cứng nhắc xem từng hào tác động với hào thế và dụng thần. Điều kiện thì thích hợp nhất khi xem việc có tính cạnh tranh, minh tranh ám đấu, cũng thường để xem việc ngắn hạn. Lâu dài thì xu thế dần dà vẫn về với hào thế (chỉ sợ không chờ được).
 
 ---
 
@@ -533,145 +515,45 @@ Khi cùng một vấn đề mà đương sự gieo nhiều quẻ trong thời gi
 
 ---
 
-## PHẦN XIV: CẨM NANG THỰC CHIẾN - TRA CỨU HÀO VỊ, LỤC THÂN, LỤC THẦN, 64 QUẺ & HÓA GIẢI
-
-### 1. Hệ Thống Tra Cứu Thần Sát Căn Bản
-
-- **Thiên Ất Quý Nhân:**
-  - Giáp Mậu Canh: Ngưu (Sửu), Dương (Mùi).
-  - Ất Kỷ: Thử (Tý), Hầu (Thân).
-  - Bính Đinh: Trư (Hợi), Kê (Dậu).
-  - Nhâm Quý: Xà (Tị), Thố (Mão).
-  - Lục Tân: Hổ (Dần), Mã (Ngọ).
-- **Dịch Mã (Di chuyển, biến động, xe cộ):**
-  - Thân - Tý - Thìn mã tại **Dần**.
-  - Dần - Ngọ - Tuất mã tại **Thân**.
-  - Tị - Dậu - Sửu mã tại **Hợi**.
-  - Hợi - Mão - Mùi mã tại **Tị**.
-- **Đào Hoa (Tình cảm, phong lưu, duyên dáng):**
-  - Thân - Tý - Thìn đào hoa tại **Dậu**.
-  - Dần - Ngọ - Tuất đào hoa tại **Mão**.
-  - Tị - Dậu - Sửu đào hoa tại **Ngọ**.
-  - Hợi - Mão - Mùi đào hoa tại **Tý**.
-- **Lộc Thần (Tài lộc, bổng lộc chính thức):**
-  - Giáp lộc Dần, Ất lộc Mão, Bính Mậu lộc Tị, Đinh Kỷ lộc Ngọ, Canh lộc Thân, Tân lộc Dậu, Nhâm lộc Hợi, Quý lộc Tý.
-- **Văn Xương (Học vấn, thi cử, bằng cấp, trí tuệ):**
-  - Giáp Tị, Ất Ngọ, Bính Mậu Thân, Đinh Kỷ Dậu, Canh Hợi, Tân Tý, Nhâm Dần, Quý Mão.
-
-### 2. Ý Nghĩa Thực Chiến Của Lục Thân
-
-- **Phụ Mẫu:** Bố mẹ, trưởng bối, thầy cô, nhà cửa, đất đai, bằng cấp, hợp đồng, giấy tờ, xe cộ, công văn, trang phục, thời tiết mưa gió.
-- **Huynh Đệ:** Anh chị em, bạn bè, đồng nghiệp, đối thủ cạnh tranh, kẻ cướp của, sự phá tài, chi phí, chia rẽ.
-- **Tử Tôn:** Con cái, học trò, cấp dưới, phúc đức, thuốc men, thầy thuốc, sự vui vẻ, du lịch, giải tỏa ưu phiền, khắc chế Quan Quỷ, nguồn sinh ra Tài (nguyên thần của Tài).
-- **Thê Tài:** Vợ, người yêu (nam xem), tiền bạc, của cải, hàng hóa, lương bổng, đồ ăn thức uống, dụng cụ sinh hoạt.
-- **Quan Quỷ:** Chức vụ, công danh, sếp, lãnh đạo, chính quyền, chồng/người yêu (nữ xem), kẻ địch, trộm cắp, ma quỷ, bệnh tật, tai họa, điều lo sợ, ưu hoạn.
-
-### 3. Tượng Phong Thủy Thực Chứng Của 64 Quẻ (Trích Yếu Cốt Lõi)
-
-- **Thuần Kiền:** Nhà cao tầng, nhà lớn, phòng khách rộng, bàn thờ gia tiên, trụ cột gia đình, kim loại quý, sếp lớn, máy móc cao cấp.
-- **Thuần Khôn:** Đất đai rộng lớn, đồng bằng, nhà trệt, tường bao, người mẹ, phụ nữ lớn tuổi, vật bằng sành sứ, vải vóc, tính tình nhu thuận dung chứa.
-- **Thuần Đoài:** Cửa ra vào, cổng chính, đồ kim khí, gương soi, vết nứt, đồ sứt mẻ, phụ nữ trẻ, miệng lưỡi, tiếng cười nói, hát xướng, thị phi.
-- **Thuần Ly:** Bếp ăn, đèn điện, cửa sổ, tranh ảnh, đồ điện tử, văn hóa, mắt, tim, tính tình nóng nảy, quảng cáo phô trương.
-- **Thuần Chấn:** Cửa đi lại, lối đi lớn, nhà xưởng, cây xanh lớn, chân tay, đồ phát ra tiếng động (chuông, loa), xe cộ di chuyển, sấm sét.
-- **Thuần Tốn:** Cửa ngõ gió lùa, cầu thang, quạt máy, điều hòa, ống dẫn khí, túi xách, dây thừng, người phụ nữ trưởng thành, kinh doanh buôn bán.
-- **Thuần Khảm:** Giếng nước, bể nước, nhà vệ sinh, cống rãnh, sông suối, nơi ẩm thấp tối tăm, thận, tai, xương khớp, rượu chè, cờ bạc, mưu mô ngầm.
-- **Thuần Cấn:** Phòng ngủ, giường ngủ, bàn thờ Thổ địa - Thần tài, bức tường chắn, tủ quần áo, đồi núi, đá tảng, mũi, lưng, nhà tù, nơi thanh tịnh tu tập.
-- **Thiên Phong Cấu:** Nhà liên kết, nhà đôi, gió lùa ngầm, phụ nữ bất ngờ xuất hiện.
-- **Địa Thiên Thái:** Khí trời đất giao hòa, thông suốt, ngã 3 ngã 4 giao thông, bằng cấp, điện thoại thông tin liên lạc thông suốt.
-- **Thiên Địa Bĩ:** Bế tắc, nội ngoại bất thông, người nước ngoài, đối lập cự tuyệt.
-- **Sơn Lôi Di:** Nhà bếp, quán ăn, giường tủ, phòng ăn, miệng lưỡi, đồ ăn uống, tích trữ lương thực.
-- **Trạch Thủy Khốn:** Nước rò rỉ, bồn rửa hỏng, toilet tắc, hoàn cảnh cùng quẫn bế tắc.
-- **Phong Thủy Hoán:** Nước chảy tán khí, vòi nước rò rỉ, thuyền bè, phao bơi, đồ vật trôi dạt di chuyển đi xa.
-- **Thủy Sơn Kiển:** Đường đi trắc trở gập ghềnh, cầu thang hẹp, hòn non bộ, người có tật ở chân.
-
-### 4. Ứng Dụng Thực Chiến: Đoán Bệnh Tật, Thai Sản, Cầu Tài
-
-- **Đoán Bệnh Tật:**
-  - *Quan Quỷ* là căn nguyên bệnh tật; ngũ hành của Quan Quỷ chỉ tính chất bệnh (Hỏa = sốt, viêm nhiễm, tim mạch; Thủy = đường tiết niệu, máu, thận, lạnh; Kim = phổi, xương, ho lao; Mộc = gan, mật, phong chứng; Thổ = tỳ vị, dạ dày, khối u).
-  - *Tử Tôn* là thuốc và bác sĩ; Tử Tôn vượng động thì gặp thầy gặp thuốc, bệnh mau lành. Tử Tôn hưu tù tuyệt tích thì vô phương cứu chữa.
-  - Hào vị lâm Quỷ: Hào 1 (chân), hào 2 (đùi, đầu gối, sinh dục), hào 3 (bụng, bàng quang), hào 4 (ngực, tim, phổi), hào 5 (cổ, họng, ngũ quan), hào 6 (đầu, não bộ).
-- **Đoán Thai Sản:**
-  - *Tử Tôn* là Dụng thần; hào Thai (Thai vị trong 12 cung) hiện trên quẻ thì chắc chắn mang thai.
-  - Tử Tôn lâm Dương hào, Dương quẻ = Sinh con trai.
-  - Tử Tôn lâm Âm hào, Âm quẻ = Sinh con gái.
-  - Tử Tôn động hóa Tuyệt, hóa Không, lâm Bạch Hổ phát động: Cần đề phòng sảy thai, sinh khó hoặc tổn thương thai nhi.
-- **Đoán Cầu Tài:**
-  - *Thê Tài* là Dụng thần, *Tử Tôn* là nguồn sinh tài (Nguyên thần), *Huynh Đệ* là thần cướp tài (Kỵ thần).
-  - Thê Tài vượng tướng, trì Thế hoặc sinh Thế, hợp Thế -> Tài lộc dồi dào, thu nhập chắc chắn.
-  - Huynh Đệ phát động khắc Tài -> Hao tài tốn của, bị lừa gạt, phá sản.
-  - Thê Tài động hóa Huynh Đệ -> Đầu tư ban đầu có lãi nhưng kết cục mất trắng (Hồi đầu khắc).
-
-### 5. Phương Pháp Hóa Giải Phong Thủy & Xu Cát Tị Hung Chu Thần Bân
-
-Chu Thần Bân xây dựng phương pháp hóa giải thực chứng dựa trên nguyên tắc Ngũ Hành Hoán Chuyển:
-
-- **Thông quan hóa giải (Khuyên giải, không dùng đối kháng):**
-  - Khi Kỵ thần động khắc Dụng thần, không dùng ngũ hành khắc lại Kỵ thần (vì sẽ tạo thành chiến cuộc xung đột dữ dội).
-  - *Dùng ngũ hành trung gian để Thông quan:*
-    - Kim khắc Mộc -> Dùng **Thủy** để Kim sinh Thủy, Thủy sinh Mộc (biến kẻ thù thành bạn).
-    - Mộc khắc Thổ -> Dùng **Hỏa** để Mộc sinh Hỏa, Hỏa sinh Thổ.
-    - Thổ khắc Thủy -> Dùng **Kim** để Thổ sinh Kim, Kim sinh Thủy.
-    - Thủy khắc Hỏa -> Dùng **Mộc** để Thủy sinh Mộc, Mộc sinh Hỏa.
-    - Hỏa khắc Kim -> Dùng **Thổ** để Hỏa sinh Thổ, Thổ sinh Kim.
-- **Bố trí vật phẩm hóa giải tại phương vị:**
-  - Tìm hào mang ngũ hành Thông quan nằm ở hào vị nào, cung quái nào trong nhà.
-  - Đặt vật phẩm phong thủy mang ngũ hành và năng lượng tương ứng tại phương vị đó vào đúng ngày giờ hoàng đạo được quẻ chỉ định (thường là ngày giờ hợp hoặc sinh cho hào Dụng thần).
-
----
-
 ## PHẦN XV: QUY TẮC BỔ TRỢ ĐẶC THÙ & BÍ KÝ THỰC CHIẾN TỔNG HỢP
 
 ### 1. Lý Luận Tam Hình và Lục Hại
 
 - **Tam Hình (Hình phạt, thương tổn, kiện tụng, tật ách):**
-  - *Dần - Tị - Thân:* Vô ân chi hình. Hào động phát động lâm tam hình chủ về vong ân bội nghĩa, bạn bè trở mặt, tai nạn xe cộ, dao kéo, kiện tụng quan trường.
-  - *Sửu - Mùi - Tuất:* Trì thế chi hình. Chủ về ỷ quyền thế làm càn, bất hòa đất đai ruộng vườn, nội bộ người thân tranh chấp di sản, tổn thương tỳ vị.
+  - Biểu thị các sự việc mang tính chất trói buộc, áp lực ngoại giới, tai hoạ thể xác/tinh thần, hoặc sự can thiệp của pháp luật/quy chế. Tượng Ước thúc, Câu thúc, Trói buộc: Sự việc hay con người ở vào trạng thái bị gò bó, không được tự do, bị quy trình, thủ tục, pháp lý hoặc hoàn cảnh "trói tay buộc chân". Tượng Bệnh tật, Đau đớn, Thương tổn: Biểu thị thân thể bị tổn thương (phẫu thuật, va chạm, tai nạn), hoặc tâm lý bị dằn dằn vọt, đau đớn, hành hạ. ượng Xử phạt, Hình phạt, Kiện tụng: Biểu thị sự việc va chạm với chính quyền, công an, bị phạt tiền, bị kỷ luật, tranh chấp tòa án hoặc chịu án phạt.
+  - *Tương hình: Tị - Thân - Dần, Tý - Mão, Ngọ - Hợi - Dậu, hoặc Sửu - Thìn / Thìn - Mùi / Sửu - Mùi* Tượng: Tai họa, áp lực, sự trói buộc hay xử phạt do nhân tố ngoại giới hoặc người khác gây ra cho chủ quẻ.
   - *Tý - Mão:* Vô lễ chi hình. Chủ về chuyện dâm ô, quan hệ bất chính làm bại hoại gia phong, xúc phạm tôn ti trật tự.
-  - *Thìn - Thìn, Ngọ - Ngọ, Dậu - Dậu, Hợi - Hợi:* Tự hình. Bản thân tự làm khổ mình, trầm cảm, tự sát, suy nghĩ quẩn quanh, tự chuốc lấy phiền não.
+  - *Tự hình (Sự tác động do chính bản thân): Thìn hình Thìn, Mùi hình Mùi (thuộc nhóm thổ)* Tượng: Rắc rối, dằn vặt, sai lầm hay tổn hại do chính bản thân tự suy nghĩ quẩn, tự tạo áp lực hoặc tự mình gây ra (tự làm khổ mình).
   - *Quy tắc Chu Thần Bân:* Tam hình không quyết định sinh tử cát hung độc lập mà bổ trợ cho mức độ khốc liệt của hung sự. Nếu quẻ đã định tính hung mà gặp tam hình thì hậu quả cực kỳ đau xót.
 - **Lục Hại (Tương Hại - Ngầm hãm hại, đố kỵ, phản trắc):**
   - Tý - Mùi, Sửu - Ngọ, Dần - Tị, Mão - Thìn, Thân - Hợi, Dậu - Tuất.
-  - Chủ về bằng mặt không bằng lòng, sau lưng đâm lén, ghen ghét đố kỵ, bệnh tật ngầm khó phát hiện, hôn nhân bất hòa ngấm ngầm.
+  - Tượng Khúc mắc âm thầm, Nghi kỵ (Tương hỗ nghi kỵ): Bằng mặt không bằng lòng, bên ngoài xã giao bình thường nhưng bên trong âm thầm đề phòng, hoài nghi, có khúc mắc không thể nói ra. Tượng Dính mắc, Liên lụy (Tương hỗ liên lụy): Trạng thái "muốn hợp khó tan, muốn rời khó bỏ", gượng ép phải đi cùng nhau, bị người khác kéo lây rắc rối hoặc mình làm ảnh hưởng tới người khác. Tượng Trì trệ, Bất thông (Khó lưu thông): Dòng chảy công việc bị nghẽn, giao tiếp bị tắc gián đoạn, thông tin bị bóp méo hoặc cảm xúc bị đè nén không thể giải tỏa.
 
 ### 2. Quẻ Du Hồn và Quẻ Quy Hồn
 
 - **Quẻ Du Hồn (Quẻ thứ 7 trong Bát cung):**
   - Tâm tính: Bất định, đứng núi này trông núi nọ, phiêu bạt vô định, hay thay đổi chủ kiến, thích ngao du di chuyển.
   - Sự việc: Chưa thể an định, đang trong quá trình trôi nổi biến động, xuất hành thì đi xa lâu về, mưu sự thì khó cố định địa điểm.
+  - Ý nghĩa & Tượng quẻ: "Du hồn đi vạn dặm". Biểu thị sự dịch chuyển, vô định, biến động không ngừng, tâm trí thiếu định hướng, thái độ hay thay đổi. Ứng dụng: Thích hợp với các việc có tính chất đi xa, du lịch, xuất hành, chuyển đổi ngắn hạn; nhưng bất lợi khi cầu sự ổn định lâu dài hay muốn gắn bó cố định.
 - **Quẻ Quy Hồn (Quẻ thứ 8 trong Bát cung):**
   - Tâm tính: Hoài cổ, nhớ về chốn cũ, thu liễm tâm tư, muốn quay đầu trở lại nguồn cội.
   - Sự việc: Đi xa sắp về, việc cũ lặp lại, sự việc đi một vòng rồi quay về điểm xuất phát ban đầu, khó bứt phá mở rộng ra ngoài.
+  - Ý nghĩa & Tượng quẻ: "Quy hồn gom về chốn cũ" / "Khôi phục hiện trạng". Biểu thị sự thu gọn, quay về chốn cũ, phục hồi trạng thái ban đầu, dừng sự mở rộng ra bên ngoài. Ứng dụng: Thích hợp cho việc trở về quê hương, nối lại quan hệ cũ, củng cố nền tảng sẵn có; không thích hợp cho việc mở rộng thị trường hay phát triển hướng đi mới. *Lưu ý:* Tương tự Du hồn, Quy hồn cũng chỉ phản ánh Tượng xu hướng của sự việc chứ không quyết định Cát Hung định đoạt. 
 
-### 3. Hương Khuê Sàng Trướng (Chuyên Luận Hôn Nhân & Tình Dục)
+### 3. 13 Thần sát thực dụng của Chu Thần Bân
 
-- **Hương Khuê:** Là hào đại diện cho khuê phòng, nơi ở của nữ giới (thường lấy hào 2 hoặc hào lâm Thê Tài).
-- **Sàng Trướng (Giường chiếu):** Thường lấy hào 2 hoặc hào lâm Mộc / Cấn quái.
-- **Ứng dụng thực chiến:**
-  - Hào Thê Tài hoặc Quan Quỷ lâm Huyền Vũ, Đằng Xà giao hợp tại hào 2: Tượng có chuyện tư tình vụng trộm, quan hệ ngoài luồng.
-  - Hào Sàng Trướng bị lâm Lục Xung, Nguyệt Phá: Tượng vợ chồng ly thân, lạnh nhạt chăn gối, chia phòng ngủ riêng.
-  - Hào Sàng Trướng lâm Bạch Hổ phát động: Có bạo lực gia đình, hoặc sinh nở rách dạ con, phẫu thuật phụ khoa.
-
-### 4. Tinh Sát và Mưu Tinh (Hệ Thống Thần Sát Sáng Tạo)
-
-- Chu Thần Bân phát triển khái niệm **Mưu Tinh**:
-  - Mưu tinh là vị trí phản ánh trí mưu, mưu kế, toan tính sâu xa của đương sự trong cuộc cờ.
-  - Hào lâm Mưu tinh vượng tướng sinh Thế: Bản thân có mưu sâu kế độc, quyền mưu đắc thắng.
-  - Hào lâm Mưu tinh hưu tù phục dưới hào Quỷ: Bị trúng kế gian của người khác, toan tính sai lầm dẫn đến sập bẫy.
-
-### 5. Manh Phái Ứng Dụng Trong Luận Tính Cách & Diện Mạo
-
-- **Theo Ngũ Hành Trì Thế:**
-  - *Thế lâm Mộc:* Nhân từ, thẳng thắn, trắc ẩn, dáng người cao gầy, thanh tú.
-  - *Thế lâm Hỏa:* Nhiệt tình, nóng nảy, lễ độ, vội vã, mặt nhọn hoặc đỏ, mắt sáng.
-  - *Thế lâm Thổ:* Thành thật, đôn hậu, thủ tín, chậm chạp, cố chấp, dáng người đậm, lưng dày, mặt chữ điền.
-  - *Thế lâm Kim:* Trọng nghĩa, cương trực, dứt khoát, sát phạt, tiếng nói vang khỏe, da trắng, răng đều.
-  - *Thế lâm Thủy:* Trí tuệ, linh hoạt, giảo hoạt, biến hóa khôn lường, dễ thích nghi, mắt đảo nhanh, thích lãng mạn.
-- **Theo Lục Thần Trì Thế:**
-  - Thế lâm Thanh Long: Hòa nhã, vui vẻ, thích ăn diện, lịch thiệp.
-  - Thế lâm Chu Tước: Hay nói, hoạt ngôn, thích tranh luận, dễ vướng thị phi khẩu thiệt.
-  - Thế lâm Câu Trần: Trầm mặc, cục mịch, chậm chạp, giữ lời hứa, nội tâm khép kín.
-  - Thế lâm Đằng Xà: Đa nghi, xảo quyệt, biến ảo, khó lường, hay lo sợ vẩn vơ, tính tình cổ quái.
-  - Thế lâm Bạch Hổ: Cương cường, dữ dằn, bạo lực, dũng cảm, quyết đoán, dễ nổi trận lôi đình.
-  - Thế lâm Huyền Vũ: Thâm trầm, mưu mô, giấu kín tâm sự, ham mê sắc dục, thích kiếm tiền ngầm.
+  - Quý Nhân: Ngụ ý về quan hệ nhân tế (mối quan hệ giữa người với người), người giúp đỡ, hỗ trợ, quý nhân nâng đỡ.
+  - Lộc Thần: Ngụ ý về tài lộc, lợi ích hồi báo, số lượng tài lộc nhiều hay ít, có hay không có tài lộc.
+  - Dương Nhận / Kình Dương: Ngụ ý về công việc, đơn vị công tác, vật phẩm, hạng mục, chuyên môn hoặc tính chất chuyên nghiệp.
+  - Văn Xương: Ngụ ý về năng lực, trình độ, kỹ năng, tính kỹ thuật, độ khó, khả năng trù hoạch và lập kế hoạch.
+  - Dịch Mã: Ngụ ý về sự bôn ba, khoảng cách xa gần, sự lưu động, chuyển động, trạng thái động hay tĩnh.
+  - Đào Hoa (Hàm Trì): Ngụ ý về nữ tính, tình cảm, trẻ con, quảng cáo, trang hoàng, vẻ bề ngoài, trình độ, vinh quang, bằng cấp, giấy tờ thủ tục hoặc chứng nhận.
+  - Tướng Tinh: Ngụ ý về tầm quan trọng, trình độ, biên độ, hiệu suất làm việc hoặc quy mô sự việc.
+  - Kiếp Sát: Ngụ ý về nan quan, trở ngại, kiếp số, vấn đề nan giải, phiền não (mang tính chất dài hạn hoặc tổng thể).
+  - Hoa Cái: Ngụ ý về trạng thái bị động, bất đắc dĩ, sự khác lạ, cổ quái, cá tính, sự cô độc hoặc tính cách đặc thù.
+  - Tai Sát: Ngụ ý về nan quan, trở ngại, vấn đề hoặc cản trở mang tính chất ngắn hạn, sắp sửa xảy ra.
+  - Mưu Tinh: Ngụ ý về mong muốn nội tại, ý đồ thầm kín, kế hoạch hoặc mưu đồ tính toán trong lòng.
+  - Thiên Y: Ngụ ý về tật bệnh, y dược, bác sĩ, việc chữa trị và tình trạng sức khỏe.
+  - Thiên Hỷ: Ngụ ý về cửa hàng, tin vui, chuyện hỷ sự, việc mừng gõ cửa.
 
 ---
