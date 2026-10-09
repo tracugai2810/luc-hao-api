@@ -9,7 +9,6 @@
 > 5. *Lục Hào Cổ Bốc Tổng Luận Thiên (Quyển 3)*
 > 6. *Lục Hào Cổ Bốc Tổng Luận Thiên (Quyển 4)*
 > 7. *Lục Hào Cổ Thệ Chân Thuyên Tiến Giai Thuyên (Quyển 5)*
-> 8. *Hệ thống ghi chú thực chiến tổng hợp (Cóp nhặt)*
 
 ---
 
