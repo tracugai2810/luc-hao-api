@@ -25,69 +25,68 @@
   1. Bản chất của Tổ hợp Động Biến và Tổ hợp Nhật Nguyệt
   2. Thứ bậc tác động và quyền ưu tiên của lực lượng
   3. Ba đại nguyên tắc định hướng xu thế mâu thuẫn
-  4. Công thức thông dụng về vượng suy và tương tác lực
+  4. Công thức thông dụng về vượng suy và tương tác lực. Áp dung tự xem cho bản thân
 
 - **PHẦN III: HÀO ĐỘNG HỮU DỤNG & VÔ DỤNG - TIẾN THOÁI THẦN**
   1. Tiêu chí phân định Hào Động Hữu Dụng
-  2. Bốn điều kiện Hào Động Vô Dụng
-  3. Lý luận Tiến Thần và Thoái Thần
-  4. Động biến liên hoàn và giải mã hào vô dụng biến hữu dụng
+  2. Bốn điều kiện Hào Động Vô Dụng (Mất lực tuyệt đối)
+  3. Lý luận Tiến Thần và Thoái Thần chuyên sâu
 
 - **PHẦN IV: TUẦN KHÔNG, NGUYỆT PHÁ & ÁM ĐỘNG CHUYÊN SÂU**
   1. Chân Không và Giả Không (Bản chất Không Vong)
   2. Thật Giả Nguyệt Phá và Hóa Phá
-  3. Lý luận Ám Động: Điều kiện hình thành và quy tắc "Ám động thuận thời thì ứng"
+  3. Lý luận Ám Động chuyên sâu
 
 - **PHẦN V: TAM MỘ LÝ LUẬN, 12 CUNG TRƯỜNG SINH & TUYỆT XỨ PHÙNG SINH**
-  1. Lý luận Tam Mộ: Mộ Nhật, Mộ Động, Mộ Biến (Khẳng định KHÔNG CÓ Mộ Nguyệt)
-  2. Bản chất Tứ Mộ thực tế chỉ là Nhị Mộ
-  3. Mười hai cung Trường sinh ứng dụng trong cát hung và ứng kỳ
-  4. Tuyệt xứ phùng sinh và Hóa tuyệt
+  1. Lý luận Tam Mộ: Khẳng định tuyệt đối KHÔNG CÓ Mộ Nguyệt
+  2. Bản chất "Tứ Mộ thực tế chỉ là Nhị Mộ"
+  3. Mười hai cung Trường sinh trong Cát Hung & Ứng Kỳ
+  4. Tuyệt xứ phùng sinh & Hóa tuyệt
 
 - **PHẦN VI: LỤC HỢP, LỤC XUNG, TAM HỢP CỤC, PHẢN NGÂM & PHỤC NGÂM**
   1. Bản chất và ứng dụng của Lục Xung
-  2. Bản chất và ứng dụng của Lục Hợp (Hợp khởi, Hợp trói)
-  3. Lục Xung và Lục Hợp biến hóa lẫn nhau
+  2. Bản chất và ứng dụng của Lục Hợp
+  3. Lục Xung, Lục Hợp biến hóa lẫn nhau
   4. Lý luận Tam Hợp Cục và điều kiện thành cục
-  5. Phản Ngâm: Toàn quẻ, nội quẻ, ngoại quẻ
-  6. Phục Ngâm: Trì trệ và nghẽn tắc
+  5. Phản Ngâm và Phục Ngâm
 
 - **PHẦN VII: TÀNG PHỤC TOÀN LUẬN (PHI THẦN & PHỤC THẦN)**
   1. Cơ chế tìm Phục Thần
   2. Ngũ loại tương tác giữa Phi Thần và Phục Thần
-  3. Quy tắc "Phi thần không phá"
-  4. Ứng dụng Phục thần ở phương diện Cát Hung vs Ứng Kỳ
+  3. Quy tắc vàng "Phi Thần không phá"
+  4. Ứng dụng Phục thần trong Cát Hung vs Ứng Kỳ
 
-- **PHẦN IX: PHÂN BIỆT QUẺ SỰ TÌNH & QUẺ TÂM TÍNH / TÂM THÁI**
+- **PHẦN VIII: PHÂN BIỆT QUẺ SỰ TÌNH & QUẺ TÂM TÍNH / TÂM THÁI**
   1. Định nghĩa và ranh giới phân định
-  2. Cơ chế giải mã Quẻ Tâm Thái (Tử Tôn giải ưu, Quan Quỷ ưu hoạn)
+  2. Cơ chế giải mã Quẻ Tâm Thái độc quyền Chu Thần Bân
   3. Sự chuyển hóa giữa tâm tính và sự tình
 
-- **PHẦN X: QUẺ TĨNH TOÀN THUYẾT - TAM BỘ KHÚC ĐỊNH TÍNH**
-  1. Đặc thù của quẻ không có hào động
-  2. Tam bộ khúc định tính quẻ tĩnh: Bước 1, Bước 2, Bước 3
+- **PHẦN IX: QUẺ TĨNH TOÀN THUYẾT - TAM BỘ KHÚC ĐỊNH TÍNH**
+  1. Đặc thù của quẻ tĩnh (Cả 6 hào đều bất động)
+  2. "Tam Bộ Khúc" định tính quẻ tĩnh của Chu Thần Bân
 
-- **PHẦN XI: QUẺ Ý TOÀN BIÊN - 12 PHƯƠNG PHÁP PHÂN TÍCH QUẺ Ý**
+- **PHẦN X: QUẺ Ý TOÀN BIÊN - 12 PHƯƠNG PHÁP PHÂN TÍCH QUẺ Ý**
   1. Mối quan hệ giữa Quẻ Lý và Quẻ Ý
-  2. Chi tiết 12 phương pháp phân tích Quẻ Ý
+  2. Chi tiết 12 phương pháp phân tích Quẻ Ý (*điều kiện bắt buộc*, là chỉ áp dụng khi không có quẻ lý)
 
-- **PHẦN XII: TIẾN GIAI CHUYÊN SÂU - ĐỐI QUỸ & ĐỘC TÂM THUẬT**
+- **PHẦN XI: TIẾN GIAI CHUYÊN SÂU - ĐỐI QUỸ & ĐỘC TÂM THUẬT**
   1. Đối quỹ thực chứng: Nắm bắt Quá khứ và Hiện trạng
   2. Độc tâm thuật: Xuyên thấu tâm lý người cầu bốc
-  3. Quẻ Chí Đạo và Quẻ Hiện Trạng
+  3. Quẻ Chỉ Đạo và Quẻ Hiện Trạng
 
-- **PHẦN XIII: CÁC DẠNG QUẺ ĐẶC THÙ & BIẾN BÁO NÂNG CAO**
+- **PHẦN XII: CÁC DẠNG QUẺ ĐẶC THÙ & BIẾN BÁO NÂNG CAO**
   1. Quẻ có tác dụng trong thời gian hạn định
   2. Nguyên tắc đặc thù khi xem quẻ liên tiếp
-  3. Quẻ Song Hạch Tâm và vai trò hào Ứng
+  3. Quẻ Song Hạch Tâm và tác dụng hào Ứng
   4. Phân tích Độc Phát, Độc Tĩnh và Toàn Động
 
-- **PHẦN XV: QUY TẮC BỔ TRỢ ĐẶC THÙ & BÍ KÝ THỰC CHIẾN TỔNG HỢP**
+- **PHẦN XIII: QUY TẮC BỔ TRỢ ĐẶC THÙ & BÍ KÝ THỰC CHIẾN TỔNG HỢP**
   1. Lý luận Tam Hình và Lục Hại
   2. Quẻ Du Hồn và Quẻ Quy Hồn
   3. 13 Thần sát thực dụng của Chu Thần Bân
 
 ---
+
 ## PHẦN I: LÝ LUẬN XÁC ĐỊNH & LỰA CHỌN DỤNG THẦN
 
 ### 1. Phân Biệt Chủ Quan Lấy Dụng và Khách Quan Lấy Dụng
@@ -334,7 +333,6 @@ Chu Thần Bân đính chính một trong những sai lầm lớn nhất của c
   - Tượng vạn sự đình trệ, bế tắc, không lối thoát, rên rỉ than khóc, bất đắc chí.
   - Ý nghĩa & Tượng quẻ: Biểu thị trạng thái đình trệ, dậm chân tại chỗ, tiến thoái lưỡng nan, lo âu rên rỉ. Tâm lý: Nội tâm trăn trở, dằn dặt, do dự không quyết, nhiều nỗi phiền muộn u sầu; Sự việc: Bị kẹt cứng, tốn công uổng phí tâm cơ nhưng cuối cùng sự việc vẫn quay về vị trí ban đầu. *Lưu ý:* Phục ngâm chủ yếu mô tả tiến trình/trạng thái gian truân của sự việc, còn kết cục Cát Hung cuối cùng vẫn căn cứ vào vượng suy và sinh khắc của Dụng thần/Thế.
 
-
 ---
 
 ## PHẦN VII: TÀNG PHỤC TOÀN LUẬN (PHI THẦN & PHỤC THẦN)
@@ -371,7 +369,7 @@ Chu Thần Bân nhấn mạnh nguyên lý độc đáo:
 
 ---
 
-## PHẦN IX: PHÂN BIỆT QUẺ SỰ TÌNH & QUẺ TÂM TÍNH / TÂM THÁI
+## PHẦN VIII: PHÂN BIỆT QUẺ SỰ TÌNH & QUẺ TÂM TÍNH / TÂM THÁI
 
 ### 1. Định Nghĩa và Ranh Giới Phân Định
 
@@ -400,7 +398,7 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 
 - Đôi khi người hỏi cất tiếng hỏi việc làm ăn (sự tình), nhưng trên quẻ Dụng thần Thê Tài hoàn toàn ẩn tàng, quẻ chỉ hiện toàn tượng Quan Quỷ và Tử Tôn xung khắc kịch liệt -> Chu Thần Bân chỉ ra: Quẻ đã tự động chuyển hóa thành quẻ tâm thái, phản ánh tâm trạng bế tắc, khủng hoảng tinh thần của người hỏi chứ không còn là chuyện lời lỗ tiền bạc đơn thuần nữa.
 
-## PHẦN X: QUẺ TĨNH TOÀN THUYẾT - TAM BỘ KHÚC ĐỊNH TÍNH
+## PHẦN IX: QUẺ TĨNH TOÀN THUYẾT - TAM BỘ KHÚC ĐỊNH TÍNH
 
 ### 1. Đặc Thù của Quẻ Tĩnh (Cả 6 Hào Đều Bất Động)
 
@@ -426,7 +424,7 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 
 ---
 
-## PHẦN XI: QUẺ Ý TOÀN BIÊN - 12 PHƯƠNG PHÁP PHÂN TÍCH QUẺ Ý
+## PHẦN X: QUẺ Ý TOÀN BIÊN - 12 PHƯƠNG PHÁP PHÂN TÍCH QUẺ Ý
 
 ### 1. Mối Quan Hệ Giữa Quẻ Lý và Quẻ Ý
 
@@ -451,7 +449,7 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 
 ---
 
-## PHẦN XII: TIẾN GIAI CHUYÊN SÂU - ĐỐI QUỸ & ĐỘC TÂM THUẬT
+## PHẦN XI: TIẾN GIAI CHUYÊN SÂU - ĐỐI QUỸ & ĐỘC TÂM THUẬT
 
 ### 1. Đối Quỹ Thực Chứng: Nắm Bắt Quá Khứ và Hiện Trạng
 
@@ -483,7 +481,7 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 
 ---
 
-## PHẦN XIII: CÁC DẠNG QUẺ ĐẶC THÙ & BIẾN BÁO NÂNG CAO
+## PHẦN XII: CÁC DẠNG QUẺ ĐẶC THÙ & BIẾN BÁO NÂNG CAO
 
 ### 1. Quẻ Có Tác Dụng Trong Thời Gian Hạn Định
 
@@ -514,19 +512,24 @@ Khi cùng một vấn đề mà đương sự gieo nhiều quẻ trong thời gi
 
 ---
 
-## PHẦN XV: QUY TẮC BỔ TRỢ ĐẶC THÙ & BÍ KÝ THỰC CHIẾN TỔNG HỢP
+## PHẦN XIII: QUY TẮC BỔ TRỢ ĐẶC THÙ & BÍ KÝ THỰC CHIẾN TỔNG HỢP
 
 ### 1. Lý Luận Tam Hình và Lục Hại
 
 - **Tam Hình (Hình phạt, thương tổn, kiện tụng, tật ách):**
-  - Biểu thị các sự việc mang tính chất trói buộc, áp lực ngoại giới, tai hoạ thể xác/tinh thần, hoặc sự can thiệp của pháp luật/quy chế. Tượng Ước thúc, Câu thúc, Trói buộc: Sự việc hay con người ở vào trạng thái bị gò bó, không được tự do, bị quy trình, thủ tục, pháp lý hoặc hoàn cảnh "trói tay buộc chân". Tượng Bệnh tật, Đau đớn, Thương tổn: Biểu thị thân thể bị tổn thương (phẫu thuật, va chạm, tai nạn), hoặc tâm lý bị dằn vọt, đau đớn, hành hạ. tượng Xử phạt, Hình phạt, Kiện tụng: Biểu thị sự việc va chạm với chính quyền, công an, bị phạt tiền, bị kỷ luật, tranh chấp tòa án hoặc chịu án phạt.
+  - Biểu thị các sự việc mang tính chất trói buộc, áp lực ngoại giới, tai hoạ thể xác/tinh thần, hoặc sự can thiệp của pháp luật/quy chế.
+  - *Tượng Ước thúc, Câu thúc, Trói buộc:* Sự việc hay con người ở vào trạng thái bị gò bó, không được tự do, bị quy trình, thủ tục, pháp lý hoặc hoàn cảnh "trói tay buộc chân".
+  - *Tượng Bệnh tật, Đau đớn, Thương tổn:* Biểu thị thân thể bị tổn thương (phẫu thuật, va chạm, tai nạn), hoặc tâm lý bị dằn vọt, đau đớn, hành hạ.
+  - *Tượng Xử phạt, Hình phạt, Kiện tụng:* Biểu thị sự việc va chạm với chính quyền, công an, bị phạt tiền, bị kỷ luật, tranh chấp tòa án hoặc chịu án phạt.
   - *Tương hình: Tị - Thân - Dần, Tý - Mão, Ngọ - Hợi - Dậu, hoặc Sửu - Thìn / Thìn - Mùi / Sửu - Mùi* Tượng: Tai họa, áp lực, sự trói buộc hay xử phạt do nhân tố ngoại giới hoặc người khác gây ra cho chủ quẻ.
   - *Tý - Mão:* Vô lễ chi hình. Chủ về chuyện dâm ô, quan hệ bất chính làm bại hoại gia phong, xúc phạm tôn ti trật tự.
   - *Tự hình (Sự tác động do chính bản thân): Thìn hình Thìn, Mùi hình Mùi (thuộc nhóm thổ)* Tượng: Rắc rối, dằn vặt, sai lầm hay tổn hại do chính bản thân tự suy nghĩ quẩn, tự tạo áp lực hoặc tự mình gây ra (tự làm khổ mình).
   - *Quy tắc Chu Thần Bân:* Tam hình không quyết định sinh tử cát hung độc lập mà bổ trợ cho mức độ khốc liệt của hung sự. Nếu quẻ đã định tính hung mà gặp tam hình thì hậu quả cực kỳ đau xót.
 - **Lục Hại (Tương Hại - Ngầm hãm hại, đố kỵ, phản trắc):**
   - Tý - Mùi, Sửu - Ngọ, Dần - Tị, Mão - Thìn, Thân - Hợi, Dậu - Tuất.
-  - Tượng Khúc mắc âm thầm, Nghi kỵ (Tương hỗ nghi kỵ): Bằng mặt không bằng lòng, bên ngoài xã giao bình thường nhưng bên trong âm thầm đề phòng, hoài nghi, có khúc mắc không thể nói ra. Tượng Dính mắc, Liên lụy (Tương hỗ liên lụy): Trạng thái "muốn hợp khó tan, muốn rời khó bỏ", gượng ép phải đi cùng nhau, bị người khác kéo lây rắc rối hoặc mình làm ảnh hưởng tới người khác. Tượng Trì trệ, Bất thông (Khó lưu thông): Dòng chảy công việc bị nghẽn, giao tiếp bị tắc gián đoạn, thông tin bị bóp méo hoặc cảm xúc bị đè nén không thể giải tỏa.
+  - *Tượng Khúc mắc âm thầm, Nghi kỵ (Tương hỗ nghi kỵ):* Bằng mặt không bằng lòng, bên ngoài xã giao bình thường nhưng bên trong âm thầm đề phòng, hoài nghi, có khúc mắc không thể nói ra.
+  - *Tượng Dính mắc, Liên lụy (Tương hỗ liên lụy):* Trạng thái "muốn hợp khó tan, muốn rời khó bỏ", gượng ép phải đi cùng nhau, bị người khác kéo lây rắc rối hoặc mình làm ảnh hưởng tới người khác.
+  - *Tượng Trì trệ, Bất thông (Khó lưu thông):* Dòng chảy công việc bị nghẽn, giao tiếp bị tắc gián đoạn, thông tin bị bóp méo hoặc cảm xúc bị đè nén không thể giải tỏa.
 
 ### 2. Quẻ Du Hồn và Quẻ Quy Hồn
 
