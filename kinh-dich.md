@@ -59,11 +59,6 @@
   3. Quy tắc "Phi thần không phá"
   4. Ứng dụng Phục thần ở phương diện Cát Hung vs Ứng Kỳ
 
-- **PHẦN VIII: CÔNG THỨC QUY NẠP ỨNG KỲ CHUẨN XÁC**
-  1. Khác biệt giữa phán đoán Cát Hung và suy đoán Ứng Kỳ
-  2. Nguyên lý chuyển đổi Nhật Nguyệt trong ứng kỳ
-  3. Hệ thống công thức quy nạp ứng kỳ thông dụng của Chu Thần Bân
-
 - **PHẦN IX: PHÂN BIỆT QUẺ SỰ TÌNH & QUẺ TÂM TÍNH / TÂM THÁI**
   1. Định nghĩa và ranh giới phân định
   2. Cơ chế giải mã Quẻ Tâm Thái (Tử Tôn giải ưu, Quan Quỷ ưu hoạn)
@@ -129,8 +124,8 @@ Khi trên quẻ xuất hiện nhiều hào cùng Lục thân của Dụng thần
 
 ### 4. Nhật, Nguyệt Hoặc Hào Biến Làm Dụng Thần
 
-- **Nhật Nguyệt làm Dụng Thần:** Khi quẻ không hiện Dụng thần nhưng Nhật hoặc Nguyệt là Dụng thần, đây là tượng "Dụng thần treo ở trên cao", sự việc được sự hỗ trợ mạnh mẽ của hoàn cảnh bên ngoài, cát hung thường ứng rất nhanh theo lệnh ngày tháng.
-- **Hào Biến làm Dụng Thần:** Khi hào động biến ra Dụng thần, sự việc ban đầu chưa có nhưng sau này sẽ biến đổi sinh ra đối tượng đó.
+- **Nhật Nguyệt làm Dụng Thần:** Khi quẻ không hiện Dụng thần nhưng Nhật hoặc Nguyệt là Dụng thần, đây là tượng "Dụng thần treo ở trên cao", sự việc được sự hỗ trợ mạnh mẽ của hoàn cảnh bên ngoài, cát hung thường ứng rất nhanh theo lệnh ngày tháng. Dụng thần trường hợp này sinh thế là cát, khắc thế là hung.
+- **Hào Biến làm Dụng Thần:** Khi hào động biến ra Dụng thần, sự việc ban đầu chưa có nhưng sau này sẽ biến đổi sinh ra đối tượng đó. Vượng suy của dụng thần ở trường hợp này, sẽ dựa theo vượng suy của hào động biến ra nó. Nếu hào động hữu dụng thì sẽ là cát, hào động vô dụng thì sẽ là hung.
 
 ### 5. Nguyên Lý Dụng Thần Trong Thay Mặt Xem (Chủ Động & Bị Động)
 
@@ -139,10 +134,10 @@ Khi trên quẻ xuất hiện nhiều hào cùng Lục thân của Dụng thần
   - Vợ/chồng: Lấy Thê Tài (cho vợ) hoặc Quan Quỷ (cho chồng) làm Dụng thần.
   - Con cái: Lấy Tử Tôn làm Dụng thần.
   - Anh chị em, bạn bè: Lấy Huynh Đệ làm Dụng thần.
-  - *Lưu ý sống còn:* Khi người thân đó có việc riêng (ví dụ bố mẹ cầu tài), Dụng thần vẫn là Phụ Mẫu (vì bố mẹ là chủ thể gánh chịu cát hung), sau đó mới xét tương tác hào Tài đối với Phụ Mẫu. Không được tự tiện lấy ngay Thê Tài làm Dụng thần.
+  - *Lưu ý sống còn:* Khi người thân đó có việc riêng (ví dụ bố mẹ cầu tài), Dụng thần vẫn là Phụ Mẫu (vì bố mẹ là chủ thể gánh chịu cát hung), sau đó mới xét tương tác hào Tài đối với Phụ Mẫu. Không được tự tiện lấy ngay Thê Tài làm Dụng thần. Tương tự hỏi hôn nhân cho con cái, thì lấy tử tôn làm dung thần.
 - **Bị động thay mặt xem:** Người khác nhờ mình gieo quẻ hộ, bản thân chỉ là người thao tác công cụ:
-  - Hào Ứng đại diện cho người nhờ xem.
-  - Lấy sự việc của người nhờ xem theo nguyên tắc gieo quẻ thông thường, đối chiếu mối quan hệ giữa Dụng thần với hào Ứng (chứ không phải với hào Thế).
+  - Hào thế đại diện cho người nhờ xem.
+  - Lấy sự việc của người nhờ xem theo nguyên tắc gieo quẻ thông thường, đối chiếu mối quan hệ giữa Dụng thần với hào Thế.
 
 ---
 
@@ -168,24 +163,24 @@ Chu Thần Bân lật đổ tư duy cổ xưa coi "Tứ đại nhân tố Nhật
 
 Khi quẻ xuất hiện tín hiệu mâu thuẫn (ví dụ: Nhật sinh nhưng Nguyệt khắc, hoặc Hào động sinh nhưng Nhật Nguyệt suy), áp dụng 3 đại nguyên tắc:
 
-1. **Nguyên tắc Tổ hợp Động Biến thắng Thế:** Trong phán đoán cát hung, lực lượng của Tổ hợp Động biến hữu dụng luôn chiếm ưu thế quyết định trước lực lượng vượng suy của Nhật Nguyệt. Động biến là xu thế phát triển tương lai.
+1. **Nguyên tắc Tổ hợp Động Biến thắng Thế:** Trong phán đoán cát hung, lực lượng của Tổ hợp Động biến hữu dụng luôn chiếm ưu thế quyết định trước lực lượng vượng suy của Nhật Nguyệt. Động biến là xu thế phát triển tương lai. Nghĩa là tổ hợp động biến sẽ định cát hung.
 2. **Nguyên tắc Quẻ Lý nhường Quẻ Ý (hoặc Quẻ Ý nhường Quẻ Lý):**
    - Bình thường Quẻ Lý (sinh khắc ngũ hành) là chủ đạo.
    - Khi quẻ xuất hiện hình thái đặc biệt rõ ràng (như tượng hồi đầu khắc tuyệt đối, phản ngâm toàn quẻ, quẻ danh biểu thị rõ kết quả), Quẻ Ý sẽ dẫn dắt định hướng cát hung.
-3. **Nguyên tắc Trọng tâm Dụng - Thế liên kết:**
+3. **Nguyên tắc Trọng tâm Dụng - Thế liên kết:** áp dung cho tự xem cho bản thân
    - Dụng thần quyết định sự việc có thành hay không.
    - Hào Thế quyết định bản thân người hỏi có nhận được lợi ích đó hay không. Dụng vượng mà Thế suy kiệt (hoặc Dụng khắc Thế) là tượng "việc thành nhưng người chịu họa" hoặc "tài nhiều mà thân không gánh nổi".
 
-### 4. Công Thức Thông Dụng Về Vượng Suy & Tương Tác Lực
+### 4. Công Thức Thông Dụng Về Vượng Suy & Tương Tác Lực. Áp dung tự xem cho bản thân
 
 - **Cát cục căn bản:**
-  - *Dụng sinh Thế cục:* Dụng thần động sinh Thế -> Thu hoạch dễ dàng.
-  - *Dụng vượng Thế hưng cục:* Cả Dụng và Thế đều vượng tướng, không bị xung khắc -> Sự nghiệp thành tựu.
+  - *Dụng sinh Thế cục:* Dụng thần động sinh Thế -> Cát
+  - *Dụng vượng Thế hưng cục:* Cả Dụng và Thế đều vượng tướng, không bị xung khắc -> Cát
   - *Thế động hóa Dụng thần (không bị hồi đầu khắc):* Bản thân nỗ lực đạt được mục tiêu.
 - **Hung cục căn bản:**
   - *Dụng suy Thế suy cục:* Mọi sự bế tắc.
   - *Dụng thần động khắc Thế:* Vì việc đó mà chuốc lấy tai họa, tổn hại bản thân.
-  - *Hào Thế động hóa Quỷ (hoặc hóa Hồi đầu khắc):* Điềm dữ hung hiểm, thân tự hại mình.
+  - *Hào Thế động hóa Quỷ (hoặc hóa Hồi đầu khắc):* Điềm dữ hung hiểm, thân tự hại mình. Trừ khi xem công việc, hoặc nữ xem hôn nhân. Thì quan quỷ làm dung thần. Lúc này, Hào thế động hóa quan quỷ, nếu quan quỷ suy -> thì là hung; nếu quan quỷ vượng -> thì là cát. Hồi đầu khắc thì đều là hung rồi.
 
 ---
 
@@ -206,7 +201,7 @@ Một hào dù phát động nhưng bị coi là **Vô Dụng** (không có kh�
 1. **Động hóa Thoái Thần:** Lực lượng bị tiêu hao thoái lui (Dần hóa Mão là tiến, Mão hóa Dần là thoái; Tỵ hóa Ngọ tiến, Ngọ hóa Tỵ thoái; Thân hóa Dậu tiến, Dậu hóa Thân thoái; Hợi hóa Tý tiến, Tý hóa Hợi thoái; Thìn hóa Mùi tiến, Mùi hóa Thìn thoái; Tuất hóa Sửu tiến, Sửu hóa Tuất thoái). Hóa thoái thì lực tàn, không thể sinh khắc.
 2. **Động hóa Tuyệt (mà không được cứu):** Hào động biến ra cung Tuyệt của chính ngũ hành nó (ví dụ: Mộc động biến Thân; Hỏa động biến Hợi; Kim động biến Dần; Thủy/Thổ động biến Tị).
 3. **Động hóa Nguyệt Phá (Thật phá):** Hào biến bị Nguyệt lệnh xung phá tan tành, không có lực lượng hỗ trợ ngược lại cho hào động.
-4. **Động hóa Chân Không:** Hào biến lâm Tuần Không mà bản thân lại hưu tù vô khí, không có Nhật Nguyệt sinh phù.
+3. **Động hóa Khắc:**Hào được biến ra quay lại khắc hào động (Ví dụ: Hào thổ hóa hào mộc hồi đầu khắc; Hào Thủy hóa hào Thổ hồi đầu khắc; hào hỏa hóa hào thủy hồi đầu khắc; hào mộc hóa hào kim hồi đầu khắc; hào kim hóa hào hỏa hồi đầu khắc)
 
 ### 3. Lý Luận Tiến Thần và Thoái Thần Chuyên Sâu
 
@@ -218,14 +213,6 @@ Một hào dù phát động nhưng bị coi là **Vô Dụng** (không có kh�
   - Hung gặp thoái thần: Tai họa giảm dần rồi tiêu biến.
 - *Đặc thù biến báo:* Nếu hào biến thoái thần nhưng lâm Nhật Nguyệt lệnh, hoặc ngày tháng xung thực thì trong giai đoạn ngắn hạn vẫn phát huy tác dụng tạm thời (gọi là "Thoái mà chưa thoái").
 
-### 4. Động Biến Liên Hoàn & Giải Mã Hào Vô Dụng Biến Hữu Dụng
-
-- Trong trường hợp hào động ban đầu bị xem là vô dụng (như hóa không, hóa phá), nhưng sự việc có kỳ hạn dài:
-  - Đến khi xuất không (qua khỏi tuần không).
-  - Đến khi qua tháng khác (không còn bị nguyệt phá).
-  - Hoặc được hào động khác sinh trợ tiếp sức.
-- Thì hào đó từ "Vô Dụng tạm thời" chuyển thành "Hữu Dụng thực tế" để ứng nghiệm cát hung.
-
 ---
 
 ## PHẦN IV: TUẦN KHÔNG, NGUYỆT PHÁ & ÁM ĐỘNG CHUYÊN SÂU
@@ -235,35 +222,35 @@ Một hào dù phát động nhưng bị coi là **Vô Dụng** (không có kh�
 Tuần không (Không vong) là trạng thái then chốt phân định chân - giả trong lý thuyết Chu Thần Bân:
 
 - **Giả Không (Tạm thời không, tương lai sẽ phát huy):**
-  - Hào lâm không nhưng được Nguyệt lệnh hoặc Nhật lệnh sinh phù, vượng tướng.
+  - Hào lâm không nhưng được Nguyệt lệnh sinh phù, vượng tướng.
   - Hào lâm không nhưng bản thân là hào phát động.
   - Hào lâm không nhưng có hào động khác sinh trợ.
   - Hào lâm không nhưng được Nhật thần xung (xung không tắc thực).
   - *Kết luận:* Giả không thì chờ ngày xuất tuần, ngày xung thực sẽ ứng nghiệm điều tốt/xấu.
 - **Chân Không (Hư vô tuyệt đối, hoàn toàn vô dụng):**
   - Hào lâm không mà hưu tù vô khí, tử tuyệt.
-  - Bị Nhật Nguyệt đồng thời khắc phạt.
+  - Bị nguyệt khắc, Suy tại nguyệt.
   - Hào tĩnh bất động, lại phục dưới hào khắc thương.
-  - Động mà hóa thoái thần, hóa tuyệt lâm không.
+  - Động mà hóa thoái thần, hóa tuyệt, hóa phá lâm không.
   - *Kết luận:* Chân không thì vĩnh viễn không thành sự, sự tình trôi vào hư vô, điềm dữ khó tránh.
 
 ### 2. Thật Giả Nguyệt Phá và Hóa Phá
 
 - **Bản chất Nguyệt Phá:** Hào trong quẻ bị Nguyệt kiến tương xung (Tý xung Ngọ, Sửu xung Mùi, Dần xung Thân, Mão xung Dậu, Thìn xung Tuất, Tị xung Hợi).
 - **Thật Phá (Chân Phá):**
-  - Hào bị Nguyệt xung mà bản thân hưu tù, suy bại, không có hào động sinh phù, là hào tĩnh.
+  - Hào bị Nguyệt xung mà bản thân không có hào động sinh phù, hoặc là hào tĩnh, hoặc là hào biến của hào động biến ra (gọi là động hóa phá - trừ trường hợp hào thế hóa phá).
   - Rơi vào chân phá thì như cành mục gãy nát, dù có Nhật xung hay phùng hợp cũng không cứu nổi, mục nát suốt đời.
 - **Giả Phá (Tạm thời phá):**
   - Hào bị Nguyệt xung nhưng bản thân phát động.
-  - Hoặc hào vượng tướng, được Nhật lệnh sinh phù trợ giúp.
-  - *Ứng kỳ:* Đến tháng sau (xuất nguyệt), hoặc đến ngày/tháng hợp với hào phá (phùng hợp), hoặc đến ngày/tháng xung thực hào phá thì lực lượng phục hồi và phát huy tác dụng.
+  - Hào thế phát động hóa ra hào khác bị nguyệt phá là giả phá.
 - **Hóa Phá:** Hào động biến ra hào lâm Nguyệt phá. Nếu hào biến là Chân phá thì hào động mất chỗ dựa; nếu là Giả phá thì cần chờ thời điểm giải phá.
 
 ### 3. Lý Luận Ám Động Chuyên Sâu
 
 - **Điều kiện hình thành Ám Động:**
-  - Bắt buộc hào phải là **Hào Tĩnh Vượng Tướng** (được Nguyệt lệnh sinh phù hoặc đồng hành).
+  - Bắt buộc hào phải là **Hào Tĩnh Vượng Tướng** (được Nguyệt lệnh sinh phù hoặc đồng hành - hoặc là dụng thần được hào động khác sinh phù).
   - Gặp **Nhật Thần Tương Xung**.
+  - Hào lâm không bị nhật xung -> luôn ám động, bất kể hào đó vượng suy thế nào.
   - Lúc này, hào bị xung không những không vỡ mà còn bị kích hoạt, chuyển động ngầm, lực lượng mạnh mẽ tương đương hào minh động!
 - **Phân biệt với Nhật Phá:**
   - Nếu hào hưu tù suy nhược ở Nguyệt lệnh mà gặp Nhật thần xung -> Bị đánh nát, gọi là **Nhật Phá** (tuyệt đối không được tính là ám động).
@@ -301,7 +288,7 @@ Chu Thần Bân đính chính một trong những sai lầm lớn nhất của c
 12 cung: Trường sinh, Mộc dục, Quan đới, Lâm quan, Đế vượng, Suy, Bệnh, Tử, Mộ, Tuyệt, Thai, Dưỡng.
 
 - **Phương diện Cát Hung:** Chỉ sử dụng 4 trạng thái cốt lõi: **Sinh, Vượng, Mộ, Tuyệt**. Không dùng các cung phụ để định đoạt thành bại.
-- **Phương diện Chi tiết & Quẻ Ý:** Mới dùng đến các trạng thái như Mộc dục (đào hoa, tắm gội, trần trụi, phong lưu), Bệnh (bệnh tật, tì vết), Thai (mang thai, khởi đầu ấp ủ), Dưỡng (nuôi nấng, tích lũy).
+- **Phương diện Chi tiết & Quẻ Ý:** Mới dùng đến các trạng thái như Mộc dục (đào hoa, tắm gội, trần trụi, phong lưu), Bệnh (bệnh tật, tì vết), Thai (mang thai, khởi đầu ấp ủ), Dưỡng (nuôi nấng, tích lũy)....
 
 ### 4. Tuyệt Xứ Phùng Sinh & Hóa Tuyệt
 
@@ -387,45 +374,7 @@ Chu Thần Bân nhấn mạnh nguyên lý độc đáo:
 
 ### 4. Ứng Dụng Phục Thần Trong Cát Hung vs Ứng Kỳ
 
-- **Về Cát Hung:** Phục thần muốn thành sự phải có căn khí: Được Nhật Nguyệt sinh phù vượng tướng, hoặc được hào động trong quẻ sinh trợ. Nếu Phục thần hưu tù tử tuyệt lại bị Phi thần khắc thì vĩnh viễn không thành.
-- **Về Ứng Kỳ:** Sự việc sẽ ứng nghiệm vào ngày/tháng:
-  - Trị ngày của Phục thần (ngày Phục thần xuất hiện).
-  - Ngày xung khai Phi thần (đánh bật nắp hầm).
-  - Ngày Phi thần lâm Tuần không, Nguyệt phá.
-
----
-
-## PHẦN VIII: CÔNG THỨC QUY NẠP ỨNG KỲ CHUẨN XÁC
-
-### 1. Khác Biệt Giữa Phán Đoán Cát Hung và Suy Đoán Ứng Kỳ
-
-- **Cát Hung (Bản chất):** Trả lời câu hỏi *Được hay Mất, Thành hay Bại, Sống hay Chết*. Dựa hoàn toàn vào lực lượng sinh khắc của Tổ hợp Động biến và Nhật Nguyệt đối với Thế và Dụng.
-- **Ứng Kỳ (Thời điểm):** Trả lời câu hỏi *Bao giờ xảy ra*. Dựa vào quy tắc vận động của tuần hoàn khí số.
-- **Khẩu quyết ranh giới:** *"Cát đoán có cát ứng, Hung đoán có hung ứng"*. Đã định tính là quẻ Hung thì thời điểm ứng nghiệm là thời điểm tai họa giáng xuống (kỵ thần đắc lực hoặc dụng thần tử tuyệt); đã định tính là Cát thì ứng nghiệm là thời điểm thu hoạch thành công.
-
-### 2. Nguyên Lý Chuyển Đổi Nhật Nguyệt Trong Ứng Kỳ
-
-- Sự việc gần (xem theo ngày/giờ): Nhật thần là chủ quản, ứng kỳ tính theo Can Chi của ngày hoặc giờ.
-- Sự việc xa (xem theo tháng/năm): Nguyệt lệnh là chủ quản, ứng kỳ tính theo tháng hoặc năm.
-- Nhật Nguyệt hoán đổi vị trí để chỉ ra thời điểm hoàn tất nhân quả của sự việc.
-
-### 3. Hệ Thống Công Thức Quy Nạp Ứng Kỳ Thông Dụng Của Chu Thần Bân
-
-1. **Hào Động Vượng Tướng:** Ứng vào ngày/tháng mang địa chi của chính hào đó (Trị hào), hoặc ngày hợp với hào đó.
-2. **Hào Động Hưu Tù (Suy kiệt):** Ứng vào ngày/tháng sinh vượng cho hào đó (được tiếp thêm sức mạnh).
-3. **Hào Động Hóa Tiến Thần:** Ứng vào ngày/tháng của hào tiến, hoặc ngày phùng hợp.
-4. **Hào Động Hóa Thoái Thần:** Ứng vào ngày/tháng của hào thoái, hoặc ngày phùng xung.
-5. **Hào Tĩnh Vượng Tướng:** Cần động mới thành sự -> Ứng vào ngày/tháng xung động hào tĩnh (gọi là *Xung khởi*).
-6. **Hào Tĩnh Hưu Tù:** Ứng vào ngày/tháng sinh trợ hoặc phùng xung phùng trị.
-7. **Hào Lâm Tuần Không (Chân/Giả không):**
-   - Hào vượng lâm không: Ứng vào ngày ra khỏi Tuần Không (*Xuất Không*), hoặc ngày xung thực hào không (*Xung Không*).
-   - Hào động lâm không: Ứng vào ngày xuất không hoặc ngày hợp.
-8. **Hào Lâm Nguyệt Phá:**
-   - Ứng vào ngày phùng hợp với hào phá (*Phùng Hợp*).
-   - Ứng vào ngày xung thực hào phá (*Xung Thực*).
-   - Hoặc chờ bước sang tháng sau (*Xuất Nguyệt*).
-9. **Hào Bị Hợp Trói (Hợp Bán):** Ứng vào ngày/tháng phùng xung để mở trói (*Xung Khai*).
-10. **Hào Phục Thần Ẩn Tàng:** Ứng vào ngày xuất hiện Phục thần, hoặc ngày xung khai Phi thần, hoặc ngày Phi thần bị không/phá.
+- **Về Cát Hung:** Phục thần muốn thành sự bắt buộc phải có căn khí: Được Nhật Nguyệt sinh phù vượng tướng. Nếu Phục thần hưu tù tử tuyệt lại bị Phi thần khắc thì vĩnh viễn không thành. Nếu phi sinh phục -> thì phi thần vượng sẽ là cát, ngược lại phi thần suy sẽ là hung. Nếu phi không sinh phục -> phi thần suy thì là cát, ngược lại phi thần vượng là hung. Vượng suy của phi thần dựa theo tổ hợp động biến và tổ hợp nhật nguyệt tác động đến phi thần. Lưu ý: Phục thần không tương tác với tổ hợp động biến.
 
 ---
 
@@ -450,9 +399,9 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 - **Tử Tôn (Hiện thân của Phúc Thần, Giải Ưu, Vui Vẻ, Bình An):**
   - Tử Tôn là thần chuyên chế ngự, tiêu diệt Quan Quỷ (Tử Tôn khắc Quan Quỷ).
   - Tử Tôn trì Thế, hoặc phát động: Mọi nỗi sợ hãi, ưu tư đều chỉ là "hư kinh quái dị", hữu kinh vô hiểm, cuối cùng mây tan trăng sáng, bình an vô sự.
-- **Phụ Mẫu Động trong Quẻ Tâm Thái:**
-  - Phụ Mẫu là thần sinh Quan Quỷ và khắc chế Tử Tôn.
-  - Phụ Mẫu động nghĩa là nguồn cơn lo âu sinh sôi, niềm vui bị dập tắt, đương sự sẽ phải lao tâm khổ tứ, mệt mỏi cùng cực.
+- **Phụ Mẫu, Thê Tài Động trong Quẻ Tâm Thái:**
+  - Phụ Mẫu khắc chế Tử Tôn. Thê tài động sinh quan quỷ
+  - Phụ Mẫu động, thê tài động nghĩa là nguồn cơn lo âu sinh sôi, niềm vui bị dập tắt, đương sự sẽ phải lao tâm khổ tứ, mệt mỏi cùng cực. Ngược lại, huynh đệ động thì lại sinh cho tử tôn, sinh cho phúc thần thì là lo âu tan biến.
 
 ### 3. Sự Chuyển Hóa Giữa Tâm Tính và Sự Tình
 
@@ -469,18 +418,18 @@ Trong quẻ tâm thái, cốt lõi chỉ xoay quanh hai nhân vật:
 
 Để giải mã một quẻ tĩnh, Chu Thần Bân thiết lập lộ trình 3 bước chuẩn xác:
 
-- **Bước 1 - Đánh giá Vượng Suy của Dụng thần và Thế qua Nhật Nguyệt:**
-  - Xét xem Dụng thần và hào Thế có được Nhật Nguyệt sinh phù, tỉ hòa (vượng tướng) hay bị khắc phạt, tiết khí, hưu tù, tử tuyệt.
-  - Xét Dụng và Thế có bị lâm Tuần Không (Chân/Giả không) hay Nguyệt Phá (Chân/Giả phá) hay không.
-- **Bước 2 - Phân tích Mối quan hệ Sinh Khắc giữa Dụng thần và Hào Thế:**
-  - *Dụng sinh Thế (Dụng vượng):* Quẻ cát, tự nhiên thu được thành quả tốt đẹp mà không tốn nhiều công sức.
-  - *Thế sinh Dụng:* Phải bỏ nhiều tâm sức, tiền bạc, hao tâm tổn trí mới mong đạt được kết quả.
-  - *Dụng khắc Thế:* Việc tuy đến nhưng mang lại tổn thương, hao tổn cho bản thân (trừ quẻ cầu danh Quan khắc Thế nhưng Quan vượng Thế vượng thì đắc quan).
-  - *Thế khắc Dụng:* Bản thân làm chủ được tình thế, nỗ lực chinh phục được mục tiêu (cầu tài Thế khắc Tài là đắc tài).
-  - *Dụng Thế Tỉ Hòa:* Bình ổn, cùng hội cùng thuyền.
-- **Bước 3 - Xét Hào Ám Động và Quẻ Ý Chủ Quẻ:**
-  - Tìm xem trong 6 hào tĩnh có hào nào vượng tướng bị Nhật thần xung hay không -> Nếu có, hào đó trở thành **Hào Ám Động**, đóng vai trò là "nguồn năng lượng kích hoạt duy nhất" xoay chuyển toàn bộ quẻ tĩnh thành quẻ có động lực!
-  - Kết hợp với nghĩa gốc của quẻ danh (Quẻ Ý) để đưa ra phán đoán sau cùng.
+- **Bước 1 - Dụng/Kỵ thần trì thế định cát hung (áp dụng cho quẻ tự xem cho bản thân):**
+  - Dụng thần trì Thế (không gặp phá/không phải thật không): Kết luận cát luôn.
+  - Kị thần trì Thế: Kết luận hung luôn.
+  - *Ngoại lệ:* Nếu Dụng thần trì Thế mà không có "rễ" (nguyên thần không hiện) hoặc bị phá thì thành hung. Nếu Kị thần trì Thế (trong 4 việc: cầu tài, y dược, người đi đường, tâm tính) mà bị phá thì thành cát.
+  - Như vậy ở bước 1, dụng/kỵ thần trì thế là có thể kết luận cát hung luôn (áp dụng cho quẻ tự xem cho bản thân).
+  - Nếu không phải dụng/kỵ trì thế thì mới sang bước 2.
+- **Bước 2 - Nếu không phải dụng/kỵ thần trì thế, thì xét đến cách này: Xét quan hệ sinh khắc trực tiếp giữa Dụng thần và Thế (áp dụng cho quẻ tự xem cho bản thân):**
+  - *Dụng thần sinh Thế (Dụng vượng):* Kết luận cát, tự nhiên thu được thành quả tốt đẹp mà không tốn nhiều công sức.
+  - *Dụng thần khắc Thế:* Kết luận hung (Dụng vượng Thế vượng thì chỉ thành công ngắn hạn rồi gây họa lâu dài).
+  - Nếu dụng thần và hào thế không tương tác, thì mới sang bước 3. 
+- **Bước 3 - Cuối cùng: Xét vượng suy (Dụng vượng - Thế hưng):**
+  - Nếu không có quan hệ trì Thế hay sinh khắc. Xét vượng suy của Dụng/Thế tại Nhật Nguyệt. Cả hai vượng là điềm lành, kết luận cát. Ngược lại không vượng thì kết luận hung.
 
 ---
 
