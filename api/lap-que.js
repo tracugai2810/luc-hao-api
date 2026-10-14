@@ -541,6 +541,30 @@ function updateHaoDong() {
     display.textContent = `→ Hào động: ${move}`;
 }
 
+function getTimezoneDisplayTag(tzEl) {
+    if (!tzEl) {
+        if (typeof document !== 'undefined') {
+            tzEl = document.getElementById('inputTimezone');
+        }
+    }
+    if (!tzEl) return '';
+
+    const selectedOpt = tzEl.selectedOptions ? tzEl.selectedOptions[0] : (tzEl.selectedIndex >= 0 ? tzEl.options[tzEl.selectedIndex] : null);
+    if (!selectedOpt) return '';
+
+    const val = (selectedOpt.value || tzEl.value || '').trim();
+    const rawText = (selectedOpt.textContent || selectedOpt.text || '').trim();
+
+    // Mặc định ở VN (+07:00 hoặc nhãn bắt đầu bằng "VN") -> không hiển thị gì cả
+    if (val === '+07:00' || rawText.startsWith('VN')) {
+        return '';
+    }
+
+    // Với khu vực khác: loại bỏ ngoặc đơn lồng bên trong nếu có rồi bọc ngoặc ngoài
+    let clean = rawText.replace(/\(([^)]+)\)/g, '$1').replace(/\s+/g, ' ').trim();
+    return clean ? ` (${clean})` : '';
+}
+
 function formatDate(isoStr) {
     if (!isoStr) return "";
     let input = isoStr;
@@ -566,8 +590,12 @@ function processDivination() {
         return;
     }
 
-    const calendar = calculateCanChi(dVal);
-    const formattedDate = formatDate(dVal);
+    const tzEl = typeof document !== 'undefined' ? document.getElementById('inputTimezone') : null;
+    const fullDateInput = (tzEl && tzEl.value) ? `${dVal}:00${tzEl.value}` : dVal;
+
+    const calendar = calculateCanChi(fullDateInput);
+    const tzTag = getTimezoneDisplayTag(tzEl);
+    const formattedDate = formatDate(fullDateInput) + tzTag;
 
     let lines = [];
     let methodText = "";
@@ -1753,6 +1781,28 @@ function finishTossSequence() {
 
 // End of Divination functions
 
+function getApiTimezoneDisplayTag(tz, tzLabel) {
+    if (tzLabel) {
+        let clean = String(tzLabel).replace(/\(([^)]+)\)/g, '$1').replace(/\s+/g, ' ').trim();
+        if (clean.startsWith('VN') || tz === '+07:00' || tz === '+07') return '';
+        return clean ? ` (${clean})` : '';
+    }
+    if (!tz || tz === '+07:00' || tz === '+07' || tz === '7') return '';
+    const MAP = {
+        '-08:00': 'Mỹ Tây -8',
+        '-05:00': 'Mỹ Đông -5',
+        '-06:00': 'Mỹ Trung -6',
+        '-07:00': 'Mỹ Núi -7',
+        '+09:00': 'Nhật/Hàn +9',
+        '+08:00': 'Đài/TQ +8',
+        '+10:00': 'Úc +10',
+        '+01:00': 'Châu Âu +1',
+        '+00:00': 'Anh UTC 0'
+    };
+    const mapped = MAP[tz];
+    if (mapped) return ` (${mapped})`;
+    return ` (UTC${tz})`;
+}
 
 export default function handler(req, res) {
     // Enable CORS
@@ -1793,7 +1843,8 @@ export default function handler(req, res) {
         }
 
         const calendar = calculateCanChi(dInputStr);
-        const formattedDate = formatDate(dInputStr) || dInputStr;
+        const tzTag = getApiTimezoneDisplayTag(tz, req.query.tz_label);
+        const formattedDate = (formatDate(dInputStr) || dInputStr) + tzTag;
 
         const nums = serial.split('').map(Number);
         const mid = Math.floor(nums.length / 2);
