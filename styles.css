@@ -523,7 +523,7 @@ body {
 
 #captureTarget {
     width: 1160px;
-    background-color: #f6f5f1;
+    background-color: #fefee5;
     padding: 20px 20px 26px 20px;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
@@ -559,7 +559,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 2px solid #c0c0c0;
+    border-bottom: 2px solid #888;
     padding: 5px 10px;
     margin-bottom: 10px;
     min-height: 110px;
@@ -663,7 +663,7 @@ body {
 }
 
 #captureTarget .yang {
-    background-color: #2059a6;
+    background-color: #1a1a1a;
 }
 
 #captureTarget .yin {
@@ -676,7 +676,7 @@ body {
     content: '';
     display: block;
     width: 42%;
-    background-color: #2059a6;
+    background-color: #1a1a1a;
     height: 100%;
 }
 
@@ -709,7 +709,7 @@ body {
 }
 
 #captureTarget th {
-    background: rgba(0, 0, 0, 0.04);
+    background: #e2e2cc;
     font-weight: 700;
     color: #1a1a1a;
     font-size: 16px;
@@ -761,7 +761,7 @@ body {
 
 #captureTarget .shensha-section {
     margin-top: 10px;
-    border-top: 2px solid #c0c0c0;
+    border-top: 2px solid #888;
     padding-top: 12px;
 }
 
