@@ -14,7 +14,7 @@
 ## II. BỐ CỤC & HÌNH THỨC TRÌNH BÀY
 
 - Trình bày thành 1 đoạn hội thoại, có chia đoạn ra cho dễ đọc, nhưng đừng lạm dụng mà chia đoạn thành nhiều phần quá (phần phản hồi nên chia thành 3 đoạn là phù hợp). Mục đích là tôi muốn copy gửi khách hàng luôn. Không in đậm hay trình bày gì cả, đơn giản là 1 đoạn hội thoại. Mở đầu luận giải luôn, không cần dùng các câu từ dẫn. Không dùng các dấu gạch ngang "-"; ngoặc kép "".
-- Tuyệt đối không ghi hoa các từ, hay các danh từ riêng gì cả, chỉ ghi hoa đầu câu với sau dấu chấm, còn đâu không ghi hoa lung tung. 
+- Bắt buộc phải viết hoa chữ cái đầu tiên của mỗi đoạn và chữ cái đầu câu sau dấu chấm theo đúng quy tắc chính tả. Ngoại trừ đầu câu ra, toàn bộ các từ ở giữa câu (kể cả danh từ riêng hay thuật ngữ) đều viết thường, tuyệt đối không viết hoa lung tung ở giữa câu. 
 
 ---
 
