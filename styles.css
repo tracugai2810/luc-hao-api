@@ -538,12 +538,12 @@ body {
     content: '';
     position: absolute;
     /* Khung viền bo góc vẽ bằng CSS (sắc nét ở mọi tỉ lệ zoom) */
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
     border: 2.5px solid #6b7280;
-    border-radius: 16px;
+    border-radius: 26px;
     pointer-events: none;
     z-index: 0;
 }

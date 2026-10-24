@@ -1071,17 +1071,19 @@ async function renderHexagramToCanvas(data) {
         ctx.globalCompositeOperation = 'multiply';
         const wmW = 960;
         const wmH = Math.round(wmW * (wmImg.naturalHeight || wmImg.height) / (wmImg.naturalWidth || wmImg.width));
-        const wmX = (W - wmW) / 2;
-        const wmY = Math.round(150 + (651 - 150 - wmH) / 2);
+        // Căn chuẩn tâm vòng thái cực vào chính giữa x = 580 (bù khoảng trắng lệch bên phải của ảnh gốc)
+        const wmX = 124;
+        // Đặt đỉnh đầu rồng ngay sát dưới đường kẻ ngang y = 126
+        const wmY = 132;
         ctx.drawImage(wmImg, wmX, wmY, wmW, wmH);
         ctx.restore();
     }
 
-    // 3. Khung viền ngoài bo góc (đậm hơn chút, bỏ 4 hoa văn theo yêu cầu)
+    // 3. Khung viền ngoài bo góc (vát viền sâu 26px, lùi lề 14px chống cắt góc trên điện thoại)
     ctx.save();
     ctx.strokeStyle = '#6b7280';
     ctx.lineWidth = 2.5;
-    drawRoundRect(ctx, 8, 8, W - 16, H - 16, 16);
+    drawRoundRect(ctx, 14, 14, W - 28, H - 28, 26);
     ctx.stroke();
     ctx.restore();
 
