@@ -838,11 +838,15 @@ function renderCaptureHTML(data) {
     // Render to hidden capture target
     const target = document.getElementById('captureTarget');
     target.innerHTML = `
+        <img src="dambc.png" class="capture-watermark" alt="">
         <div class="info-header">
             <div class="info-content">
                 <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
-                <div class="info-line"><strong>Can chi:</strong> ${dateInfo.fullCanChi} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
+                <div class="info-line"><strong>Tàng hào:</strong> <span class="highlight">${dateInfo.haoTam}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
                 <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
+            </div>
+            <div class="info-seal">
+                <img src="dambc.png" alt="Dấu ấn">
             </div>
         </div>
         
@@ -852,6 +856,7 @@ function renderCaptureHTML(data) {
                 ${renderHexVisual(data.lines, false)}
                 <div class="hex-family">Họ ${palaceName}${mainAttr ? ' - ' + mainAttr : ''}</div>
             </div>
+            <div class="hex-ngam-indicator">${data.ngamResult && data.ngamResult.length > 0 ? data.ngamResult.map(t => `<span>${t}</span>`).join('') : ''}</div>
             <div class="hex-box">
                 <div class="hex-title">${changedName}</div>
                 ${renderHexVisual(data.lines, true)}
@@ -917,6 +922,10 @@ function renderCaptureHTML(data) {
         })()}
             </div>
         </div>
+        
+        <div class="capture-footer-note">
+            Đây là quẻ Kinh Dịch được gieo bằng phương pháp <span class="highlight">${methodText}</span> theo thông tin bạn cung cấp.
+        </div>
     `;
 }
 
@@ -932,11 +941,20 @@ function captureAndDisplayImage() {
     captureArea.style.zIndex = '-1';
     captureArea.style.opacity = '0.01';
 
-    html2canvas(target, {
+    const images = Array.from(target.querySelectorAll('img'));
+    const waitImages = Promise.all(images.map(img => {
+        if (img.complete && img.naturalWidth > 0) return Promise.resolve();
+        return new Promise(resolve => {
+            img.onload = resolve;
+            img.onerror = resolve;
+        });
+    }));
+
+    waitImages.then(() => html2canvas(target, {
         scale: 1.5,
         useCORS: true,
         logging: false
-    }).then(canvas => {
+    })).then(canvas => {
         // Hide capture area again
         captureArea.style.position = 'absolute';
         captureArea.style.left = '-9999px';

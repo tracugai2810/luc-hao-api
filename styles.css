@@ -523,8 +523,8 @@ body {
 
 #captureTarget {
     width: 1160px;
-    background-color: #fefee5;
-    padding: 20px 20px 26px 20px;
+    background-color: #ffffff;
+    padding: 26px 32px 30px 32px;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     color: #1a1a1a;
@@ -539,16 +539,28 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1000 1200' width='1000' height='1200'%3E%3Cdefs%3E%3Cg id='coin'%3E%3Ccircle cx='0' cy='0' r='145' fill='none' stroke='%237c2d12' stroke-width='2.4'/%3E%3Ccircle cx='0' cy='0' r='138' fill='none' stroke='%23b45309' stroke-width='1'/%3E%3Ccircle cx='0' cy='0' r='122' fill='none' stroke='%237c2d12' stroke-width='1' stroke-dasharray='3.5,3.5'/%3E%3Ccircle cx='0' cy='0' r='114' fill='none' stroke='%23b45309' stroke-width='0.8'/%3E%3Crect x='-44' y='-44' width='88' height='88' rx='2' fill='none' stroke='%237c2d12' stroke-width='2.4'/%3E%3Crect x='-51' y='-51' width='102' height='102' rx='3' fill='none' stroke='%23b45309' stroke-width='1'/%3E%3Cline x1='-80' y1='-80' x2='-51' y2='-51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cline x1='80' y1='-80' x2='51' y2='-51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cline x1='-80' y1='80' x2='-51' y2='51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cline x1='80' y1='80' x2='51' y2='51' stroke='%23b45309' stroke-width='0.8'/%3E%3Cg transform='translate(0, -82) scale(0.8)'%3E%3Cline x1='-22' y1='-14' x2='22' y2='-14' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='-2' x2='22' y2='-2' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='10' x2='22' y2='10' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(0, 82) scale(0.8)'%3E%3Cline x1='-22' y1='-10' x2='-4' y2='-10' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='4' y1='-10' x2='22' y2='-10' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='2' x2='-4' y2='2' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='4' y1='2' x2='22' y2='2' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='-22' y1='14' x2='-4' y2='14' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3Cline x1='4' y1='14' x2='22' y2='14' stroke='%237c2d12' stroke-width='2' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(-82, 0) scale(0.8)'%3E%3Ccircle cx='0' cy='0' r='13' fill='none' stroke='%237c2d12' stroke-width='1.8'/%3E%3Ccircle cx='0' cy='0' r='4' fill='%237c2d12'/%3E%3C/g%3E%3Cg transform='translate(82, 0) scale(0.8)'%3E%3Cpath d='M-10,-12 C-2,0 -2,0 -10,12 M10,-12 C2,0 2,0 10,12' fill='none' stroke='%237c2d12' stroke-width='1.8' stroke-linecap='round'/%3E%3C/g%3E%3C/g%3E%3Cg id='ruyi-corner'%3E%3Cpath d='M15,80 C15,40 40,15 80,15' fill='none' stroke='%238b2525' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M25,75 C25,45 45,25 75,25' fill='none' stroke='%23b45309' stroke-width='1.2' stroke-linecap='round'/%3E%3Cpath d='M40,55 C40,42 48,35 60,35 C70,35 75,45 68,55 C60,65 45,55 52,45' fill='none' stroke='%238b2525' stroke-width='1.2' stroke-linecap='round'/%3E%3C/g%3E%3C/defs%3E%3Crect x='14' y='14' width='972' height='1172' rx='12' fill='none' stroke='%23b45309' stroke-width='1.8'/%3E%3Crect x='22' y='22' width='956' height='1156' rx='8' fill='none' stroke='%238b2525' stroke-width='1' stroke-dasharray='8,5'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='20' y='20'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='0' y='0' transform='translate(980, 20) scale(-1, 1)'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='0' y='0' transform='translate(20, 1180) scale(1, -1)'/%3E%3Cuse href='%23ruyi-corner' xlink:href='%23ruyi-corner' x='0' y='0' transform='translate(980, 1180) scale(-1, -1)'/%3E%3Cg transform='translate(500, 480) scale(1.05)' opacity='0.75'%3E%3Cuse href='%23coin' xlink:href='%23coin'/%3E%3C/g%3E%3Cg transform='translate(365, 710) scale(0.98) rotate(-14)' opacity='0.75'%3E%3Cuse href='%23coin' xlink:href='%23coin'/%3E%3C/g%3E%3Cg transform='translate(635, 710) scale(0.98) rotate(14)' opacity='0.75'%3E%3Cuse href='%23coin' xlink:href='%23coin'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1000 1200' width='1000' height='1200' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cg id='floral-corner'%3E%3Cpath d='M16,58 L16,18 Q16,16 18,16 L58,16' fill='none' stroke='%231a1a1a' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M16,52 L22,52 L22,46 M52,16 L52,22 L46,22' fill='none' stroke='%231a1a1a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='27' r='2.4' fill='%231a1a1a'/%3E%3Ccircle cx='27' cy='21.5' r='2.5' fill='%231a1a1a'/%3E%3Ccircle cx='27' cy='32.5' r='2.5' fill='%231a1a1a'/%3E%3Ccircle cx='21.5' cy='27' r='2.5' fill='%231a1a1a'/%3E%3Ccircle cx='32.5' cy='27' r='2.5' fill='%231a1a1a'/%3E%3Cpath d='M35,24 C42,20 50,22 54,28 C51,31 45,30 42,26' fill='%231a1a1a'/%3E%3Cpath d='M24,35 C20,42 22,50 28,54 C31,51 30,45 26,42' fill='%231a1a1a'/%3E%3Cpath d='M33,33 C40,36 44,40 46,46 C40,44 36,40 33,33 Z' fill='%231a1a1a'/%3E%3Cpath d='M38,29 C46,29 52,34 49,39 C46,42 42,39 44,35' fill='none' stroke='%231a1a1a' stroke-width='1.6' stroke-linecap='round'/%3E%3Cpath d='M29,38 C29,46 34,52 39,49 C42,46 39,42 35,44' fill='none' stroke='%231a1a1a' stroke-width='1.6' stroke-linecap='round'/%3E%3C/g%3E%3C/defs%3E%3Crect x='10' y='10' width='980' height='1180' rx='16' fill='none' stroke='%23cccccc' stroke-width='1.6'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0' transform='translate(1000, 0) scale(-1, 1)'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0' transform='translate(0, 1200) scale(1, -1)'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0' transform='translate(1000, 1200) scale(-1, -1)'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 100% 100%;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#captureTarget .capture-watermark {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 620px;
+    height: auto;
     opacity: 0.08;
     pointer-events: none;
     z-index: 0;
 }
 
-#captureTarget>* {
+#captureTarget>*:not(.capture-watermark) {
     position: relative;
     z-index: 1;
 }
@@ -559,14 +571,32 @@ body {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 2px solid #888;
-    padding: 5px 10px;
+    border-bottom: 1.5px solid #cccccc;
+    padding: 5px 10px 10px 10px;
     margin-bottom: 10px;
-    min-height: 110px;
+    min-height: 115px;
 }
 
 #captureTarget .info-content {
     flex: 1;
+}
+
+#captureTarget .info-seal {
+    width: 165px;
+    height: 120px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 16px;
+    margin-right: 8px;
+}
+
+#captureTarget .info-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
 }
 
 #captureTarget .info-line {
@@ -587,7 +617,7 @@ body {
 
 
 #captureTarget .highlight {
-    color: #e60000;
+    color: #d97706;
     font-weight: 700;
 }
 
@@ -597,7 +627,7 @@ body {
     align-items: flex-start;
     gap: 60px;
     padding: 20px 0;
-    border-bottom: 2px solid #888;
+    border-bottom: 1.5px solid #cccccc;
     margin-bottom: 10px;
 }
 
@@ -634,7 +664,7 @@ body {
 #captureTarget .hex-title {
     font-size: 20px;
     font-weight: 700;
-    color: #c41e3a;
+    color: #d91b1b;
     text-transform: uppercase;
     margin-bottom: 15px;
     letter-spacing: 1px;
@@ -642,7 +672,7 @@ body {
 
 #captureTarget .hex-family {
     font-size: 18px;
-    color: #333;
+    color: #6b7280;
     font-weight: 600;
     margin-top: 12px;
     text-transform: uppercase;
@@ -663,7 +693,7 @@ body {
 }
 
 #captureTarget .yang {
-    background-color: #1a1a1a;
+    background-color: #1c549c;
 }
 
 #captureTarget .yin {
@@ -676,17 +706,17 @@ body {
     content: '';
     display: block;
     width: 42%;
-    background-color: #1a1a1a;
+    background-color: #1c549c;
     height: 100%;
 }
 
 #captureTarget .yang.moving {
-    background-color: #e60000;
+    background-color: #e61919;
 }
 
 #captureTarget .yin.moving::before,
 #captureTarget .yin.moving::after {
-    background-color: #e60000;
+    background-color: #e61919;
 }
 
 #captureTarget table {
@@ -701,7 +731,7 @@ body {
 #captureTarget th,
 #captureTarget td {
     border: none;
-    border-bottom: 1px solid #d0c8b8;
+    border-bottom: 1px solid #e5e5e5;
     padding: 8px 4px;
     text-align: center;
     white-space: nowrap;
@@ -709,22 +739,23 @@ body {
 }
 
 #captureTarget th {
-    background: #e2e2cc;
+    background: transparent;
     font-weight: 700;
-    color: #1a1a1a;
+    color: #111111;
     font-size: 16px;
     padding: 10px 4px;
-    border-bottom: 1px solid #bbb;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
     text-transform: uppercase;
     letter-spacing: 0.3px;
 }
 
 #captureTarget .sep-col {
-    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid #cccccc;
 }
 
 #captureTarget .row-moving td {
-    color: #e60000;
+    color: #e61919;
     font-weight: 700;
 }
 
@@ -741,11 +772,11 @@ body {
 }
 
 #captureTarget .row-moving .marker-the {
-    color: #e60000;
+    color: #e61919;
 }
 
 #captureTarget .row-moving .marker-ung {
-    color: #e60000;
+    color: #e61919;
 }
 
 #captureTarget .phuc-than {
@@ -755,13 +786,13 @@ body {
 }
 
 #captureTarget .row-moving .phuc-than {
-    color: #e60000;
+    color: #e61919;
     font-weight: 700;
 }
 
 #captureTarget .shensha-section {
     margin-top: 10px;
-    border-top: 2px solid #888;
+    border-top: 1.5px solid #cccccc;
     padding-top: 12px;
 }
 
@@ -769,12 +800,12 @@ body {
     font-weight: 700;
     font-size: 19px;
     margin-bottom: 12px;
-    color: #1a1a1a;
+    color: #111111;
     text-transform: uppercase;
     text-align: center;
     letter-spacing: 1px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #d0c8b8;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 #captureTarget .shensha-grid {
@@ -786,10 +817,10 @@ body {
 #captureTarget .ss-item {
     font-size: 18px;
     padding: 8px 10px;
-    border: 1px solid #d0c8b8;
+    border: 1px solid #e0e0e0;
     border-radius: 6px;
     color: #1a1a1a;
-    background: rgba(0, 0, 0, 0.02);
+    background: rgba(0, 0, 0, 0.015);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -811,11 +842,11 @@ body {
 
 /* Highlight thần sát whose chi matches a moving line */
 #captureTarget .ss-item.ss-moving strong {
-    color: #e60000;
+    color: #e61919;
 }
 
 #captureTarget .ss-item.ss-moving .ss-value {
-    color: #e60000;
+    color: #e61919;
     font-weight: normal;
 }
 
@@ -830,7 +861,7 @@ body {
 }
 
 #captureTarget .capture-footer-note .highlight {
-    color: #e60000;
+    color: #d97706;
     font-weight: 700;
 }
 
