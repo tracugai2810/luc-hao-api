@@ -1071,10 +1071,10 @@ async function renderHexagramToCanvas(data) {
         ctx.globalCompositeOperation = 'multiply';
         const wmW = 960;
         const wmH = Math.round(wmW * (wmImg.naturalHeight || wmImg.height) / (wmImg.naturalWidth || wmImg.width));
-        // Căn chuẩn tâm vòng thái cực vào chính giữa x = 580 (bù khoảng trắng lệch bên phải của ảnh gốc)
-        const wmX = 124;
-        // Đặt đỉnh đầu rồng ngay sát dưới đường kẻ ngang y = 126
-        const wmY = 132;
+        // Căn chuẩn tâm đối xứng tổng thể vào chính giữa x = 580 (cân đối cả phần thân và đuôi rồng)
+        const wmX = 105;
+        // Đặt đầu rồng cao lên một chút (mặt rồng ngay sát dưới đường kẻ ngang)
+        const wmY = 120;
         ctx.drawImage(wmImg, wmX, wmY, wmW, wmH);
         ctx.restore();
     }
