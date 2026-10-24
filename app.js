@@ -927,7 +927,7 @@ function renderCaptureHTML(data) {
     // Render to hidden capture target
     const target = document.getElementById('captureTarget');
     target.innerHTML = `
-        <img src="dambc.png" class="capture-watermark" alt="">
+        <img src="dambc-watermark.png" class="capture-watermark" alt="">
         <div class="info-header">
             <div class="info-content">
                 <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
@@ -935,7 +935,7 @@ function renderCaptureHTML(data) {
                 <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
             </div>
             <div class="info-seal">
-                <img src="dambc.png" alt="Dấu ấn">
+                <img src="dambc-seal.png" alt="Dấu ấn">
             </div>
         </div>
         
@@ -1039,8 +1039,14 @@ function captureAndDisplayImage() {
         });
     }));
 
+    // Tối ưu tỉ lệ xuất ảnh <= 2048px (chuẩn tối đa của Messenger/Sapo để không bị nền tảng tự động nén giảm chất lượng khi dán gửi)
+    const rect = target.getBoundingClientRect();
+    const maxEdge = Math.max(rect.width || 1160, rect.height || 1200);
+    const captureScale = Math.min(2, 2048 / maxEdge);
+
     waitImages.then(() => html2canvas(target, {
-        scale: 1.5,
+        scale: captureScale,
+        backgroundColor: '#ffffff',
         useCORS: true,
         logging: false
     })).then(canvas => {

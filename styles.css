@@ -524,7 +524,7 @@ body {
 #captureTarget {
     width: 1160px;
     background-color: #ffffff;
-    padding: 26px 32px 30px 32px;
+    padding: 20px 22px 24px 22px;
     font-family: 'Inter', sans-serif;
     font-size: 18px;
     color: #1a1a1a;
@@ -535,27 +535,25 @@ body {
 #captureTarget::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 1000 1200' width='1000' height='1200' preserveAspectRatio='none'%3E%3Cdefs%3E%3Cg id='floral-corner'%3E%3Cpath d='M16,58 L16,18 Q16,16 18,16 L58,16' fill='none' stroke='%231a1a1a' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M16,52 L22,52 L22,46 M52,16 L52,22 L46,22' fill='none' stroke='%231a1a1a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='27' r='2.4' fill='%231a1a1a'/%3E%3Ccircle cx='27' cy='21.5' r='2.5' fill='%231a1a1a'/%3E%3Ccircle cx='27' cy='32.5' r='2.5' fill='%231a1a1a'/%3E%3Ccircle cx='21.5' cy='27' r='2.5' fill='%231a1a1a'/%3E%3Ccircle cx='32.5' cy='27' r='2.5' fill='%231a1a1a'/%3E%3Cpath d='M35,24 C42,20 50,22 54,28 C51,31 45,30 42,26' fill='%231a1a1a'/%3E%3Cpath d='M24,35 C20,42 22,50 28,54 C31,51 30,45 26,42' fill='%231a1a1a'/%3E%3Cpath d='M33,33 C40,36 44,40 46,46 C40,44 36,40 33,33 Z' fill='%231a1a1a'/%3E%3Cpath d='M38,29 C46,29 52,34 49,39 C46,42 42,39 44,35' fill='none' stroke='%231a1a1a' stroke-width='1.6' stroke-linecap='round'/%3E%3Cpath d='M29,38 C29,46 34,52 39,49 C42,46 39,42 35,44' fill='none' stroke='%231a1a1a' stroke-width='1.6' stroke-linecap='round'/%3E%3C/g%3E%3C/defs%3E%3Crect x='10' y='10' width='980' height='1180' rx='16' fill='none' stroke='%23cccccc' stroke-width='1.6'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0' transform='translate(1000, 0) scale(-1, 1)'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0' transform='translate(0, 1200) scale(1, -1)'/%3E%3Cuse href='%23floral-corner' xlink:href='%23floral-corner' x='0' y='0' transform='translate(1000, 1200) scale(-1, -1)'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100% 100%;
-    opacity: 1;
+    /* Khung viền bo góc vẽ bằng CSS (sắc nét ở mọi tỉ lệ zoom) */
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2.5px solid #6b7280;
+    border-radius: 16px;
     pointer-events: none;
     z-index: 0;
 }
 
 #captureTarget .capture-watermark {
     position: absolute;
-    top: 46%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 620px;
+    width: 780px;
     height: auto;
-    opacity: 0.08;
+    opacity: 1;
     pointer-events: none;
     z-index: 0;
 }
@@ -571,10 +569,10 @@ body {
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border-bottom: 1.5px solid #cccccc;
-    padding: 5px 10px 10px 10px;
+    border-bottom: 2px solid #888888;
+    padding: 4px 10px 8px 10px;
     margin-bottom: 10px;
-    min-height: 115px;
+    min-height: 110px;
 }
 
 #captureTarget .info-content {
@@ -582,14 +580,14 @@ body {
 }
 
 #captureTarget .info-seal {
-    width: 165px;
+    width: 170px;
     height: 120px;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 16px;
-    margin-right: 8px;
+    margin-right: 6px;
 }
 
 #captureTarget .info-seal img {
@@ -617,7 +615,7 @@ body {
 
 
 #captureTarget .highlight {
-    color: #d97706;
+    color: #e60000;
     font-weight: 700;
 }
 
@@ -627,7 +625,7 @@ body {
     align-items: flex-start;
     gap: 60px;
     padding: 20px 0;
-    border-bottom: 1.5px solid #cccccc;
+    border-bottom: 2px solid #888888;
     margin-bottom: 10px;
 }
 
@@ -672,8 +670,8 @@ body {
 
 #captureTarget .hex-family {
     font-size: 18px;
-    color: #6b7280;
-    font-weight: 600;
+    color: #374151;
+    font-weight: 700;
     margin-top: 12px;
     text-transform: uppercase;
     white-space: nowrap;
@@ -711,12 +709,12 @@ body {
 }
 
 #captureTarget .yang.moving {
-    background-color: #e61919;
+    background-color: #e60000;
 }
 
 #captureTarget .yin.moving::before,
 #captureTarget .yin.moving::after {
-    background-color: #e61919;
+    background-color: #e60000;
 }
 
 #captureTarget table {
@@ -731,7 +729,7 @@ body {
 #captureTarget th,
 #captureTarget td {
     border: none;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #cccccc;
     padding: 8px 4px;
     text-align: center;
     white-space: nowrap;
@@ -739,23 +737,23 @@ body {
 }
 
 #captureTarget th {
-    background: transparent;
+    background: #f1f5f9;
     font-weight: 700;
     color: #111111;
     font-size: 16px;
     padding: 10px 4px;
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
+    border-top: 1.5px solid #999999;
+    border-bottom: 1.5px solid #999999;
     text-transform: uppercase;
     letter-spacing: 0.3px;
 }
 
 #captureTarget .sep-col {
-    border-left: 1px solid #cccccc;
+    border-left: 1px solid #999999;
 }
 
 #captureTarget .row-moving td {
-    color: #e61919;
+    color: #e60000;
     font-weight: 700;
 }
 
@@ -772,11 +770,11 @@ body {
 }
 
 #captureTarget .row-moving .marker-the {
-    color: #e61919;
+    color: #e60000;
 }
 
 #captureTarget .row-moving .marker-ung {
-    color: #e61919;
+    color: #e60000;
 }
 
 #captureTarget .phuc-than {
@@ -786,13 +784,13 @@ body {
 }
 
 #captureTarget .row-moving .phuc-than {
-    color: #e61919;
+    color: #e60000;
     font-weight: 700;
 }
 
 #captureTarget .shensha-section {
     margin-top: 10px;
-    border-top: 1.5px solid #cccccc;
+    border-top: 2px solid #888888;
     padding-top: 12px;
 }
 
@@ -805,7 +803,7 @@ body {
     text-align: center;
     letter-spacing: 1px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #cccccc;
 }
 
 #captureTarget .shensha-grid {
@@ -817,7 +815,7 @@ body {
 #captureTarget .ss-item {
     font-size: 18px;
     padding: 8px 10px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #cccccc;
     border-radius: 6px;
     color: #1a1a1a;
     background: rgba(0, 0, 0, 0.015);
@@ -842,11 +840,11 @@ body {
 
 /* Highlight thần sát whose chi matches a moving line */
 #captureTarget .ss-item.ss-moving strong {
-    color: #e61919;
+    color: #e60000;
 }
 
 #captureTarget .ss-item.ss-moving .ss-value {
-    color: #e61919;
+    color: #e60000;
     font-weight: normal;
 }
 
@@ -861,7 +859,7 @@ body {
 }
 
 #captureTarget .capture-footer-note .highlight {
-    color: #d97706;
+    color: #e60000;
     font-weight: 700;
 }
 
