@@ -1161,9 +1161,9 @@ async function renderHexagramToCanvas(data) {
         const wmW = 960;
         const wmH = Math.round(wmW * (wmImg.naturalHeight || wmImg.height) / (wmImg.naturalWidth || wmImg.width));
         // Căn chuẩn tâm đối xứng tổng thể vào chính giữa x = 580 (cân đối cả phần thân và đuôi rồng)
-        const wmX = 105;
-        // Đặt đầu rồng cao lên một chút (mặt rồng ngay sát dưới đường kẻ ngang)
-        const wmY = 120;
+        const wmX = 102;
+        // Đặt đầu rồng cao lên thêm một tí (chạm sát đường kẻ ngang)
+        const wmY = 115;
         ctx.drawImage(wmImg, wmX, wmY, wmW, wmH);
         ctx.restore();
     }
