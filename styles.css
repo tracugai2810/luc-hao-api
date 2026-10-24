@@ -488,6 +488,8 @@ body {
     max-width: 100%;
     height: auto;
     display: block;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 .save-hint {
@@ -551,7 +553,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 780px;
+    width: 960px;
     height: auto;
     opacity: 1;
     pointer-events: none;
@@ -577,24 +579,6 @@ body {
 
 #captureTarget .info-content {
     flex: 1;
-}
-
-#captureTarget .info-seal {
-    width: 170px;
-    height: 120px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 16px;
-    margin-right: 6px;
-}
-
-#captureTarget .info-seal img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
 }
 
 #captureTarget .info-line {

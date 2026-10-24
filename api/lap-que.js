@@ -208,8 +208,9 @@ const LUC_THU = {
     'Quý': ['Huyền Vũ', 'Thanh Long', 'Chu Tước', 'Câu Trần', 'Đằng Xà', 'Bạch Hổ'],
 };
 
-// Store generated image data URL
+// Store generated image data URL & blob
 let currentImageDataUrl = null;
+let currentImageBlob = null;
 let currentHexData = null;
 let currentTuViData = null;
 let currentTabType = 'default';
@@ -835,141 +836,543 @@ function renderCaptureHTML(data) {
         </tr>`;
     }
 
-    // Render to hidden capture target
+    // Render to hidden capture target (kept as DOM fallback)
     const target = document.getElementById('captureTarget');
-    target.innerHTML = `
-        <img src="dambc-watermark.png" class="capture-watermark" alt="">
-        <div class="info-header">
-            <div class="info-content">
-                <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
-                <div class="info-line"><strong>Tàng hào:</strong> <span class="highlight">${dateInfo.haoTam}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
-                <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
+    if (target) {
+        target.innerHTML = `
+            <img src="dambc.png" class="capture-watermark" alt="">
+            <div class="info-header">
+                <div class="info-content">
+                    <div class="info-line"><strong>Ngày giờ:</strong> ${data.formattedDate} &nbsp;&nbsp;&nbsp;&nbsp; <strong>Phương pháp:</strong> <span class="highlight">${methodText}</span></div>
+                    <div class="info-line"><strong>Tàng hào:</strong> <span class="highlight">${dateInfo.haoTam}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Tuần Không:</strong> <span class="highlight">${dateInfo.tuanKhong}</span></div>
+                    <div class="info-line"><strong>Nhật Thần:</strong> <span class="highlight">${dateInfo.nhatThan}</span> &nbsp;&nbsp;&nbsp;&nbsp; <strong>Nguyệt Lệnh:</strong> <span class="highlight">${dateInfo.nguyetLenh}</span></div>
+                </div>
             </div>
-            <div class="info-seal">
-                <img src="dambc-seal.png" alt="Dấu ấn">
+            
+            <div class="hex-visual-section">
+                <div class="hex-box">
+                    <div class="hex-title">${mainName}</div>
+                    ${renderHexVisual(data.lines, false)}
+                    <div class="hex-family">Họ ${palaceName}${mainAttr ? ' - ' + mainAttr : ''}</div>
+                </div>
+                <div class="hex-ngam-indicator">${data.ngamResult && data.ngamResult.length > 0 ? data.ngamResult.map(t => `<span>${t}</span>`).join('') : ''}</div>
+                <div class="hex-box">
+                    <div class="hex-title">${changedName}</div>
+                    ${renderHexVisual(data.lines, true)}
+                    <div class="hex-family">Họ ${changedPalaceName}${changedAttr ? ' - ' + changedAttr : ''}</div>
+                </div>
             </div>
-        </div>
-        
-        <div class="hex-visual-section">
-            <div class="hex-box">
-                <div class="hex-title">${mainName}</div>
-                ${renderHexVisual(data.lines, false)}
-                <div class="hex-family">Họ ${palaceName}${mainAttr ? ' - ' + mainAttr : ''}</div>
-            </div>
-            <div class="hex-ngam-indicator">${data.ngamResult && data.ngamResult.length > 0 ? data.ngamResult.map(t => `<span>${t}</span>`).join('') : ''}</div>
-            <div class="hex-box">
-                <div class="hex-title">${changedName}</div>
-                ${renderHexVisual(data.lines, true)}
-                <div class="hex-family">Họ ${changedPalaceName}${changedAttr ? ' - ' + changedAttr : ''}</div>
-            </div>
-        </div>
 
-        <table>
-            <colgroup>
-                <col style="width: 5%;">
-                <col style="width: 6%;">
-                <col style="width: 10.5%;">
-                <col style="width: 10.5%;">
-                <col style="width: 10.5%;">
-                <col style="width: 4.5%;">
-                <col style="width: 9.5%;">
-                <col style="width: 10%;">
-                <col style="width: 11.5%;">
-                <col style="width: 4%;">
-                <col style="width: 9%;">
-                <col style="width: 9%;">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>Hào</th>
-                    <th>T/Ư</th>
-                    <th>Lục Thân</th>
-                    <th>Can Chi</th>
-                    <th>P.Thần</th>
-                    <th>TK</th>
-                    <th class="sep-col">Lục Thân</th>
-                    <th>Can Chi</th>
-                    <th>Lục Thú</th>
-                    <th>TK</th>
-                    <th>T.S-Ngày</th>
-                    <th>V.S-Tháng</th>
-                </tr>
-            </thead>
-            <tbody>${rowsHtml}</tbody>
-        </table>
-        
-        <div class="shensha-section">
-            <div class="shensha-title">Thần Sát</div>
-            <div class="shensha-grid">
-                ${(() => {
-            const movingChiSet = new Set();
-            linesData.forEach(line => {
-                if (line.isMoving) {
-                    movingChiSet.add(line.chi);
-                    movingChiSet.add(line.changed.branch);
-                }
-            });
-            return shensha.map(s => {
-                const nameMatch = s.match(/<strong>(.*?):<\/strong>\s*(.*)/);
-                if (!nameMatch) return `<div class="ss-item">${s}</div>`;
-                const name = nameMatch[1];
-                const value = nameMatch[2] || '-';
-                const chiValues = value.split(',').map(v => v.trim());
-                const hasMovingChi = chiValues.some(chi => movingChiSet.has(chi));
-                const movingClass = hasMovingChi ? ' ss-moving' : '';
-                return `<div class="ss-item${movingClass}"><strong>${name}</strong><span class="ss-value">${value}</span></div>`;
-            }).join('');
-        })()}
+            <table>
+                <colgroup>
+                    <col style="width: 5%;">
+                    <col style="width: 6%;">
+                    <col style="width: 10.5%;">
+                    <col style="width: 10.5%;">
+                    <col style="width: 10.5%;">
+                    <col style="width: 4.5%;">
+                    <col style="width: 9.5%;">
+                    <col style="width: 10%;">
+                    <col style="width: 11.5%;">
+                    <col style="width: 4%;">
+                    <col style="width: 9%;">
+                    <col style="width: 9%;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Hào</th>
+                        <th>T/Ư</th>
+                        <th>Lục Thân</th>
+                        <th>Can Chi</th>
+                        <th>P.Thần</th>
+                        <th>TK</th>
+                        <th class="sep-col">Lục Thân</th>
+                        <th>Can Chi</th>
+                        <th>Lục Thú</th>
+                        <th>TK</th>
+                        <th>T.S-Ngày</th>
+                        <th>V.S-Tháng</th>
+                    </tr>
+                </thead>
+                <tbody>${rowsHtml}</tbody>
+            </table>
+            
+            <div class="shensha-section">
+                <div class="shensha-title">Thần Sát</div>
+                <div class="shensha-grid">
+                    ${(() => {
+                        const movingChiSet = new Set();
+                        linesData.forEach(line => {
+                            if (line.isMoving) {
+                                movingChiSet.add(line.chi);
+                                movingChiSet.add(line.changed.branch);
+                            }
+                        });
+                        return shensha.map(s => {
+                            const nameMatch = s.match(/<strong>(.*?):<\/strong>\s*(.*)/);
+                            if (!nameMatch) return `<div class="ss-item">${s}</div>`;
+                            const name = nameMatch[1];
+                            const value = nameMatch[2] || '-';
+                            const chiValues = value.split(',').map(v => v.trim());
+                            const hasMovingChi = chiValues.some(chi => movingChiSet.has(chi));
+                            const movingClass = hasMovingChi ? ' ss-moving' : '';
+                            return `<div class="ss-item${movingClass}"><strong>${name}</strong><span class="ss-value">${value}</span></div>`;
+                        }).join('');
+                    })()}
+                </div>
             </div>
-        </div>
-        
-        <div class="capture-footer-note">
-            Đây là quẻ Kinh Dịch được gieo bằng phương pháp <span class="highlight">${methodText}</span> theo thông tin bạn cung cấp.
-        </div>
-    `;
+            
+            <div class="capture-footer-note">
+                Đây là quẻ Kinh Dịch được gieo bằng phương pháp <span class="highlight">${methodText}</span> theo thông tin bạn cung cấp.
+            </div>
+        `;
+    }
 }
 
+// ============================================
+// NATIVE CANVAS 2D RENDERER (Chuẩn Sắc Nét Cao - Như LapQueKinhDich)
+// ============================================
 
-function captureAndDisplayImage() {
-    const captureArea = document.getElementById('captureArea');
-    const target = document.getElementById('captureTarget');
+function drawRoundRect(ctx, x, y, w, h, r) {
+    if (typeof ctx.roundRect === 'function') {
+        ctx.beginPath();
+        ctx.roundRect(x, y, w, h, r);
+        return;
+    }
+    ctx.beginPath();
+    ctx.moveTo(x + r, y);
+    ctx.arcTo(x + w, y, x + w, y + h, r);
+    ctx.arcTo(x + w, y + h, x, y + h, r);
+    ctx.arcTo(x, y + h, x, y, r);
+    ctx.arcTo(x, y, x + w, y, r);
+    ctx.closePath();
+}
 
-    // Temporarily position capture area on screen for html2canvas
-    captureArea.style.position = 'fixed';
-    captureArea.style.left = '0';
-    captureArea.style.top = '0';
-    captureArea.style.zIndex = '-1';
-    captureArea.style.opacity = '0.01';
+function enableInkText(ctx, ratio = 0.22) {
+    if (!ctx || ctx.__inkEnabled) return;
+    ctx.__inkEnabled = true;
+    const originalFillText = ctx.fillText.bind(ctx);
+    ctx.fillText = function (text, x, y, maxWidth) {
+        const font = this.font || '';
+        const pxMatch = font.match(/([\d.]+)px/);
+        const px = pxMatch ? parseFloat(pxMatch[1]) : 18;
+        const isBold = /bold|700|800|900/i.test(font);
+        const stem = isBold ? 0.12 : 0.08;
+        const w = px * stem * ratio;
+        if (w > 0 && typeof this.fillStyle === 'string') {
+            this.save();
+            this.lineJoin = 'round';
+            this.miterLimit = 2;
+            this.lineWidth = w;
+            this.strokeStyle = this.fillStyle;
+            if (maxWidth !== undefined) this.strokeText(text, x, y, maxWidth);
+            else this.strokeText(text, x, y);
+            this.restore();
+        }
+        if (maxWidth !== undefined) originalFillText(text, x, y, maxWidth);
+        else originalFillText(text, x, y);
+    };
+}
 
-    const images = Array.from(target.querySelectorAll('img'));
-    const waitImages = Promise.all(images.map(img => {
-        if (img.complete && img.naturalWidth > 0) return Promise.resolve();
-        return new Promise(resolve => {
-            img.onload = resolve;
-            img.onerror = resolve;
+function drawTextSpans(ctx, spans, startX, y) {
+    let curX = startX;
+    for (const span of spans) {
+        ctx.font = span.font || '18px Inter, sans-serif';
+        ctx.fillStyle = span.color || '#000000';
+        ctx.fillText(span.text, curX, y);
+        curX += ctx.measureText(span.text).width;
+    }
+    return curX;
+}
+
+function drawCenteredSpans(ctx, spans, centerX, y) {
+    let totalW = 0;
+    for (const span of spans) {
+        ctx.font = span.font || '18px Inter, sans-serif';
+        totalW += ctx.measureText(span.text).width;
+    }
+    let curX = centerX - totalW / 2;
+    ctx.textAlign = 'left';
+    for (const span of spans) {
+        ctx.font = span.font || '18px Inter, sans-serif';
+        ctx.fillStyle = span.color || '#000000';
+        ctx.fillText(span.text, curX, y);
+        curX += ctx.measureText(span.text).width;
+    }
+}
+
+let cachedWatermarkImg = null;
+function getWatermarkImage() {
+    if (cachedWatermarkImg && cachedWatermarkImg.complete && cachedWatermarkImg.naturalWidth > 0) {
+        return Promise.resolve(cachedWatermarkImg);
+    }
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.src = 'dambc.png';
+        img.onload = () => {
+            cachedWatermarkImg = img;
+            resolve(img);
+        };
+        img.onerror = () => {
+            const fb = new Image();
+            fb.src = 'dambc-watermark.png';
+            fb.onload = () => {
+                cachedWatermarkImg = fb;
+                resolve(fb);
+            };
+            fb.onerror = () => resolve(null);
+        };
+    });
+}
+
+async function renderHexagramToCanvas(data) {
+    if (document.fonts) {
+        await Promise.all([
+            document.fonts.load('400 16px Inter'),
+            document.fonts.load('400 18px Inter'),
+            document.fonts.load('700 16px Inter'),
+            document.fonts.load('700 18px Inter'),
+            document.fonts.load('700 19px Inter'),
+            document.fonts.load('700 20px Inter')
+        ]).catch(() => []);
+        await document.fonts.ready;
+    }
+
+    const wmImg = await getWatermarkImage();
+
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    const W = 1160;
+    const SCALE = 1.5; // Kích thước xuất ra = 1740px (chuẩn tối ưu < 2000px, Sapo không bóp chất lượng)
+
+    const shenshaList = data.shensha || [];
+    const shenshaRows = Math.ceil(shenshaList.length / 4);
+    const itemH = 36;
+    const shenshaGridH = shenshaRows * (itemH + 8);
+    const totalH = 651 + 12 + 28 + 12 + 14 + shenshaGridH + 20 + 38;
+    const H = Math.ceil(totalH);
+
+    canvas.width = Math.round(W * SCALE);
+    canvas.height = Math.round(H * SCALE);
+    ctx.scale(SCALE, SCALE);
+
+    // Kích hoạt kỹ thuật "Mực in" (sheet-ink) làm dày nét chữ 22%
+    enableInkText(ctx, 0.22);
+
+    // 1. Nền trắng
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, W, H);
+
+    // 2. Hình nền mờ Watermark (dambc.png mở rộng 960px ~ 83-85% chiều ngang bảng)
+    if (wmImg && wmImg.naturalWidth > 0) {
+        ctx.save();
+        ctx.globalAlpha = 0.065;
+        ctx.globalCompositeOperation = 'multiply';
+        const wmW = 960;
+        const wmH = Math.round(wmW * (wmImg.naturalHeight || wmImg.height) / (wmImg.naturalWidth || wmImg.width));
+        const wmX = (W - wmW) / 2;
+        const wmY = Math.round(150 + (651 - 150 - wmH) / 2);
+        ctx.drawImage(wmImg, wmX, wmY, wmW, wmH);
+        ctx.restore();
+    }
+
+    // 3. Khung viền ngoài bo góc (đậm hơn chút, bỏ 4 hoa văn theo yêu cầu)
+    ctx.save();
+    ctx.strokeStyle = '#6b7280';
+    ctx.lineWidth = 2.5;
+    drawRoundRect(ctx, 8, 8, W - 16, H - 16, 16);
+    ctx.stroke();
+    ctx.restore();
+
+    // 4. Khối Thông Tin Header (3 dòng rõ nét, các giá trị bôi đỏ #e60000)
+    ctx.textAlign = 'left';
+    drawTextSpans(ctx, [
+        { text: 'Ngày giờ: ', font: 'bold 18px Inter, sans-serif', color: '#000000' },
+        { text: data.formattedDate + '    ', font: '18px Inter, sans-serif', color: '#000000' },
+        { text: 'Phương pháp: ', font: 'bold 18px Inter, sans-serif', color: '#000000' },
+        { text: data.methodText, font: 'bold 18px Inter, sans-serif', color: '#e60000' }
+    ], 24, 46);
+
+    drawTextSpans(ctx, [
+        { text: 'Tàng hào: ', font: 'bold 18px Inter, sans-serif', color: '#000000' },
+        { text: data.dateInfo.haoTam + '    ', font: 'bold 18px Inter, sans-serif', color: '#e60000' },
+        { text: 'Tuần Không: ', font: 'bold 18px Inter, sans-serif', color: '#000000' },
+        { text: data.dateInfo.tuanKhong, font: 'bold 18px Inter, sans-serif', color: '#e60000' }
+    ], 24, 76);
+
+    drawTextSpans(ctx, [
+        { text: 'Nhật Thần: ', font: 'bold 18px Inter, sans-serif', color: '#000000' },
+        { text: data.dateInfo.nhatThan + '    ', font: 'bold 18px Inter, sans-serif', color: '#e60000' },
+        { text: 'Nguyệt Lệnh: ', font: 'bold 18px Inter, sans-serif', color: '#000000' },
+        { text: data.dateInfo.nguyetLenh, font: 'bold 18px Inter, sans-serif', color: '#e60000' }
+    ], 24, 106);
+
+    // Đường kẻ phân cách Header
+    ctx.strokeStyle = '#888888';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(22, 126);
+    ctx.lineTo(W - 22, 126);
+    ctx.stroke();
+
+    // 5. Khu Vực Hình Quẻ (Hex Visual Section)
+    const cX1 = 340, cX2 = 820;
+    ctx.textAlign = 'center';
+    ctx.font = 'bold 20px Inter, sans-serif';
+    ctx.fillStyle = '#d91b1b';
+    ctx.fillText(data.mainName.toUpperCase(), cX1, 162);
+    ctx.fillText(data.changedName.toUpperCase(), cX2, 162);
+
+    // Chỉ báo Phục Ngâm / Phản Ngâm ở giữa
+    if (data.ngamResult && data.ngamResult.length > 0) {
+        ctx.font = 'bold 17px Inter, sans-serif';
+        ctx.fillStyle = '#000000';
+        const startNgamY = 250 - ((data.ngamResult.length - 1) * 24) / 2;
+        data.ngamResult.forEach((txt, idx) => {
+            ctx.fillText(txt.toUpperCase(), 580, startNgamY + idx * 24);
         });
-    }));
+    }
 
-    // Tối ưu tỉ lệ xuất ảnh <= 2048px (chuẩn tối đa của Messenger/Sapo để không bị nền tảng tự động nén giảm chất lượng khi dán gửi)
-    const rect = target.getBoundingClientRect();
-    const maxEdge = Math.max(rect.width || 1160, rect.height || 1200);
-    const captureScale = Math.min(2, 2048 / maxEdge);
+    // Vạch Hào (Hào 6 đến Hào 1)
+    const yGuaStart = 182;
+    const bitsMain = data.lines.map(v => getBit(v, false));
+    const bitsChanged = data.lines.map(v => getBit(v, true));
 
-    waitImages.then(() => html2canvas(target, {
-        scale: captureScale,
-        backgroundColor: '#ffffff',
-        useCORS: true,
-        logging: false
-    })).then(canvas => {
-        // Hide capture area again
-        captureArea.style.position = 'absolute';
-        captureArea.style.left = '-9999px';
-        captureArea.style.opacity = '1';
+    for (let i = 5; i >= 0; i--) {
+        const lineIdx = 5 - i;
+        const lineY = yGuaStart + lineIdx * 24;
 
-        // Convert to PNG
-        currentImageDataUrl = canvas.toDataURL('image/png');
+        // Quẻ Chính
+        const isYangMain = bitsMain[i] === '1';
+        const isMoving = data.lines[i] === 0 || data.lines[i] === 3;
+        const colorMain = isMoving ? '#e60000' : '#1c549c';
+        ctx.fillStyle = colorMain;
+        if (isYangMain) {
+            ctx.fillRect(cX1 - 55, lineY, 110, 16);
+        } else {
+            ctx.fillRect(cX1 - 55, lineY, 46, 16);
+            ctx.fillRect(cX1 - 55 + 46 + 18, lineY, 46, 16);
+        }
 
-        // Display image
+        // Quẻ Biến
+        const isYangChanged = bitsChanged[i] === '1';
+        const colorChanged = isMoving ? '#e60000' : '#1c549c';
+        ctx.fillStyle = colorChanged;
+        if (isYangChanged) {
+            ctx.fillRect(cX2 - 55, lineY, 110, 16);
+        } else {
+            ctx.fillRect(cX2 - 55, lineY, 46, 16);
+            ctx.fillRect(cX2 - 55 + 46 + 18, lineY, 46, 16);
+        }
+    }
+
+    // Họ Quẻ
+    const yFam = yGuaStart + 6 * 24 + 18;
+    ctx.font = 'bold 18px Inter, sans-serif';
+    ctx.fillStyle = '#374151';
+    ctx.textAlign = 'center';
+    ctx.fillText(`HỌ ${data.palaceName.toUpperCase()}${data.mainAttr ? ' - ' + data.mainAttr.toUpperCase() : ''}`, cX1, yFam);
+    ctx.fillText(`HỌ ${data.changedPalaceName.toUpperCase()}${data.changedAttr ? ' - ' + data.changedAttr.toUpperCase() : ''}`, cX2, yFam);
+
+    // Đường kẻ phân cách Visual Section
+    const yDiv2 = yFam + 22;
+    ctx.strokeStyle = '#888888';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(22, yDiv2);
+    ctx.lineTo(W - 22, yDiv2);
+    ctx.stroke();
+
+    // 6. Bảng Dữ Liệu 12 Cột
+    const colWidths = [56, 67, 117, 117, 117, 50, 106, 112, 128, 45, 100, 101];
+    const colLefts = [];
+    let curColX = 22;
+    for (let w of colWidths) {
+        colLefts.push(curColX);
+        curColX += w;
+    }
+    const sepColX = colLefts[6]; // Cột 6 là sep-col
+
+    // Tiêu đề bảng
+    const tableTop = yDiv2 + 14;
+    ctx.fillStyle = '#f1f5f9';
+    ctx.fillRect(22, tableTop, 1116, 38);
+
+    ctx.strokeStyle = '#999999';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(22, tableTop);
+    ctx.lineTo(W - 22, tableTop);
+    ctx.moveTo(22, tableTop + 38);
+    ctx.lineTo(W - 22, tableTop + 38);
+    ctx.moveTo(sepColX, tableTop);
+    ctx.lineTo(sepColX, tableTop + 38);
+    ctx.stroke();
+
+    const headers = ['HÀO', 'T/Ư', 'LỤC THÂN', 'CAN CHI', 'P.THẦN', 'TK', 'LỤC THÂN', 'CAN CHI', 'LỤC THÚ', 'TK', 'T.S-NGÀY', 'V.S-THÁNG'];
+    ctx.font = 'bold 16px Inter, sans-serif';
+    ctx.fillStyle = '#111111';
+    ctx.textAlign = 'center';
+    headers.forEach((h, idx) => {
+        const centerX = colLefts[idx] + colWidths[idx] / 2;
+        ctx.fillText(h, centerX, tableTop + 25);
+    });
+
+    // Các hàng dữ liệu bảng (Hào 6 xuống 1)
+    const rowH = 38;
+    const rowStartY = tableTop + 38;
+    for (let r = 0; r < 6; r++) {
+        const i = 5 - r;
+        const line = data.linesData[i];
+        const rY = rowStartY + r * rowH;
+        const centerY = rY + 25;
+
+        // Viền dưới hàng
+        ctx.strokeStyle = '#cccccc';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(22, rY + rowH);
+        ctx.lineTo(W - 22, rY + rowH);
+        ctx.stroke();
+
+        // Đường dọc ngăn cách Quẻ Biến (sep-col)
+        ctx.strokeStyle = '#999999';
+        ctx.beginPath();
+        ctx.moveTo(sepColX, rY);
+        ctx.lineTo(sepColX, rY + rowH);
+        ctx.stroke();
+
+        const isMoving = line.isMoving;
+        const textColor = isMoving ? '#e60000' : '#000000';
+        const font = isMoving ? 'bold 18px Inter, sans-serif' : '18px Inter, sans-serif';
+
+        const sym = (line.val === 1) ? '—' : (line.val === 2) ? '--' : (line.val === 3) ? 'O' : 'X';
+        const tu = line.isShi ? 'Thế' : line.isYing ? 'Ứng' : '';
+        const phucThan = line.phucThan ? `${line.phucThan.rel} - ${line.phucThan.branch}` : '-';
+        const tk = line.isTK ? 'K' : '-';
+        const ctk = line.isCTK ? 'K' : '-';
+
+        const vals = [
+            sym,
+            tu,
+            line.relation,
+            `${line.chi}-${line.hanh}`,
+            phucThan,
+            tk,
+            line.changed.relation,
+            `${line.changed.branch}-${line.changed.hanh}`,
+            line.lucThu,
+            ctk,
+            line.tsNgay,
+            line.vsThang
+        ];
+
+        vals.forEach((v, idx) => {
+            const cX = colLefts[idx] + colWidths[idx] / 2;
+            ctx.textAlign = 'center';
+            if (idx === 1 && !isMoving && v) {
+                ctx.font = 'bold 18px Inter, sans-serif';
+                ctx.fillStyle = '#1a1a1a';
+            } else if (idx === 4 && !isMoving) {
+                ctx.font = '18px Inter, sans-serif';
+                ctx.fillStyle = '#1a1a1a';
+            } else {
+                ctx.font = font;
+                ctx.fillStyle = textColor;
+            }
+            ctx.fillText(v, cX, centerY);
+        });
+    }
+
+    const tableBottom = rowStartY + 6 * rowH;
+
+    // 7. Khu Vực Thần Sát (Shensha Section)
+    const ssTop = tableBottom + 12;
+    ctx.strokeStyle = '#888888';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(22, ssTop);
+    ctx.lineTo(W - 22, ssTop);
+    ctx.stroke();
+
+    ctx.font = 'bold 19px Inter, sans-serif';
+    ctx.fillStyle = '#111111';
+    ctx.textAlign = 'center';
+    ctx.fillText('THẦN SÁT', W / 2, ssTop + 26);
+
+    ctx.strokeStyle = '#cccccc';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(22, ssTop + 36);
+    ctx.lineTo(W - 22, ssTop + 36);
+    ctx.stroke();
+
+    const movingChiSet = new Set();
+    data.linesData.forEach(line => {
+        if (line.isMoving) {
+            movingChiSet.add(line.chi);
+            movingChiSet.add(line.changed.branch);
+        }
+    });
+
+    const gridStartY = ssTop + 48;
+    const itW = (1116 - 3 * 8) / 4;
+    shenshaList.forEach((s, idx) => {
+        const c = idx % 4;
+        const r = Math.floor(idx / 4);
+        const itX = 22 + c * (itW + 8);
+        const itY = gridStartY + r * (itemH + 8);
+
+        ctx.strokeStyle = '#cccccc';
+        ctx.lineWidth = 1;
+        drawRoundRect(ctx, itX, itY, itW, itemH, 6);
+        ctx.stroke();
+
+        const m = s.match(/<strong>(.*?):<\/strong>\s*(.*)/);
+        if (m) {
+            const name = m[1] + ': ';
+            const val = m[2] || '-';
+            const chiVals = val.split(',').map(v => v.trim());
+            const hasMovingChi = chiVals.some(ch => movingChiSet.has(ch));
+            const color = hasMovingChi ? '#e60000' : '#111111';
+            ctx.textAlign = 'left';
+            drawTextSpans(ctx, [
+                { text: name, font: 'bold 17px Inter, sans-serif', color: color },
+                { text: val, font: '17px Inter, sans-serif', color: color }
+            ], itX + 10, itY + 24);
+        } else {
+            ctx.textAlign = 'left';
+            ctx.font = '17px Inter, sans-serif';
+            ctx.fillStyle = '#111111';
+            ctx.fillText(s, itX + 10, itY + 24);
+        }
+    });
+
+    // 8. Chân Trang (Footer Note)
+    const footerY = gridStartY + shenshaRows * (itemH + 8) + 24;
+    drawCenteredSpans(ctx, [
+        { text: 'Đây là quẻ Kinh Dịch được gieo bằng phương pháp ', font: 'italic 16px Inter, sans-serif', color: '#444444' },
+        { text: data.methodText, font: 'bold italic 16px Inter, sans-serif', color: '#e60000' },
+        { text: ' theo thông tin bạn cung cấp.', font: 'italic 16px Inter, sans-serif', color: '#444444' }
+    ], W / 2, footerY);
+
+    return canvas;
+}
+
+async function captureAndDisplayImage() {
+    try {
+        if (!currentHexData) return;
+
+        // Render trực tiếp bằng Canvas 2D Native Context (công nghệ lapquekinhdich.com)
+        const canvas = await renderHexagramToCanvas(currentHexData);
+
+        // Xuất PNG Blob chất lượng cao Lossless
+        const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/png'));
+        currentImageBlob = blob;
+        currentImageDataUrl = URL.createObjectURL(blob);
+
+        // Hiển thị ảnh kết quả
         const imageDisplay = document.getElementById('imageDisplay');
         imageDisplay.innerHTML = '';
 
@@ -978,26 +1381,43 @@ function captureAndDisplayImage() {
         img.alt = 'Kết quả quẻ Lục Hào';
         imageDisplay.appendChild(img);
 
-        // Hide loading, show result
+        // Ẩn loading overlay, hiện kết quả ngay lập tức
         document.getElementById('loading-overlay').classList.remove('visible');
         document.getElementById('resultSection').classList.add('visible');
 
-        // Scroll to result
-        document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Tự động cuộn đến nút chức năng
+        const scrollToButton = (smooth = true) => {
+            const downloadBtn = document.getElementById('downloadBtn');
+            if (downloadBtn) {
+                downloadBtn.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'center' });
+            } else {
+                const resultSection = document.getElementById('resultSection');
+                if (resultSection) {
+                    resultSection.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+                }
+            }
+        };
 
-    }).catch(err => {
-        console.error('html2canvas error:', err);
+        requestAnimationFrame(() => {
+            setTimeout(() => scrollToButton(true), 150);
+        });
 
-        // Hide capture area
-        captureArea.style.position = 'absolute';
-        captureArea.style.left = '-9999px';
-        captureArea.style.opacity = '1';
+        setTimeout(() => {
+            const downloadBtn = document.getElementById('downloadBtn');
+            if (downloadBtn) {
+                const rect = downloadBtn.getBoundingClientRect();
+                const viewHeight = window.innerHeight || document.documentElement.clientHeight;
+                if (rect.top < 0 || rect.bottom > viewHeight) {
+                    scrollToButton(false);
+                }
+            }
+        }, 700);
 
-        // Hide loading
+    } catch (err) {
+        console.error('Canvas render error:', err);
         document.getElementById('loading-overlay').classList.remove('visible');
-
         alert('Có lỗi khi tạo ảnh. Vui lòng thử lại!');
-    });
+    }
 }
 
 
@@ -1407,18 +1827,20 @@ function fallbackCopyText(text) {
 }
 
 async function copyImageToClipboard() {
-    if (!currentImageDataUrl) {
+    if (!currentImageBlob && !currentImageDataUrl) {
         alert("Vui lòng lập quẻ trước!");
         return;
     }
 
     try {
-        // Convert data URL to blob
-        const response = await fetch(currentImageDataUrl);
-        const blob = await response.blob();
+        let blob = currentImageBlob;
+        if (!blob && currentImageDataUrl) {
+            const response = await fetch(currentImageDataUrl);
+            blob = await response.blob();
+        }
 
         // Use Clipboard API to copy image
-        if (navigator.clipboard && navigator.clipboard.write) {
+        if (navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
             const clipboardItem = new ClipboardItem({
                 'image/png': blob
             });
@@ -1469,7 +1891,7 @@ function showToast(message) {
 }
 
 function downloadImage() {
-    if (!currentImageDataUrl) {
+    if (!currentImageDataUrl && !currentImageBlob) {
         alert('Chưa có ảnh để tải!');
         return;
     }
@@ -1480,40 +1902,42 @@ function downloadImage() {
     // Detect if mobile device
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-    // Convert base64 to blob
-    fetch(currentImageDataUrl)
-        .then(res => res.blob())
-        .then(blob => {
-            if (isMobile && navigator.share && navigator.canShare) {
-                // Mobile: Try Web Share API first
-                const file = new File([blob], filename, { type: 'image/png' });
-                const shareData = { files: [file] };
+    const handleBlob = (blob) => {
+        if (isMobile && navigator.share && navigator.canShare) {
+            const file = new File([blob], filename, { type: 'image/png' });
+            const shareData = { files: [file] };
 
-                if (navigator.canShare(shareData)) {
-                    navigator.share(shareData)
-                        .then(() => showToast('Đã chia sẻ thành công!'))
-                        .catch((err) => {
-                            console.log('Share cancelled or failed, trying fallback');
-                            fallbackDownload(blob, filename);
-                        });
-                    return;
-                }
+            if (navigator.canShare(shareData)) {
+                navigator.share(shareData)
+                    .then(() => showToast('Đã chia sẻ thành công!'))
+                    .catch((err) => {
+                        console.log('Share cancelled or failed, trying fallback');
+                        fallbackDownload(blob, filename);
+                    });
+                return;
             }
+        }
 
-            // Desktop and fallback: Direct download
-            fallbackDownload(blob, filename);
-            showToast('Đã tải ảnh thành công!');
-        })
-        .catch(err => {
-            console.error('Download error:', err);
-            // Ultimate fallback - direct link download
-            const link = document.createElement('a');
-            link.download = filename;
-            link.href = currentImageDataUrl;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        });
+        fallbackDownload(blob, filename);
+        showToast('Đã tải ảnh thành công!');
+    };
+
+    if (currentImageBlob) {
+        handleBlob(currentImageBlob);
+    } else {
+        fetch(currentImageDataUrl)
+            .then(res => res.blob())
+            .then(handleBlob)
+            .catch(err => {
+                console.error('Download error:', err);
+                const link = document.createElement('a');
+                link.download = filename;
+                link.href = currentImageDataUrl;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            });
+    }
 }
 
 function fallbackDownload(blob, filename) {
